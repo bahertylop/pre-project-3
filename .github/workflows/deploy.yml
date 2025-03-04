@@ -73,8 +73,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            echo DB_USERNAME = ${{ secrets.POSTGRES_USERNAME }} >> pre-project-3-env.txt
-            echo DB_PASSWORD = ${{ secrets.POSTGRES_PASSWORD }} >> pre-project-3-env.txt
+            cd project
+            echo DB_USERNAME = ${{ secrets.POSTGRES_USERNAME }} >> .env
+            echo DB_PASSWORD = ${{ secrets.POSTGRES_PASSWORD }} >> .env
             
             docker stop frontend
             docker stop app
@@ -84,9 +85,7 @@ jobs:
             
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/docker-spring-boot-postgres
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/frontend-http-server
-            
-            cd project
-            
-            docker-compose up --env-file=pre-project-3-env.txt -d 
+  
+            docker-compose up -d 
             docker ps -a
             
