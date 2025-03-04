@@ -16,7 +16,7 @@ jobs:
         with:
           host: "194.87.94.5"
           username: "lev"
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ SSH_PRIVATE_KEY }}
           port: 22
           source: "docker-compose.yml"
           target: "/project"
