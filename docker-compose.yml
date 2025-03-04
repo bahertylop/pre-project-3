@@ -1,0 +1,39 @@
+version: '2'
+
+services:
+  app:
+    image: 'bahertylop/docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/pre_project_3
+      - SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
+
+  db:
+    image: 'bahertylop/postgres:latest'
+    container_name: db
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=pre_project_3
+    ports:
+      - "5434:5432"
+
+  frontend:
+    image: 'bahertylop/frontend-http-server:latest'
+    build:
+      context: ./frontend
+    container_name: frontend
+    depends_on:
+      - app
+    ports:
+      - "3000:3000"
+#    environment:
+#      - API_BASE_URL=${API_BASE_URL}

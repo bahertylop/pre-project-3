@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="profile.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="container mt-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+        <span class="navbar-text" id="userEmail"></span>
+        <span class="navbar-text mx-3" id="userRoles"></span>
+        <div class="ms-auto">
+            <button class="btn btn-secondary d-none" id="adminPanelBtn">админ-панель</button>
+            <button class="btn btn-outline-danger" id="logoutBtn">выйти</button>
+        </div>
+
+    </div>
+</nav>
+
+<h2 class="mb-4">Профиль пользователя</h2>
+
+<div id="profileData" class="mb-3">
+    <p><strong>ID:</strong> <span id="profileId"></span></p>
+    <p><strong>Имя:</strong> <span id="profileName"></span></p>
+    <p><strong>Почта:</strong> <span id="profileEmail"></span></p>
+    <p><strong>Возраст:</strong> <span id="profileAge"></span></p>
+    <p><strong>Роли:</strong> <span id="profileRoles"></span></p>
+</div>
+
+<div class="button-container">
+    <div class="button-row">
+        <button class="btn btn-primary btn-fixed" id="editProfileBtn">Редактировать</button>
+        <button class="btn btn-danger btn-fixed" id="deleteAccountBtn">Удалить аккаунт</button>
+    </div>
+</div>
+
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel">Редактирование профиля</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editProfileForm">
+                    <div class="mb-3">
+                        <label for="editName" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="editName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPassword" class="form-label">Пароль (минимум 8 символов)</label>
+                        <input type="password" class="form-control" id="editPassword">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editAge" class="form-label">Возраст</label>
+                        <input type="number" class="form-control" id="editAge" required min="12">
+                    </div>
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="config.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>
