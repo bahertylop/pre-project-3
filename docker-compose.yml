@@ -17,7 +17,7 @@ services:
       - "8080:8080"
 
   db:
-    image: 'bahertylop/postgres:latest'
+    image: 'postgres:latest'
     container_name: db
     environment:
       - POSTGRES_USER=${DB_USERNAME}
