@@ -19,4 +19,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           source: "docker-compose.yml"
-          target: "/project"
+          target: "/home/lev/project"
