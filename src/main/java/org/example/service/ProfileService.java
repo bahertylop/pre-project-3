@@ -1,22 +1,14 @@
 package org.example.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.dto.UserDto;
 import org.example.dto.request.UpdateProfileRequest;
 import org.example.dto.request.UpdateUserInfoRequest;
 import org.example.dto.response.ProfileResponse;
-import org.example.exception.IllegalRequestArgumentException;
-import org.example.exception.UserNotFoundException;
 import org.example.model.Role;
 import org.example.model.User;
-import org.example.repository.UserRepository;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.swing.text.html.Option;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service

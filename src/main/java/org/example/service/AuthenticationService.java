@@ -1,10 +1,8 @@
 package org.example.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.config.jwt.JwtAuthenticationFilter;
 import org.example.config.jwt.JwtService;
 import org.example.dto.CreateUserDto;
-import org.example.dto.UserDto;
 import org.example.dto.request.LoginRequest;
 import org.example.dto.request.SignUpRequest;
 import org.example.dto.response.JwtTokenResponse;

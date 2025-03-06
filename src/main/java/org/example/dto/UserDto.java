@@ -7,10 +7,6 @@ import lombok.NoArgsConstructor;
 import org.example.model.Role;
 import org.example.model.User;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.*;
 import java.util.Set;
 import java.util.stream.Collectors;
