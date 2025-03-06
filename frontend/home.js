@@ -62,9 +62,13 @@ $(document).ready(function () {
                 let errorMessages = '';
 
                 if (errors) {
-                    errors.forEach(error => {
-                        errorMessages += `<p>${error.message}</p>`;
-                    });
+                    if (Array.isArray(errors)) {
+                        errors.forEach(error => {
+                            errorMessages += `<p>${error.message}</p>`;
+                        });
+                    } else {
+                        errorMessages += `<p>${errors.message}</p>`;
+                    }
                 }
 
                 $('#signupModal .modal-body').append(`<div class="alert alert-danger mt-3">${errorMessages}</div>`);
