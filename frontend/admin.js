@@ -1,5 +1,9 @@
 $(document).ready(function () {
     const token = localStorage.getItem('jwtToken');
+    if (!token) {
+        window.location.href = "home.html";
+        return;
+    }
 
     function fetchUsers() {
         $.ajax({
@@ -27,7 +31,8 @@ $(document).ready(function () {
                 });
             },
             error: function () {
-                alert("Ошибка загрузки пользователей.");
+                localStorage.removeItem('jwtToken');
+                window.location.href = "home.html";
             }
         });
     }
@@ -39,7 +44,6 @@ $(document).ready(function () {
             data: {id},
             headers: {'Authorization': 'Bearer ' + token},
             success: function () {
-                alert("Пользователь удалён!");
                 fetchUsers();
             },
             error: function () {
@@ -101,7 +105,6 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify({id, name, password, age, roles}),
             success: function () {
-                alert("Пользователь обновлён!");
                 $('#editUserModal').modal('hide');
                 fetchUsers();
             },
@@ -141,7 +144,6 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify({name, email, password, age, roles}),
             success: function () {
-                alert("Пользователь создан!");
                 $('#createUserModal').modal('hide');
                 fetchUsers();
             },

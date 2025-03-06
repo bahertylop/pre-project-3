@@ -25,7 +25,6 @@ $(document).ready(function () {
                 }
             },
             error: function () {
-                alert("Ошибка загрузки профиля.");
                 localStorage.removeItem('jwtToken');
                 window.location.href = "home.html";
             }
@@ -52,7 +51,6 @@ $(document).ready(function () {
             headers: { 'Authorization': 'Bearer ' + token },
             data: JSON.stringify({ name, password, age }),
             success: function () {
-                alert("Профиль обновлён!");
                 fetchProfile();
                 $('#editProfileModal').modal('hide');
             },
@@ -78,7 +76,6 @@ $(document).ready(function () {
             method: 'POST',
             headers: { 'Authorization': 'Bearer ' + token },
             success: function () {
-                alert("Аккаунт удалён!");
                 localStorage.removeItem('jwtToken');
                 window.location.href = "home.html";
             },
