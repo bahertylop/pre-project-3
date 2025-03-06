@@ -12,6 +12,15 @@
         <insert tableName="role">
             <column name="role" value="ROLE_USER"/>
         </insert>
+
+        <rollback>
+            <delete tableName="role">
+                <where>role = 'ROLE_ADMIN'</where>
+            </delete>
+            <delete tableName="role">
+                <where>role = 'ROLE_USER'</where>
+            </delete>
+        </rollback>
     </changeSet>
 
 </databaseChangeLog>

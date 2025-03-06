@@ -17,6 +17,10 @@
             <column name="name" type="varchar(255)"/>
             <column name="password" type="varchar(255)"/>
         </createTable>
+
+        <rollback>
+            <dropTable tableName="users" cascadeConstraints="true"/>
+        </rollback>
     </changeSet>
 
 </databaseChangeLog>
