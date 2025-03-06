@@ -10,6 +10,8 @@ import org.example.dto.request.SignUpRequest;
 import org.example.dto.response.JwtTokenResponse;
 import org.example.model.Role;
 import org.example.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,6 +24,8 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
+
+    private static final Logger logger = LoggerFactory.getLogger(AuthenticationService.class);
 
     private final JwtService jwtService;
 
