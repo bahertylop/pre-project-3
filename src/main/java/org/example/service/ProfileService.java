@@ -1,6 +1,7 @@
 package org.example.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.example.dto.request.UpdateProfileRequest;
 import org.example.dto.request.UpdateUserInfoRequest;
 import org.example.dto.response.ProfileResponse;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ProfileService {
@@ -19,7 +21,7 @@ public class ProfileService {
 
     public ProfileResponse getUserInfo(UserDetails userDetails) {
         User user = (User) userDetails;
-
+        log.info("get user info for user with email: {}", user.getEmail());
         return ProfileResponse.builder()
                 .id(user.getId())
                 .name(user.getName())
@@ -27,33 +29,17 @@ public class ProfileService {
                 .age(user.getAge())
                 .roles(user.getRoles().stream().map(Role::getRole).collect(Collectors.toSet()))
                 .build();
-//
-//        if (email == null) {
-//            throw new IllegalRequestArgumentException("email не может быть null");
-//        }
-//
-//        Optional<UserDto> userDtoOp = userService.getUserByEmail(email);
-//        if (!userDtoOp.isPresent()) {
-//            throw new UserNotFoundException("пользователь с email: " + email + " не найден");
-//        }
-//
-//        UserDto userDto = userDtoOp.get();
-//        return ProfileResponse.builder()
-//                .id(userDto.getId())
-//                .name(userDto.getName())
-//                .email(userDto.getEmail())
-//                .age(userDto.getAge())
-//                .roles(userDto.getRoles())
-//                .build();
     }
 
     public void deleteProfile(UserDetails userDetails) {
         User user = (User) userDetails;
+        log.info("user delete account, email: {}", user.getEmail());
         userService.deleteUser(user.getId());
     }
 
     public void updateUserInfo(UserDetails userDetails, UpdateProfileRequest updateInfo) {
         User user = (User) userDetails;
+        log.info("user update account, email: {}", user.getEmail());
         UpdateUserInfoRequest updateRequest = UpdateUserInfoRequest.builder()
                 .id(user.getId())
                 .name(updateInfo.getName())
