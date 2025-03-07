@@ -43,10 +43,4 @@
         <appender-ref ref="FILE" />
         <appender-ref ref="LOGSTASH" />
     </root>
-
-    <logger name="org.example" level="DEBUG" additivity="false">
-        <appender-ref ref="CONSOLE" />
-        <appender-ref ref="FILE" />
-        <appender-ref ref="LOGSTASH" />
-    </logger>
 </configuration>
