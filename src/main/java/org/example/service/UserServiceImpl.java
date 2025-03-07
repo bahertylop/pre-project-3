@@ -1,6 +1,7 @@
 package org.example.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.example.dto.CreateUserDto;
 import org.example.dto.UserDto;
 import org.example.dto.request.UpdateUserInfoRequest;
@@ -13,11 +14,11 @@ import org.example.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -35,19 +36,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserDto> getUserById(Long id) {
+        log.info("get user by id: {}", id);
         return userRepository.findById(id).map(UserDto::from);
     }
 
     @Override
     public Optional<UserDto> getUserByEmail(String email) {
+        log.info("get user by email: {} ", email);
         return userRepository.getUserByEmail(email).map(UserDto::from);
     }
 
     @Override
     public User addNewUser(CreateUserDto createUserDto) {
         if (createUserDto == null || (createUserDto.getEmail() != null && userRepository.getUserByEmail(createUserDto.getEmail()).isPresent())) {
+            log.error("try to add registered user, email: {}", createUserDto != null ? createUserDto.getEmail() : null);
             throw new UserAlreadyExistsException("Пользователь уже зарегистрирован");
         }
+        log.info("add new user with email: {}", createUserDto.getEmail());
 
         return userRepository.save(User.builder()
                         .name(createUserDto.getName())
@@ -61,7 +66,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Long id) {
+        log.info("delete user with id: {}", id);
         if (!userRepository.existsById(id)) {
+            log.error("user with id {} not found", id);
             throw new UserNotFoundException("Пользователь с id: " + id + " не найден");
         }
         userRepository.deleteById(id);
@@ -70,11 +77,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User updateUser(UpdateUserInfoRequest request) {
         if (request == null || request.getId() == null) {
+            log.error("not correct args, request || request.getId() is null, request: {}", request);
             throw new IllegalRequestArgumentException("Некорректные аргументы при обновлении пользователя");
         }
+        log.info("update user with id: {}", request.getId());
+
         Optional<UserDto> userDtoOp = getUserById(request.getId());
 
         if (!userDtoOp.isPresent()) {
+            log.error("user with id: {} not found", request.getId());
             throw new UserNotFoundException("Пользователь с id: " + request.getId() + "не найден");
         }
 
@@ -91,6 +102,8 @@ public class UserServiceImpl implements UserService {
             user.setPassword(passwordEncoder.encode(request.getPassword()));
         }
 
-        return userRepository.save(user);
+        User updatedUser = userRepository.save(user);
+        log.info("user with email: {} updated", updatedUser.getEmail());
+        return updatedUser;
     }
 }

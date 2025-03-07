@@ -1,12 +1,12 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
+
 import org.example.dto.request.LoginRequest;
 import org.example.dto.request.SignUpRequest;
 import org.example.dto.response.JwtTokenResponse;
 import org.example.service.AuthenticationService;
-import org.springframework.security.authentication.AuthenticationManager;
+
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +20,7 @@ public class AuthController {
 
     @PostMapping("/signup")
     public JwtTokenResponse signUp(@RequestBody @Validated SignUpRequest request) {
-         return authenticationService.signUp(request);
+        return authenticationService.signUp(request);
     }
 
     @PostMapping("/signin")

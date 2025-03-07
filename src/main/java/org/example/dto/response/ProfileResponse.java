@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.model.Role;
 
-import javax.validation.constraints.*;
 import java.util.Set;
 
 @Data

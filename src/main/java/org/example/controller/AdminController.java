@@ -4,14 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.example.dto.CreateUserDto;
 import org.example.dto.UserDto;
 import org.example.dto.request.UpdateUserInfoRequest;
-import org.example.model.Role;
 import org.example.model.User;
 import org.example.service.UserService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
