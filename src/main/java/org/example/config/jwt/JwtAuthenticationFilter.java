@@ -4,6 +4,7 @@ package org.example.config.jwt;
 import io.jsonwebtoken.JwtException;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -39,6 +41,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
         String authHeader = request.getHeader(HEADER_NAME);
         if (authHeader == null || !authHeader.startsWith(BEARER_PREFIX)) {
+            log.info("request not have auth header");
             filterChain.doFilter(request, response);
             return;
         }
@@ -47,6 +50,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         try {
             String userEmail = jwtService.extractUserEmail(token);
             if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                log.info("request by user with email: {}", userEmail);
                 UserDetails userDetails = userDetailsService.loadUserByUsername(userEmail);
 
                 if (jwtService.isTokenValid(token, userDetails)) {
@@ -60,14 +64,17 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     context.setAuthentication(authToken);
                     SecurityContextHolder.setContext(context);
+                    log.info("user with email: {} authorized", userDetails.getUsername());
                 }
             }
         } catch (JwtException e) {
+            log.error("not valid jwt token for request", e);
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType("text/plain; charset=UTF-8");
             response.getWriter().write("Невалидный jwt токен");
             return;
         } catch (UsernameNotFoundException e) {
+            log.error("user not found", e);
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             response.setContentType("text/plain; charset=UTF-8");
             response.getWriter().write("Пользователь не найден");
