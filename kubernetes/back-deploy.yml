@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: back
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: back
+    spec:
+      containers:
+        - name: back-container
+          image: bahertylop/docker-spring-boot-postgres:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://194.87.94.5:5434/pre_project_3"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "compose-postgres"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "compose-postgres"

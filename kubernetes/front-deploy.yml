@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: front
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: front
+    spec:
+      containers:
+        - name: front-container
+          image: bahertylop/frontend-http-server:latest
+          ports:
+            - containerPort: 3000
