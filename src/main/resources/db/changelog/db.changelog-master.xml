@@ -9,4 +9,9 @@
     <include file="/db/changelog/tables/changeset-06-03-2025-002-create-table-users.xml"/>
     <include file="/db/changelog/tables/changeset-06-03-2025-003-create-table-users_roles.xml"/>
     <include file="/db/changelog/data/changeset-06-03-2025-004-insert-roles-to-role.xml"/>
+
+    <include file="/db/changelog/tables/changeset-12-03-2025-001-create-table-brand.xml"/>
+    <include file="/db/changelog/tables/changeset-12-03-2025-002-create-table-model.xml"/>
+    <include file="/db/changelog/tables/changeset-12-03-2025-003-create-table-car_position.xml"/>
+    <include file="/db/changelog/tables/changeset-12-03-2025-004-create-table-position_price.xml"/>
 </databaseChangeLog>
