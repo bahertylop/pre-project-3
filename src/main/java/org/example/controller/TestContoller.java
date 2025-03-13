@@ -1,7 +1,7 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.parsing.BrandModelParsing;
+import org.example.parsing.BrandModelParser;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestContoller {
 
-    private final BrandModelParsing brandModelParsing;
+    private final BrandModelParser brandModelParsing;
 
     @GetMapping("/qqq")
     public void parse() {

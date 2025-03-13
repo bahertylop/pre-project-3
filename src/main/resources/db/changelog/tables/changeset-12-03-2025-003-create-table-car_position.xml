@@ -19,9 +19,6 @@
             <column name="user_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="value" type="varchar(255)">
-                <constraints nullable="false" unique="true"/>
-            </column>
             <column name="year_from" type="int"/>
             <column name="year_before" type="int"/>
             <column name="mileage_from" type="int"/>

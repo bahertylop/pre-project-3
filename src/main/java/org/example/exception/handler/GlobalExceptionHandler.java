@@ -2,9 +2,7 @@ package org.example.exception.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.dto.ErrorDto;
-import org.example.exception.IllegalRequestArgumentException;
-import org.example.exception.UserAlreadyExistsException;
-import org.example.exception.UserNotFoundException;
+import org.example.exception.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.ObjectError;
@@ -53,6 +51,51 @@ public class GlobalExceptionHandler {
                 .getAllErrors().stream().map(ObjectError::getDefaultMessage).map(ErrorDto::new).collect(Collectors.toList());
         log.error("error, bind exception in request params", ex);
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(CarPositionNotFoundException.class)
+    public ResponseEntity<Object> handleCarPositionNotFoundException(CarPositionNotFoundException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Позиция не найдена");
+        errorResponse.put("message", ex.getMessage());
+        log.warn("user tried to get nonexistent position");
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(CarPositionAccessDeniedException.class)
+    public ResponseEntity<Object> handleCarPositionAccessDeniedException(CarPositionAccessDeniedException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Отказ в доступе");
+        errorResponse.put("message", ex.getMessage());
+        log.warn("user tried to get not his position");
+        return new ResponseEntity<>(errorResponse, HttpStatus.FORBIDDEN);
+    }
+
+    @ExceptionHandler(CarBrandNotFoundException.class)
+    public ResponseEntity<Object> handleCarBrandNotFoundException(CarBrandNotFoundException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Марка не найдена");
+        errorResponse.put("message", ex.getMessage());
+        log.warn("user tried to get nonexistent position");
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(CarModelNotFoundException.class)
+    public ResponseEntity<Object> handleCarModelNotFoundException(CarModelNotFoundException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Модель не найдена");
+        errorResponse.put("message", ex.getMessage());
+        log.warn("user tried to get nonexistent position");
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ParsingPricesException.class)
+    public ResponseEntity<Object> handleParsingPricesException(ParsingPricesException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Parsing error");
+        errorResponse.put("message", ex.getMessage());
+        log.error("error with parsing avito", ex);
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 }
 

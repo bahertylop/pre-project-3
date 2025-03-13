@@ -1,7 +1,5 @@
 package org.example.parsing;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,32 +7,23 @@ import org.example.model.CarBrand;
 import org.example.model.CarModel;
 import org.example.repository.CarBrandRepository;
 import org.example.repository.CarModelRepository;
+import org.example.util.RandomTimeSleep;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v130.network.Network;
-import org.openqa.selenium.devtools.v130.page.Page;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class BrandModelParsing {
+public class BrandModelParser {
 
     private static final String parseBrandsUrl = "https://www.avito.ru/web/2/suggest/desktop?" +
             "categoryId=9&" +
@@ -130,7 +119,7 @@ public class BrandModelParsing {
 
     @Transactional
     public void parseModels(CarBrand carBrand) {
-        randomSleep();
+        RandomTimeSleep.randomSleep();
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--disable-blink-features=AutomationControlled"); // Убираем флаг Automation
@@ -181,16 +170,6 @@ public class BrandModelParsing {
             log.error("error during parsing models for brand: {}", carBrand.getName(), e);
         } finally {
             driver.quit();
-        }
-    }
-
-    public static void randomSleep() {
-        try {
-            int sleepTime = ThreadLocalRandom.current().nextInt(1000, 4000 + 1);
-            System.out.println("Задержка: " + (sleepTime / 1000.0) + " секунд");
-            Thread.sleep(sleepTime);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
         }
     }
 }
