@@ -18585,3 +18585,62 @@ java.net.SocketException: Connection reset
 2025-03-13 16:03:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-13 16:03:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-03-13 16:03:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 16:08:56 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-13 16:08:56 [main] INFO  org.example.Main - Starting Main using Java 20.0.2 on god_vaper with PID 25256 (D:\android_developing\IdiaProjects\pre-project-3\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-13 16:08:56 [main] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 16:08:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 16:08:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 6 JPA repository interfaces.
+2025-03-13 16:08:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 16:08:57 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 16:08:57 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 16:08:57 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-13 16:08:57 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 16:08:57 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1011 ms
+2025-03-13 16:08:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 16:08:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 16:08:57 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-13 16:08:57 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-13 16:08:58 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-13 16:08:58 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-13 16:08:58 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 16:08:58 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-13 16:08:58 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-13 16:08:58 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-13 16:08:59 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 16:08:59 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 16:08:59 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-13 16:09:00 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6971c6b7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@402d45c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@490b8f1e, org.springframework.security.web.header.HeaderWriterFilter@23f16852, org.springframework.security.web.authentication.logout.LogoutFilter@5a438c0a, org.example.config.jwt.JwtAuthenticationFilter@adb15df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4eb43d2f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52c919f3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b37b01e, org.springframework.security.web.session.SessionManagementFilter@3bbab2c9, org.springframework.security.web.access.ExceptionTranslationFilter@4beec7a1, org.springframework.security.web.access.intercept.AuthorizationFilter@4faccb34]
+2025-03-13 16:09:00 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 16:09:00 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-13 16:09:00 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 16:09:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 16:09:00 [main] INFO  org.example.Main - Started Main in 4.63 seconds (JVM running for 5.542)
+2025-03-13 16:09:02 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 16:09:02 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 16:09:02 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-13 16:09:02 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /signin]
+2025-03-13 16:09:02 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 16:09:03 [http-nio-8080-exec-1] INFO  o.e.service.AuthenticationService - sign in user with email: tolya@mail
+2025-03-13 16:09:03 [http-nio-8080-exec-1] INFO  o.e.service.AuthenticationService - user with email: tolya@mail signed in
+2025-03-13 16:09:03 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /signin, payload={
+    "email": "tolya@mail", 
+    "password": "Qwerty123"
+}]
+2025-03-13 16:09:17 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 16:09:17 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 16:09:17 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 16:09:17 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 16:09:21 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 16:09:21 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 16:09:21 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 16:09:22 [http-nio-8080-exec-3] INFO  o.example.service.CarPositionService - User with id: 2 try get not his position carPositionId: 4
+2025-03-13 16:09:22 [http-nio-8080-exec-3] WARN  o.e.e.handler.GlobalExceptionHandler - user tried to get not his position
+2025-03-13 16:09:23 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 16:10:40 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 16:10:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 16:10:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 16:10:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-13 16:10:44 [main] INFO  org.example.Main - Starting Main using Java 20.0.2 on god_vaper with PID 47048 (D:\android_developing\IdiaProjects\pre-project-3\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-13 16:10:44 [main] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 16:10:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 16:10:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 6 JPA repository interfaces.
