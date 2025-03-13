@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> request
                         .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .antMatchers("/", "/signup", "/login", "/signin", "/qqq").permitAll()
-                        .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
+                        .antMatchers("/user/**", "/cars/**").hasAnyRole("ADMIN", "USER")
                         .antMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
