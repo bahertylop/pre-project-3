@@ -18752,3 +18752,1402 @@ java.net.SocketException: Connection reset
 2025-03-13 19:12:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
 2025-03-13 19:12:44 [main] INFO  org.example.Main - Starting Main using Java 20.0.2 on god_vaper with PID 17316 (D:\android_developing\IdiaProjects\pre-project-3\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
 2025-03-13 19:12:44 [main] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 19:12:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 19:12:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 6 JPA repository interfaces.
+2025-03-13 19:12:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 19:12:45 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 19:12:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 19:12:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-13 19:12:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 19:12:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1116 ms
+2025-03-13 19:12:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 19:12:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 19:12:46 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-13 19:12:46 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-13 19:12:46 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-13 19:12:46 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-13 19:12:46 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 19:12:46 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-13 19:12:46 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-13 19:12:46 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-13 19:12:47 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 19:12:47 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 19:12:47 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-13 19:12:47 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@633dce39, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4dd28982, org.springframework.security.web.context.SecurityContextPersistenceFilter@274b0c2a, org.springframework.security.web.header.HeaderWriterFilter@4b59a1c1, org.springframework.security.web.authentication.logout.LogoutFilter@dcf64d2, org.example.config.jwt.JwtAuthenticationFilter@e98004e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@149fab7f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35920655, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e8c741c, org.springframework.security.web.session.SessionManagementFilter@6e2764c9, org.springframework.security.web.access.ExceptionTranslationFilter@a642c54, org.springframework.security.web.access.intercept.AuthorizationFilter@3393aa46]
+2025-03-13 19:12:47 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 19:12:47 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-13 19:12:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 19:12:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 19:12:48 [main] INFO  org.example.Main - Started Main in 4.005 seconds (JVM running for 5.148)
+2025-03-13 19:12:50 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 19:12:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 19:12:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-13 19:12:50 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 19:12:50 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 19:12:50 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 19:12:50 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 19:13:01 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /cars/create]
+2025-03-13 19:13:01 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 19:13:01 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 19:13:01 [http-nio-8080-exec-2] INFO  o.example.service.CarPositionService - CarPosition already exists id: 7
+2025-03-13 19:13:01 [http-nio-8080-exec-2] WARN  o.e.e.handler.GlobalExceptionHandler - user tried to add already exists CarPosition
+2025-03-13 19:13:01 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /cars/create, payload={
+    "brand":"ВАЗ (LADA)",
+    "model":"2104",
+    "yearFrom": null,
+    "yearBefore": 2005,
+    "mileageFrom": 150000,
+    "mileageBefore": null
+}]
+2025-03-13 19:50:06 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 19:50:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 19:50:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 20:03:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-13 20:03:22 [main] INFO  org.example.Main - Starting Main using Java 20.0.2 on god_vaper with PID 46544 (D:\android_developing\IdiaProjects\pre-project-3\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-13 20:03:22 [main] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 20:03:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 20:03:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 6 JPA repository interfaces.
+2025-03-13 20:03:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 20:03:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 20:03:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 20:03:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-13 20:03:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 20:03:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1181 ms
+2025-03-13 20:03:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 20:03:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 20:03:24 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-13 20:03:24 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-13 20:03:24 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-13 20:03:24 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-13 20:03:24 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 20:03:24 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-13 20:03:24 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-13 20:03:25 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-13 20:03:25 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 20:03:25 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 20:03:25 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-13 20:03:26 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4ac2b4c6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@326489c4, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e866323, org.springframework.security.web.header.HeaderWriterFilter@6e6ec9c, org.springframework.security.web.authentication.logout.LogoutFilter@639c5ab4, org.example.config.jwt.JwtAuthenticationFilter@cbd3871, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31e1c7c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f98859a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50165a6d, org.springframework.security.web.session.SessionManagementFilter@11eb8842, org.springframework.security.web.access.ExceptionTranslationFilter@42516ce2, org.springframework.security.web.access.intercept.AuthorizationFilter@38f7a20]
+2025-03-13 20:03:26 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 20:03:26 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-13 20:03:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 20:03:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 20:03:26 [main] INFO  org.example.Main - Started Main in 4.2 seconds (JVM running for 4.998)
+2025-03-13 20:06:02 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 20:06:02 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 20:06:02 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-03-13 20:06:02 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-13 20:06:02 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:06:02 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:06:02 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-13 20:07:30 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models]
+2025-03-13 20:07:30 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:07:30 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:07:30 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'brandId' for method parameter type Long is not present]
+2025-03-13 20:07:30 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models]
+2025-03-13 20:07:49 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=1]
+2025-03-13 20:07:49 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:07:49 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:07:49 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=1]
+2025-03-13 20:07:56 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=391]
+2025-03-13 20:07:56 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:07:56 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:07:56 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=391]
+2025-03-13 20:08:04 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=392]
+2025-03-13 20:08:04 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:08:04 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:08:04 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=392]
+2025-03-13 20:12:13 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=-1]
+2025-03-13 20:12:13 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:12:13 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:12:13 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=-1]
+2025-03-13 20:12:16 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=12]
+2025-03-13 20:12:16 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:12:16 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:12:16 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=12]
+2025-03-13 20:12:20 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=15]
+2025-03-13 20:12:20 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:12:20 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:12:20 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=15]
+2025-03-13 20:12:22 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=16]
+2025-03-13 20:12:22 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:12:22 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:12:22 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=16]
+2025-03-13 20:12:24 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=17]
+2025-03-13 20:12:24 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:12:24 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:12:24 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=17]
+2025-03-13 20:12:31 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=18]
+2025-03-13 20:12:31 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:12:31 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:12:31 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=18]
+2025-03-13 20:13:52 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=19]
+2025-03-13 20:13:52 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:13:52 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:13:52 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=19]
+2025-03-13 20:15:47 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=33]
+2025-03-13 20:15:47 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:15:47 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:15:47 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=33]
+2025-03-13 20:15:50 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=334]
+2025-03-13 20:15:50 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:15:50 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:15:50 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=334]
+2025-03-13 20:15:53 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=34]
+2025-03-13 20:15:53 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:15:53 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:15:53 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=34]
+2025-03-13 20:16:02 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=3500]
+2025-03-13 20:16:02 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:16:02 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:16:03 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=3500]
+2025-03-13 20:16:04 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=350]
+2025-03-13 20:16:04 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 20:16:04 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 20:16:04 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=350]
+2025-03-13 21:50:20 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /signin]
+2025-03-13 21:50:20 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 21:50:20 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /signin]
+2025-03-13 21:51:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 21:51:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 21:51:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 21:51:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-13 21:51:22 [main] INFO  org.example.Main - Starting Main using Java 20.0.2 on god_vaper with PID 41504 (D:\android_developing\IdiaProjects\pre-project-3\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-13 21:51:22 [main] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 21:51:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 21:51:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 6 JPA repository interfaces.
+2025-03-13 21:51:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 21:51:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 21:51:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 21:51:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-13 21:51:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 21:51:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1046 ms
+2025-03-13 21:51:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 21:51:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 21:51:23 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-13 21:51:23 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-13 21:51:24 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-13 21:51:24 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-13 21:51:24 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 21:51:24 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-13 21:51:24 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-13 21:51:24 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-13 21:51:25 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 21:51:25 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 21:51:25 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-13 21:51:25 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@628d6320, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22025464, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e8c741c, org.springframework.security.web.header.HeaderWriterFilter@586a9fe1, org.springframework.security.web.authentication.logout.LogoutFilter@7c7d83ff, org.example.config.jwt.JwtAuthenticationFilter@66694050, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6db64abf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ed7db72, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77eb0e47, org.springframework.security.web.session.SessionManagementFilter@7eb006bd, org.springframework.security.web.access.ExceptionTranslationFilter@39329d81, org.springframework.security.web.access.intercept.AuthorizationFilter@272cec71]
+2025-03-13 21:51:25 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 21:51:25 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-13 21:51:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 21:51:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 21:51:25 [main] INFO  org.example.Main - Started Main in 3.622 seconds (JVM running for 4.442)
+2025-03-13 21:51:29 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 21:51:29 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 21:51:29 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-13 21:51:29 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /signin]
+2025-03-13 21:51:29 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 21:51:29 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /signin]
+2025-03-13 21:51:29 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /signin]
+2025-03-13 21:51:29 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 21:51:29 [http-nio-8080-exec-2] INFO  o.e.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-13 21:51:30 [http-nio-8080-exec-2] INFO  o.e.service.AuthenticationService - user with email: levka288@gmail.com signed in
+2025-03-13 21:51:30 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /signin, payload={"email":"levka288@gmail.com","password":"Kaka3600"}]
+2025-03-13 21:51:32 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 21:51:32 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 21:51:32 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 21:51:32 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 21:51:32 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 21:51:32 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 21:51:32 [http-nio-8080-exec-5] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 21:51:32 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 21:52:40 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 21:52:40 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 21:52:40 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 21:52:40 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 21:52:40 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 21:52:40 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 21:52:40 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 21:56:24 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 21:56:24 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 21:56:24 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 21:56:24 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 21:56:24 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 21:56:24 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 21:56:24 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 21:56:38 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 21:56:38 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 21:56:38 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 21:56:38 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 21:56:38 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 21:56:38 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 21:56:38 [http-nio-8080-exec-4] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 21:56:38 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 21:56:40 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 21:56:40 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 21:56:40 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 21:56:40 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 21:56:40 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 21:56:40 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 21:56:40 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 22:01:07 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:01:07 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:01:07 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:01:07 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:01:07 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:01:07 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:01:07 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:01:25 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /signin]
+2025-03-13 22:01:25 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:01:25 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /signin]
+2025-03-13 22:01:25 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /signin]
+2025-03-13 22:01:25 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:01:25 [http-nio-8080-exec-2] INFO  o.e.service.AuthenticationService - sign in user with email: tolya@mail
+2025-03-13 22:01:25 [http-nio-8080-exec-2] INFO  o.e.service.AuthenticationService - user with email: tolya@mail signed in
+2025-03-13 22:01:25 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /signin, payload={"email":"tolya@mail","password":"Qwerty123"}]
+2025-03-13 22:01:27 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:01:27 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:01:27 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:01:27 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:01:27 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 22:01:27 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 22:01:27 [http-nio-8080-exec-4] INFO  org.example.service.ProfileService - get user info for user with email: tolya@mail
+2025-03-13 22:01:27 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:01:32 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:01:32 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:01:32 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:01:32 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:01:32 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 22:01:32 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 22:01:32 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:03:32 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 22:03:32 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:03:32 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 22:03:32 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 22:03:32 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 22:03:32 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 22:03:32 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 22:03:38 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:03:38 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:03:38 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:03:38 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:03:38 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 22:03:38 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 22:03:38 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:03:52 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /signin]
+2025-03-13 22:03:52 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:03:52 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /signin]
+2025-03-13 22:03:52 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /signin]
+2025-03-13 22:03:52 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:03:52 [http-nio-8080-exec-4] INFO  o.e.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-13 22:03:52 [http-nio-8080-exec-4] INFO  o.e.service.AuthenticationService - user with email: levka288@gmail.com signed in
+2025-03-13 22:03:52 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /signin, payload={"email":"levka288@gmail.com","password":"Kaka3600"}]
+2025-03-13 22:03:53 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:03:53 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:03:53 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:03:53 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:03:53 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:03:53 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:03:53 [http-nio-8080-exec-6] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:03:53 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:03:59 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:03:59 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:03:59 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:03:59 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:03:59 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:03:59 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:03:59 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:04:49 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/7]
+2025-03-13 22:04:49 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 22:04:49 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 22:04:49 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/7]
+2025-03-13 22:07:08 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:07:08 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:07:08 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:07:08 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:07:08 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:07:08 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:07:08 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:09:23 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:09:23 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:23 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:09:23 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:09:23 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:23 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:23 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:09:24 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:09:24 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:24 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:09:24 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:09:24 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:24 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:24 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:09:32 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:09:32 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:32 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:09:32 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:09:32 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:32 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:32 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:09:35 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:09:35 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:35 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:09:35 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:09:35 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:35 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:35 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:09:36 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:09:36 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:36 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:09:36 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:09:36 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:36 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:36 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:09:39 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:09:39 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:39 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:09:39 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:09:39 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:39 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:39 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:09:39 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:09:39 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:39 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:09:39 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:09:39 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:39 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:40 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:09:57 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:09:57 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:57 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:09:57 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:09:57 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:57 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:57 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:09:59 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:09:59 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:09:59 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:09:59 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:09:59 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:09:59 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:09:59 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:10:09 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:10:09 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:09 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:10:09 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:10:09 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:09 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:09 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:10:12 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:10:12 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:12 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:10:12 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:10:12 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:12 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:12 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:10:14 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:10:14 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:14 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:10:14 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:10:14 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:14 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:14 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:10:15 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:10:15 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:15 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:10:15 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:10:15 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:15 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:15 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:10:23 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:10:23 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:23 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:10:23 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:10:23 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:23 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:23 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:10:33 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:10:33 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:33 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:10:33 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:10:33 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:33 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:33 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:10:40 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:10:40 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:40 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:10:40 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:10:40 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:40 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:40 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:10:41 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:10:41 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:41 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:10:41 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:10:41 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:41 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:41 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:10:43 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:10:43 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:43 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:10:43 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:10:43 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:43 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:43 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:10:58 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:10:58 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:10:58 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:10:58 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:10:58 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:10:58 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:10:58 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:11:42 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:11:42 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:11:42 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:11:42 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:11:42 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:11:42 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:11:42 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:11:46 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:11:46 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:11:46 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:11:46 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:11:46 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:11:46 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:11:46 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:11:47 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:11:47 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:11:47 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:11:47 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:11:47 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:11:47 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:11:47 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:11:50 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:11:50 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:11:50 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:11:50 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:11:50 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:11:50 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:11:50 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:13:42 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:13:42 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:13:42 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:13:42 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:13:42 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:13:42 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:13:42 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:13:51 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:13:51 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:13:51 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:13:51 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:13:51 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:13:51 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:13:51 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:13:52 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:13:52 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:13:52 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:13:52 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:13:52 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:13:52 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:13:52 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:13:54 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:13:54 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:13:54 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:13:54 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:13:54 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:13:54 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:13:54 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:13:56 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:13:56 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:13:56 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:13:56 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:13:56 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:13:56 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:13:56 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:14:02 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:14:02 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:14:02 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:14:02 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:14:02 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:14:02 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:14:02 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:14:04 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 22:14:04 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:14:04 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 22:14:04 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 22:14:04 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:14:04 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:14:04 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 22:14:13 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:14:13 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:14:13 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:14:13 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:14:13 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:14:13 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:14:13 [http-nio-8080-exec-4] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:14:13 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:14:17 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 22:14:17 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:14:17 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 22:14:17 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 22:14:17 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:14:17 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:14:17 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 22:14:24 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:14:24 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:14:24 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:14:24 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:14:24 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:14:24 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:14:24 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:14:26 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:14:26 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:14:26 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:14:26 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:14:26 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:14:26 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:14:26 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:14:58 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:14:58 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:14:58 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:14:58 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:14:58 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:14:58 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:14:58 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:17:03 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:17:03 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:17:03 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:17:03 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:17:03 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:17:03 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:17:03 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:17:06 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:17:06 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:17:06 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:17:06 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:17:06 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:17:06 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:17:06 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:17:08 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:17:08 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:17:08 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:17:08 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:17:08 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:17:08 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:17:08 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:17:10 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:17:10 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:17:10 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:17:10 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:17:10 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:17:10 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:17:10 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:17:23 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:17:23 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:17:23 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:17:23 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:17:23 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:17:23 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:17:23 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:17:29 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:17:29 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:17:29 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:17:29 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:17:29 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:17:29 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:17:29 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:17:32 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:17:32 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:17:32 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:17:32 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:17:32 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:17:32 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:17:32 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:18:10 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:18:10 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:18:10 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:18:10 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:18:10 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:18:10 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:18:10 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:18:13 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:18:13 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:18:13 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:18:13 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:18:13 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:18:13 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:18:13 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:19:39 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:19:39 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:19:39 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:19:39 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:19:39 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:19:39 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:19:39 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:21:30 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 22:21:30 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:21:30 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 22:21:30 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 22:21:30 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:21:30 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:21:30 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 22:21:34 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:21:34 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:21:34 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:21:34 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:21:34 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:21:34 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:21:34 [http-nio-8080-exec-9] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:21:34 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:21:51 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:21:51 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:21:51 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:21:51 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:21:51 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:21:51 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:21:51 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:24:33 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:24:33 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:24:33 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:24:33 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:24:33 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:24:33 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:24:33 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:24:34 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:24:34 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:24:34 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:24:34 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:24:34 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:24:34 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:24:34 [http-nio-8080-exec-6] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:24:34 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:24:36 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:24:36 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:24:36 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:24:36 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:24:36 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:24:36 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:24:36 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:24:37 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:24:37 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:24:37 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:24:37 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:24:37 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:24:37 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:24:37 [http-nio-8080-exec-10] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:24:37 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:34:29 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:34:29 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:29 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:34:29 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:34:29 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:29 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:29 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:34:30 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:34:30 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:30 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:34:30 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:34:30 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:30 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:30 [http-nio-8080-exec-5] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:34:30 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:34:32 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:34:32 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:32 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:34:32 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:34:32 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:32 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:32 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:34:34 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 22:34:34 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:34 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 22:34:34 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 22:34:34 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:34 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:34 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 22:34:37 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 22:34:37 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:37 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 22:34:37 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 22:34:37 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:37 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:37 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 22:34:44 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:34:44 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:44 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:34:44 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:34:44 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:44 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:44 [http-nio-8080-exec-3] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:34:44 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:34:46 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:34:46 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:46 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:34:46 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:34:46 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:46 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:46 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:34:49 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:34:49 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:49 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:34:49 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:34:49 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:49 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:49 [http-nio-8080-exec-7] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:34:49 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:34:50 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 22:34:50 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:50 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 22:34:50 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 22:34:50 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:50 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:50 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 22:34:52 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:34:52 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:52 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:34:52 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:34:52 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:52 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:52 [http-nio-8080-exec-1] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:34:52 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:34:53 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:34:53 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:53 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:34:53 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:34:53 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:53 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:53 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:34:55 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:34:55 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:55 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:34:55 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:34:55 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:55 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:55 [http-nio-8080-exec-5] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:34:55 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:34:58 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 22:34:58 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:58 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 22:34:58 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 22:34:58 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:58 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:58 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 22:34:59 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:34:59 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:34:59 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:34:59 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:34:59 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:34:59 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:34:59 [http-nio-8080-exec-9] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:34:59 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:35:02 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:35:02 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:35:02 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:35:02 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:35:02 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:35:02 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:35:02 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:35:03 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:35:03 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:35:03 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:35:03 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:35:03 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:35:03 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:35:03 [http-nio-8080-exec-3] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:35:03 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:35:05 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:35:05 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:35:05 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:35:05 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:35:05 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:35:05 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:35:05 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:43:35 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:43:35 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:43:35 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:43:35 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:43:35 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:43:35 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:43:35 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:43:37 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:43:37 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:43:37 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:43:37 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:43:37 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:43:37 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:43:37 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:45:00 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:45:00 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:45:00 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:45:00 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:45:00 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:45:00 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:45:00 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:45:01 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-13 22:45:01 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:45:01 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-13 22:47:41 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:47:41 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:47:41 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:47:41 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:47:41 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:47:41 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:47:41 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:47:41 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /brands]
+2025-03-13 22:47:41 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:47:41 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /brands]
+2025-03-13 22:47:41 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-13 22:47:41 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:47:41 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:47:41 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-13 22:47:57 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /models?brandId=undefined]
+2025-03-13 22:47:57 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:47:57 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /models?brandId=undefined]
+2025-03-13 22:47:57 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=undefined]
+2025-03-13 22:47:57 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:47:57 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:47:57 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]
+2025-03-13 22:47:57 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=undefined]
+2025-03-13 22:48:21 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /signin]
+2025-03-13 22:48:21 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:48:21 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /signin]
+2025-03-13 22:48:21 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /signin]
+2025-03-13 22:48:21 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:48:21 [http-nio-8080-exec-3] ERROR o.e.e.handler.GlobalExceptionHandler - error, bind exception in request params
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.example.dto.response.JwtTokenResponse org.example.controller.AuthController.signIn(org.example.dto.request.LoginRequest): [Field error in object 'loginRequest' on field 'password': rejected value [Лфлф3600]; codes [Pattern.loginRequest.password,Pattern.password,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [loginRequest.password,password]; arguments []; default message [password],[Ljavax.validation.constraints.Pattern$Flag;@1ed8e620,^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$]; default message [Пароль должен содержать хотя бы одну заглавную букву, одну строчную букву и одну цифру]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:141)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.example.config.jwt.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+2025-03-13 22:48:21 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /signin, payload={"email":"levka288@gmail.com","password":"Лфлф3600"}]
+2025-03-13 22:48:27 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /signin]
+2025-03-13 22:48:27 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:48:27 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /signin]
+2025-03-13 22:48:27 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /signin]
+2025-03-13 22:48:27 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:48:27 [http-nio-8080-exec-5] INFO  o.e.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-13 22:48:27 [http-nio-8080-exec-5] INFO  o.e.service.AuthenticationService - user with email: levka288@gmail.com signed in
+2025-03-13 22:48:27 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /signin, payload={"email":"levka288@gmail.com","password":"Kaka3600"}]
+2025-03-13 22:48:28 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 22:48:28 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:48:28 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 22:48:28 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 22:48:28 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:48:28 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:48:28 [http-nio-8080-exec-7] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 22:48:28 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 22:48:29 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:48:29 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:48:29 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:48:29 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:48:29 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:48:29 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:48:29 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:50:14 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-13 22:50:14 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: tolya@mail
+2025-03-13 22:50:14 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: tolya@mail authorized
+2025-03-13 22:50:15 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-13 22:50:56 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 22:50:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 22:50:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 22:51:01 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-13 22:51:01 [main] INFO  org.example.Main - Starting Main using Java 20.0.2 on god_vaper with PID 46304 (D:\android_developing\IdiaProjects\pre-project-3\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-13 22:51:01 [main] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 22:51:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 22:51:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 6 JPA repository interfaces.
+2025-03-13 22:51:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 22:51:02 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 22:51:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 22:51:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-13 22:51:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 22:51:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1032 ms
+2025-03-13 22:51:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 22:51:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 22:51:02 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-13 22:51:02 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-13 22:51:03 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-13 22:51:03 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-13 22:51:03 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 22:51:03 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-13 22:51:03 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-13 22:51:03 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-13 22:51:03 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 22:51:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 22:51:04 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-13 22:51:04 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6441da2c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61b11d35, org.springframework.security.web.context.SecurityContextPersistenceFilter@dcf64d2, org.springframework.security.web.header.HeaderWriterFilter@6812708d, org.springframework.security.web.authentication.logout.LogoutFilter@f6b128b, org.example.config.jwt.JwtAuthenticationFilter@7cd2d3b6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7959fbe3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74e111a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c7d83ff, org.springframework.security.web.session.SessionManagementFilter@39329d81, org.springframework.security.web.access.ExceptionTranslationFilter@354baab2, org.springframework.security.web.access.intercept.AuthorizationFilter@7c046af]
+2025-03-13 22:51:04 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 22:51:04 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-13 22:51:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 22:51:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 22:51:04 [main] INFO  org.example.Main - Started Main in 3.692 seconds (JVM running for 4.504)
+2025-03-13 22:51:08 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 22:51:08 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 22:51:08 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-03-13 22:51:08 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /brands]
+2025-03-13 22:51:08 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:51:08 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /brands]
+2025-03-13 22:51:08 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-13 22:51:08 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:51:09 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:51:09 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-13 22:51:12 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /models?brandId=30]
+2025-03-13 22:51:12 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:51:12 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /models?brandId=30]
+2025-03-13 22:51:12 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=30]
+2025-03-13 22:51:12 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:51:12 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:51:12 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=30]
+2025-03-13 22:51:41 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/create]
+2025-03-13 22:51:41 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:51:41 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/create]
+2025-03-13 22:51:41 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /cars/create]
+2025-03-13 22:51:41 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:51:41 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:51:43 [http-nio-8080-exec-8] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 133.0.6943.141 (resolved driver for Chrome 133)
+2025-03-13 22:51:43 [http-nio-8080-exec-8] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\levic\.cache\selenium\chromedriver\win64\133.0.6943.141\chromedriver.exe
+2025-03-13 22:51:45 [Forwarding newSession on session null to remote] INFO  o.o.s.remote.ProtocolHandshake - Detected dialect: W3C
+2025-03-13 22:51:45 [http-nio-8080-exec-8] WARN  o.o.s.devtools.CdpVersionFinder - Unable to find an exact match for CDP version 133, so returning the closest version found: 132
+2025-03-13 22:51:45 [http-nio-8080-exec-8] INFO  o.o.s.devtools.CdpVersionFinder - Found CDP implementation for version 133 of 132
+2025-03-13 22:52:13 [AsyncHttpClient-1-4] WARN  o.a.netty.handler.WebSocketHandler - onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+2025-03-13 22:52:13 [AsyncHttpClient-1-4] WARN  o.o.selenium.remote.http.WebSocket - Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+2025-03-13 22:52:13 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /cars/create, payload={"brand":"BMW","model":"4 серия","yearFrom":"2010","yearBefore":"2015","mileageFrom":"100000","mileageBefore":"180000"}]
+2025-03-13 22:52:13 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:52:13 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:52:13 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:52:13 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:52:13 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:52:13 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:52:13 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:52:20 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/8]
+2025-03-13 22:52:20 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:52:20 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/8]
+2025-03-13 22:52:20 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/8]
+2025-03-13 22:52:20 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:52:20 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:52:20 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/8]
+2025-03-13 22:52:27 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 22:52:27 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:52:27 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 22:52:27 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 22:52:27 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:52:27 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:52:27 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 22:52:29 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /brands]
+2025-03-13 22:52:29 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:52:29 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /brands]
+2025-03-13 22:52:29 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-13 22:52:29 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:52:29 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:52:29 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-13 22:58:43 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /brands]
+2025-03-13 22:58:43 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:58:43 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /brands]
+2025-03-13 22:58:43 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-13 22:58:43 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:58:43 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:58:43 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-13 22:58:58 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /models?brandId=192]
+2025-03-13 22:58:58 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:58:58 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /models?brandId=192]
+2025-03-13 22:58:58 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=192]
+2025-03-13 22:58:58 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:58:58 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:58:58 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=192]
+2025-03-13 22:59:15 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/create]
+2025-03-13 22:59:15 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 22:59:15 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/create]
+2025-03-13 22:59:15 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /cars/create]
+2025-03-13 22:59:15 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 22:59:15 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 22:59:16 [http-nio-8080-exec-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 133.0.6943.141 (resolved driver for Chrome 133)
+2025-03-13 22:59:16 [http-nio-8080-exec-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\levic\.cache\selenium\chromedriver\win64\133.0.6943.141\chromedriver.exe
+2025-03-13 22:59:16 [Forwarding newSession on session null to remote] INFO  o.o.s.remote.ProtocolHandshake - Detected dialect: W3C
+2025-03-13 22:59:16 [http-nio-8080-exec-1] WARN  o.o.s.devtools.CdpVersionFinder - Unable to find an exact match for CDP version 133, so returning the closest version found: 132
+2025-03-13 22:59:16 [http-nio-8080-exec-1] INFO  o.o.s.devtools.CdpVersionFinder - Found CDP implementation for version 133 of 132
+2025-03-13 23:01:13 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /cars/create, payload={"brand":"Lexus","model":"IS","yearFrom":"2000","yearBefore":"2007","mileageFrom":null,"mileageBefore":"300000"}]
+2025-03-13 23:01:13 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 23:01:13 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:01:13 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 23:01:13 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 23:01:13 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:01:13 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:01:13 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 23:01:23 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/9]
+2025-03-13 23:01:23 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:01:23 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/9]
+2025-03-13 23:01:23 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/9]
+2025-03-13 23:01:23 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:01:23 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:01:23 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/9]
+2025-03-13 23:03:32 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 23:03:32 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:32 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 23:03:32 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 23:03:32 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:32 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:32 [http-nio-8080-exec-9] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 23:03:32 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 23:03:34 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 23:03:34 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:34 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 23:03:34 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 23:03:34 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:34 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:34 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 23:03:36 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 23:03:36 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:36 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 23:03:36 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 23:03:36 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:36 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:36 [http-nio-8080-exec-5] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 23:03:36 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 23:03:37 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 23:03:37 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:37 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 23:03:37 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 23:03:37 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:37 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:37 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 23:03:43 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 23:03:43 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:43 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 23:03:43 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 23:03:43 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:43 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:43 [http-nio-8080-exec-8] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 23:03:43 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 23:03:44 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 23:03:44 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:44 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 23:03:44 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 23:03:44 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:44 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:44 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 23:03:45 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 23:03:45 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:45 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 23:03:45 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 23:03:45 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:45 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:45 [http-nio-8080-exec-10] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 23:03:45 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 23:03:46 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 23:03:46 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:46 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 23:03:46 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 23:03:46 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:46 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:46 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 23:03:47 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 23:03:47 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:47 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 23:03:47 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 23:03:47 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:47 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:47 [http-nio-8080-exec-4] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 23:03:47 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 23:03:48 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 23:03:48 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:48 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 23:03:48 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 23:03:48 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:48 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:48 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 23:03:53 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 23:03:53 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:03:53 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 23:03:53 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 23:03:53 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:03:53 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:03:53 [http-nio-8080-exec-9] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 23:03:53 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 23:04:39 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /admin]
+2025-03-13 23:04:39 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:04:39 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /admin]
+2025-03-13 23:04:39 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /admin]
+2025-03-13 23:04:39 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:04:39 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:04:39 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /admin]
+2025-03-13 23:04:40 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /user]
+2025-03-13 23:04:40 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:04:40 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /user]
+2025-03-13 23:04:40 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /user]
+2025-03-13 23:04:40 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:04:40 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:04:40 [http-nio-8080-exec-5] INFO  org.example.service.ProfileService - get user info for user with email: levka288@gmail.com
+2025-03-13 23:04:40 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /user]
+2025-03-13 23:04:41 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 23:04:41 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:04:41 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 23:04:41 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 23:04:41 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:04:41 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:04:41 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 23:04:47 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/9]
+2025-03-13 23:04:47 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:04:47 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/9]
+2025-03-13 23:04:47 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/9]
+2025-03-13 23:04:47 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:04:47 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:04:47 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/9]
+2025-03-13 23:07:21 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/9]
+2025-03-13 23:07:21 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:07:21 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/9]
+2025-03-13 23:07:21 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/9]
+2025-03-13 23:07:21 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:07:21 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:07:21 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/9]
+2025-03-13 23:07:35 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 23:07:35 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:07:35 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 23:07:35 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 23:07:35 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:07:35 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:07:35 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 23:08:10 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 23:08:10 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:08:10 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 23:08:10 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 23:08:10 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:08:10 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:08:10 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 23:09:55 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 23:09:55 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:09:55 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 23:09:55 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 23:09:55 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:09:55 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:09:55 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 23:10:18 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 23:10:18 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:10:18 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 23:10:18 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 23:10:18 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:10:18 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:10:18 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 23:17:38 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 23:17:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 23:17:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 23:17:42 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-13 23:17:42 [main] INFO  org.example.Main - Starting Main using Java 20.0.2 on god_vaper with PID 46412 (D:\android_developing\IdiaProjects\pre-project-3\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-13 23:17:42 [main] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 23:17:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 23:17:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 6 JPA repository interfaces.
+2025-03-13 23:17:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 23:17:43 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 23:17:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 23:17:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-13 23:17:43 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 23:17:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1045 ms
+2025-03-13 23:17:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 23:17:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 23:17:44 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-13 23:17:44 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-13 23:17:44 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-13 23:17:44 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-13 23:17:44 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 23:17:44 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-13 23:17:44 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-13 23:17:45 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-13 23:17:45 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 23:17:45 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 23:17:45 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-13 23:17:45 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7c070e78, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63ead376, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e6ec9c, org.springframework.security.web.header.HeaderWriterFilter@1e8c9083, org.springframework.security.web.authentication.logout.LogoutFilter@5350a926, org.example.config.jwt.JwtAuthenticationFilter@33293b34, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3393aa46, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4dd28982, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a1d7832, org.springframework.security.web.session.SessionManagementFilter@3dfe520, org.springframework.security.web.access.ExceptionTranslationFilter@30fffb53, org.springframework.security.web.access.intercept.AuthorizationFilter@21f7c0be]
+2025-03-13 23:17:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 23:17:46 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-13 23:17:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 23:17:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 23:17:46 [main] INFO  org.example.Main - Started Main in 3.831 seconds (JVM running for 4.59)
+2025-03-13 23:18:13 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 23:18:13 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 23:18:13 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-03-13 23:18:13 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 23:18:13 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:18:13 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 23:18:13 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 23:18:13 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:18:14 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:18:14 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 23:18:24 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/9]
+2025-03-13 23:18:24 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:18:24 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/9]
+2025-03-13 23:18:24 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/9]
+2025-03-13 23:18:24 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:18:24 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:18:24 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/9]
+2025-03-13 23:18:26 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 23:18:26 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:18:26 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 23:18:26 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 23:18:26 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:18:26 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:18:26 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 23:18:29 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 23:18:29 [http-nio-8080-exec-7] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:18:29 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 23:18:29 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 23:18:29 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:18:29 [http-nio-8080-exec-8] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:18:29 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 23:18:33 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/4]
+2025-03-13 23:18:33 [http-nio-8080-exec-9] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:18:33 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/4]
+2025-03-13 23:18:33 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-13 23:18:33 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:18:33 [http-nio-8080-exec-10] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:18:33 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-13 23:18:39 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/6]
+2025-03-13 23:18:39 [http-nio-8080-exec-1] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:18:39 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/6]
+2025-03-13 23:18:39 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-13 23:18:39 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:18:39 [http-nio-8080-exec-4] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:18:39 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-13 23:18:43 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars/10]
+2025-03-13 23:18:43 [http-nio-8080-exec-2] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:18:43 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars/10]
+2025-03-13 23:18:43 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/10]
+2025-03-13 23:18:43 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:18:43 [http-nio-8080-exec-3] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:18:43 [http-nio-8080-exec-3] INFO  o.example.service.CarPositionService - CarPosition with id: 10 not found
+2025-03-13 23:18:43 [http-nio-8080-exec-3] WARN  o.e.e.handler.GlobalExceptionHandler - user tried to get nonexistent position
+2025-03-13 23:18:43 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/10]
+2025-03-13 23:18:47 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: OPTIONS /cars]
+2025-03-13 23:18:47 [http-nio-8080-exec-5] INFO  o.e.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-13 23:18:47 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: OPTIONS /cars]
+2025-03-13 23:18:47 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-13 23:18:47 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-13 23:18:47 [http-nio-8080-exec-6] INFO  o.e.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-13 23:18:47 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-13 23:20:46 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 23:20:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 23:20:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 23:20:49 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-13 23:20:49 [main] INFO  org.example.Main - Starting Main using Java 20.0.2 on god_vaper with PID 44476 (D:\android_developing\IdiaProjects\pre-project-3\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-13 23:20:49 [main] INFO  org.example.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 23:20:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 23:20:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 6 JPA repository interfaces.

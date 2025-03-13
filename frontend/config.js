@@ -1,3 +1,3 @@
 const CONFIG = {
-    API_BASE_URL: "http://194.87.94.5:8080"
+    API_BASE_URL: "http://localhost:8080"
 };

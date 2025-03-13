@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отслеживаемые автомобили</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+        <h1>Отслеживаемые автомобили</h1>
+        <div class="ms-auto">
+            <a href="profile.html" class="btn btn-secondary">профиль</a>
+            <button class="btn btn-outline-danger" id="logoutBtn">Выйти</button>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <div class="mb-4">
+        <button class="btn btn-outline-primary" id="addCarBtn">Добавить автомобиль</button>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Бренд</th>
+            <th>Модель</th>
+            <th>Год от</th>
+            <th>Год до</th>
+            <th>Пробег от</th>
+            <th>Пробег до</th>
+        </tr>
+        </thead>
+        <tbody id="carTableBody">
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="addCarModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Добавить автомобиль</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addCarForm">
+                    <div class="mb-3">
+                        <label for="brandSelect" class="form-label">Бренд</label>
+                        <select id="brandSelect" class="form-select" required>
+                            <option value="">Выберите бренд</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modelSelect" class="form-label">Модель</label>
+                        <select id="modelSelect" class="form-select" required disabled>
+                            <option value="">Сначала выберите бренд</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="yearFrom" class="form-label">Год от</label>
+                        <input type="number" class="form-control" id="yearFrom">
+                    </div>
+                    <div class="mb-3">
+                        <label for="yearBefore" class="form-label">Год до</label>
+                        <input type="number" class="form-control" id="yearBefore">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mileageFrom" class="form-label">Пробег от</label>
+                        <input type="number" class="form-control" id="mileageFrom">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mileageBefore" class="form-label">Пробег до</label>
+                        <input type="number" class="form-control" id="mileageBefore">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                    <span class="loading ms-3">⏳ Добавляется...</span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="config.js"></script>
+<script src="cars.js"></script>
+</body>
+</html>

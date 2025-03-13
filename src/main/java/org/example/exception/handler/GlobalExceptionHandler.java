@@ -59,7 +59,7 @@ public class GlobalExceptionHandler {
         Map<String, String> errorResponse = new HashMap<>();
         errorResponse.put("error", "Позиция не найдена");
         errorResponse.put("message", ex.getMessage());
-        log.warn("user tried to get nonexistent position");
+        log.warn("user tried to get nonexistent position", ex);
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 
@@ -68,7 +68,7 @@ public class GlobalExceptionHandler {
         Map<String, String> errorResponse = new HashMap<>();
         errorResponse.put("error", "Отказ в доступе");
         errorResponse.put("message", ex.getMessage());
-        log.warn("user tried to get not his position");
+        log.warn("user tried to get not his position", ex);
         return new ResponseEntity<>(errorResponse, HttpStatus.FORBIDDEN);
     }
 
@@ -86,7 +86,7 @@ public class GlobalExceptionHandler {
         Map<String, String> errorResponse = new HashMap<>();
         errorResponse.put("error", "Марка не найдена");
         errorResponse.put("message", ex.getMessage());
-        log.warn("user tried to get nonexistent position");
+        log.warn("user tried to get nonexistent position", ex);
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 
@@ -95,7 +95,7 @@ public class GlobalExceptionHandler {
         Map<String, String> errorResponse = new HashMap<>();
         errorResponse.put("error", "Модель не найдена");
         errorResponse.put("message", ex.getMessage());
-        log.warn("user tried to get nonexistent position");
+        log.warn("user tried to get nonexistent position", ex);
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 

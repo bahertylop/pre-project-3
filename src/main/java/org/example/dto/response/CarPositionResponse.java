@@ -8,6 +8,8 @@ import org.example.dto.CarPositionPriceDto;
 import org.example.model.CarPosition;
 import org.example.model.PositionPrice;
 
+import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,7 +44,7 @@ public class CarPositionResponse {
                 .yearBefore(carPosition.getYearBefore())
                 .mileageFrom(carPosition.getMileageFrom())
                 .mileageBefore(carPosition.getMileageBefore())
-                .prices(CarPositionPriceDto.from(carPosition.getPrices()))
+                .prices(CarPositionPriceDto.from(carPosition.getPrices()).stream().sorted(Comparator.comparing(CarPositionPriceDto::getDate)).collect(Collectors.toList()))
                 .build();
     }
 }
