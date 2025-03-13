@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Data
@@ -46,4 +47,23 @@ public class CarPosition {
 
     @OneToMany(mappedBy = "position", cascade = CascadeType.ALL)
     private List<PositionPrice> prices;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CarPosition that = (CarPosition) o;
+        return Objects.equals(brand.getId(), that.brand.getId()) &&
+                Objects.equals(model.getId(), that.model.getId()) &&
+                Objects.equals(user.getId(), that.user.getId()) &&
+                Objects.equals(yearFrom, that.yearFrom) &&
+                Objects.equals(yearBefore, that.yearBefore) &&
+                Objects.equals(mileageFrom, that.mileageFrom) &&
+                Objects.equals(mileageBefore, that.mileageBefore);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand.getId(), model.getId(), user.getId(), yearFrom, yearBefore, mileageFrom, mileageBefore);
+    }
 }

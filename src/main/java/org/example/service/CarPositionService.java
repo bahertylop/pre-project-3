@@ -5,10 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.dto.CarPositionDto;
 import org.example.dto.request.CreateCarPositionRequest;
 import org.example.dto.response.CarPositionResponse;
-import org.example.exception.CarBrandNotFoundException;
-import org.example.exception.CarModelNotFoundException;
-import org.example.exception.CarPositionAccessDeniedException;
-import org.example.exception.CarPositionNotFoundException;
+import org.example.exception.*;
 import org.example.model.CarBrand;
 import org.example.model.CarModel;
 import org.example.model.CarPosition;
@@ -18,7 +15,6 @@ import org.example.repository.CarModelRepository;
 import org.example.repository.CarPositionRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Objects;
@@ -81,6 +77,13 @@ public class CarPositionService {
                 .mileageBefore(request.getMileageBefore())
                 .user(user)
                 .build();
+
+        Optional<CarPosition> carPositionExists = findDuplicateCarPosition(carPosition);
+        if (carPositionExists.isPresent()) {
+            log.info("CarPosition already exists id: {}", carPositionExists.get().getId());
+            throw new CarPositionAlreadyExistsException("Позиция уже добавлена, id: " + carPositionExists.get().getId());
+        }
+
         carPositionRepository.save(carPosition);
 
         positionParsingService.parseCarPosition(carPosition);
@@ -100,5 +103,10 @@ public class CarPositionService {
         }
 
         carPositionRepository.delete(carPositionOp.get());
+    }
+
+    private Optional<CarPosition> findDuplicateCarPosition(CarPosition carPosition) {
+        return carPositionRepository.findByUser(carPosition.getUser())
+                .stream().filter(carPosition::equals).findFirst();
     }
 }

@@ -1,5 +1,6 @@
 package org.example.exception.handler;
 
+import liquibase.pro.packaged.O;
 import lombok.extern.slf4j.Slf4j;
 import org.example.dto.ErrorDto;
 import org.example.exception.*;
@@ -69,6 +70,15 @@ public class GlobalExceptionHandler {
         errorResponse.put("message", ex.getMessage());
         log.warn("user tried to get not his position");
         return new ResponseEntity<>(errorResponse, HttpStatus.FORBIDDEN);
+    }
+
+    @ExceptionHandler(CarPositionAlreadyExistsException.class)
+    public ResponseEntity<Object> handleCarPositionAlreadyExistsException(CarPositionAlreadyExistsException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Позиция уже существует");
+        errorResponse.put("message", ex.getMessage());
+        log.warn("user tried to add already exists CarPosition");
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(CarBrandNotFoundException.class)
