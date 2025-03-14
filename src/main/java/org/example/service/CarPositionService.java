@@ -31,11 +31,23 @@ public class CarPositionService {
 
     private final CarModelRepository carModelRepository;
 
+    private final UserService userService;
+
     private final PositionParsingService positionParsingService;
 
     public List<CarPositionDto> getUserCars(UserDetails userDetails) {
         User user = (User) userDetails;
-        return CarPositionDto.from(carPositionRepository.findByUser(user));
+        log.info("user gets car positions userId: {}", user.getId());
+        return CarPositionDto.from(carPositionRepository.findByUserId(user.getId()));
+    }
+
+    public List<CarPositionDto> getUserCars(Long userid) {
+        if (userService.getUserById(userid).isEmpty()) {
+            throw new UserNotFoundException("Пользователь с id: " + userid + " не найден");
+        }
+
+        log.info("get user car positions by userId: {}", userid);
+        return CarPositionDto.from(carPositionRepository.findByUserId(userid));
     }
 
     public CarPositionResponse getUserCarPosition(UserDetails userDetails, Long carPositionId) {
@@ -51,6 +63,15 @@ public class CarPositionService {
             throw new CarPositionAccessDeniedException("Пользователь обращается не к своей позиции");
         }
 
+        return CarPositionResponse.from(carPositionOp.get());
+    }
+
+    public CarPositionResponse getCarPosition(Long carPositionId) {
+        Optional<CarPosition> carPositionOp = carPositionRepository.findById(carPositionId);
+        if (carPositionOp.isEmpty()) {
+            log.info("CarPosition with id: {} not found", carPositionId);
+            throw new CarPositionNotFoundException("Позиция с id: " + carPositionId + " не найдена");
+        }
         return CarPositionResponse.from(carPositionOp.get());
     }
 

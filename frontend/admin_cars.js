@@ -5,16 +5,23 @@ $(document).ready(function () {
         return;
     }
 
-    $("#loading").hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('userId');
+
+    if (!userId) {
+        alert("ID пользователя не указан!");
+        window.location.href = "admin.html";
+        return;
+    }
 
     function fetchCars() {
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/cars`,
+            url: `${CONFIG.API_BASE_URL}/admin/cars?userId=${userId}`,
             method: 'GET',
             headers: { 'Authorization': 'Bearer ' + token,
-                        'content-type': 'application/json'},
+                'content-type': 'application/json'},
             success: function (response) {
-                let tableBody = $("#carTableBody")
+                let tableBody = $("#userCarTableBody")
                 tableBody.empty();
 
                 response.forEach(car => {
@@ -31,7 +38,7 @@ $(document).ready(function () {
                     `);
 
                     row.click(function () {
-                        window.location.href = `car?id=${car.id}`;
+                        window.location.href = `admin_car?id=${car.id}&userId=${userId}`;
                     });
 
                     tableBody.append(row);
@@ -88,7 +95,7 @@ $(document).ready(function () {
 
     $("#addCarForm").submit(function (e) {
         e.preventDefault();
-        $("#loading").show();
+        $(".loading").show();
 
         let carData = {
             brand: $("#brandSelect option:selected").text(),
@@ -108,7 +115,7 @@ $(document).ready(function () {
             },
             data: JSON.stringify(carData),
             complete: function () {
-                $("#loading").hide();
+                $(".loading").hide();
                 $("#addCarModal").modal('hide');
                 fetchCars();
             }

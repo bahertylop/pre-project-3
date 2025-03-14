@@ -15,7 +15,7 @@ $(document).ready(function () {
                 tableBody.empty();
 
                 response.forEach(user => {
-                    tableBody.append(`
+                    let row = $(`
                     <tr data-id="${user.id}">
                         <td>${user.id}</td>
                         <td class="user-name">${user.name}</td>
@@ -28,6 +28,12 @@ $(document).ready(function () {
                         </td>
                     </tr>
                 `);
+
+                    row.click(function () {
+                        window.location.href = `admin_cars?userId=${user.id}`
+                    });
+
+                    tableBody.append(row);
                 });
             },
             error: function () {

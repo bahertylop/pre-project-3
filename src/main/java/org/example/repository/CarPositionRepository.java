@@ -9,4 +9,6 @@ import java.util.List;
 public interface CarPositionRepository extends JpaRepository<CarPosition, Long> {
 
     List<CarPosition> findByUser(User user);
+
+    List<CarPosition> findByUserId(Long userId);
 }
