@@ -65,20 +65,15 @@ public class BrandModelParser {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-blink-features=AutomationControlled"); // Убираем флаг Automation
+        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
         chromeOptions.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         chromeOptions.setExperimentalOption("useAutomationExtension", false);
-        chromeOptions.addArguments("--disable-infobars"); // Убираем "Chrome is being controlled by automated software"
+        chromeOptions.addArguments("--disable-infobars");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--remote-allow-origins=*");
 
         ChromeDriver driver = new ChromeDriver(chromeOptions);
         driver.executeScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
-//        DevTools devTools = driver.getDevTools();
-//        devTools.createSession();
-//
-//        // Отключаем navigator.webdriver
-//        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         List<CarBrand> brands = new ArrayList<>();
         try {
             driver.get(parseBrandsUrl);
@@ -122,20 +117,15 @@ public class BrandModelParser {
         RandomTimeSleep.randomSleep();
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-blink-features=AutomationControlled"); // Убираем флаг Automation
+        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
         chromeOptions.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         chromeOptions.setExperimentalOption("useAutomationExtension", false);
-        chromeOptions.addArguments("--disable-infobars"); // Убираем "Chrome is being controlled by automated software"
+        chromeOptions.addArguments("--disable-infobars");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--remote-allow-origins=*");
 
         ChromeDriver driver = new ChromeDriver(chromeOptions);
         driver.executeScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
-//        DevTools devTools = driver.getDevTools();
-//        devTools.createSession();
-//
-//        // Отключаем navigator.webdriver
-//        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         List<String> models = new ArrayList<>();
         try {
             String modelsParseUrl = parseModelsUrl + "params%5B110000%5D=" + carBrand.getValue();

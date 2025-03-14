@@ -83,14 +83,14 @@ public class PositionParsingService {
                         WebElement priceElement = ads.get(j).findElement(By.xpath(".//meta[@itemprop='price']"));
                         String price = priceElement.getAttribute("content");
                         prices.add(Integer.parseInt(price));
-                        System.out.println(i + " " + j + " 🚗 " + title + " - 💰 " + price);
+                        System.out.println(i + " " + j + title + " - " + price);
                     } catch (Exception e) {
-                        System.out.println("Ошибка при обработке объявления.");
+                        log.error("error with parsing ad carPosition: {}", carPosition.getId(), e);
                     }
                 }
             }
         } catch (Exception e) {
-            log.info("error with parsing ads: {}", e.getMessage());
+            log.info("error with parsing ads carPosition: {}", carPosition.getId(), e);
             throw new ParsingPricesException("ошибка при обработке объявлений");
         } finally {
             driver.quit();
