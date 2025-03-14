@@ -7,6 +7,7 @@ import org.example.dto.response.CarPositionResponse;
 import org.example.service.CarPositionService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class CarPositionController {
 
     @PostMapping("/create")
     public void createCarPosition(@AuthenticationPrincipal UserDetails userDetails,
-                                  @RequestBody CreateCarPositionRequest request) {
+                                  @RequestBody @Validated CreateCarPositionRequest request) {
         carPositionService.createCarPosition(userDetails, request);
     }
 
