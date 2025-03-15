@@ -105,7 +105,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/cars/create`,
+            url: `${CONFIG.API_BASE_URL}/cars`,
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + token,

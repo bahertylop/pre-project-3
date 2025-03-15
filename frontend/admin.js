@@ -47,9 +47,8 @@ $(document).ready(function () {
 
     window.deleteUser = function (id) {
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/admin/delete`,
-            method: 'POST',
-            data: {id},
+            url: `${CONFIG.API_BASE_URL}/admin/${id}`,
+            method: 'DELETE',
             headers: {'Authorization': 'Bearer ' + token,
                 'ngrok-skip-browser-warning': 'true'
             },
@@ -109,8 +108,8 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/admin/update`,
-            method: 'POST',
+            url: `${CONFIG.API_BASE_URL}/admin`,
+            method: 'PUT',
             headers: {'Authorization': 'Bearer ' + token,
                 'ngrok-skip-browser-warning': 'true'
             },
@@ -150,7 +149,7 @@ $(document).ready(function () {
             roles.push("ROLE_ADMIN");
         }
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/admin/create`,
+            url: `${CONFIG.API_BASE_URL}/admin`,
             method: 'POST',
             headers: {'Authorization': 'Bearer ' + token,
                 'ngrok-skip-browser-warning': 'true'

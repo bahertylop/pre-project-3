@@ -20,8 +20,8 @@ public class CarPositionAdminController {
         return carPositionService.getUserCars(userId);
     }
 
-    @GetMapping("/car")
-    public CarPositionResponse getCarPosition(@RequestParam Long positionId) {
+    @GetMapping("/{positionId}")
+    public CarPositionResponse getCarPosition(@PathVariable Long positionId) {
         return carPositionService.getCarPosition(positionId);
     }
 }

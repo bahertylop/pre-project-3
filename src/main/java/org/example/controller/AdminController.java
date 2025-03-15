@@ -23,18 +23,18 @@ public class AdminController {
         return userService.getUsers();
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public UserDto createUser(@RequestBody @Validated CreateUserDto createUserDto) {
         User createdUser = userService.addNewUser(createUserDto);
         return UserDto.from(createdUser);
     }
 
-    @PostMapping("/delete")
-    public void deleteUser(@RequestParam Long id) {
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
     }
 
-    @PostMapping(path = "/update")
+    @PutMapping
     public UserDto updateUser(@RequestBody @Validated UpdateUserInfoRequest request) {
         return UserDto.from(userService.updateUser(request));
     }

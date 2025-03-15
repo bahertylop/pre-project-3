@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     function fetchCarDetails() {
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/admin/cars/car?positionId=${carId}`,
+            url: `${CONFIG.API_BASE_URL}/admin/cars/${carId}`,
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token,

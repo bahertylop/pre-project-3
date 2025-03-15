@@ -22,12 +22,12 @@ public class ProfileController {
         return profileService.getUserInfo(userDetails);
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping
     public void deleteAccount(@AuthenticationPrincipal UserDetails userDetails) {
         profileService.deleteProfile(userDetails);
     }
 
-    @PostMapping("/update")
+    @PutMapping
     public void updateUserInfo(@RequestBody @Validated UpdateProfileRequest updateInfo,
                                @AuthenticationPrincipal UserDetails userDetails) {
         profileService.updateUserInfo(userDetails, updateInfo);

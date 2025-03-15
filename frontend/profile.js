@@ -47,8 +47,8 @@ $(document).ready(function () {
         const age = $("#editAge").val();
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/user/update`,
-            method: 'POST',
+            url: `${CONFIG.API_BASE_URL}/user`,
+            method: 'PUT',
             contentType: 'application/json',
             headers: { 'Authorization': 'Bearer ' + token,
                 'ngrok-skip-browser-warning': 'true'
@@ -76,8 +76,8 @@ $(document).ready(function () {
         if (!confirm("Вы уверены, что хотите удалить аккаунт?")) return;
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/user/delete`,
-            method: 'POST',
+            url: `${CONFIG.API_BASE_URL}/user`,
+            method: 'DELETE',
             headers: { 'Authorization': 'Bearer ' + token,
                 'ngrok-skip-browser-warning': 'true'
             },

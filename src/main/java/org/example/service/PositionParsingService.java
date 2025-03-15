@@ -66,9 +66,9 @@ public class PositionParsingService {
             JSONObject jsonObjectResult = new JSONObject(jsonResponse);
 
             String getProductsUrl = "https://www.avito.ru" + jsonObjectResult.getString("url");
-            System.out.println("url: " + getProductsUrl);
+            log.info("url: " + getProductsUrl);
             int productsCount = jsonObjectResult.getInt("count");
-            System.out.println("найдено объявлений: " + productsCount);
+            log.info("ads found: " + productsCount);
 
             int pageCount = productsCount / 50 + 1;
             for (int i = 1; i <= pageCount; i++) {

@@ -30,15 +30,15 @@ public class CarPositionController {
         return carPositionService.getUserCarPosition(userDetails, carPositionId);
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public void createCarPosition(@AuthenticationPrincipal UserDetails userDetails,
                                   @RequestBody @Validated CreateCarPositionRequest request) {
         carPositionService.createCarPosition(userDetails, request);
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/{carPositionId}")
     public void deleteCarPosition(@AuthenticationPrincipal UserDetails userDetails,
-                                  @RequestParam Long id) {
-        carPositionService.deleteCarPosition(userDetails, id);
+                                  @PathVariable Long carPositionId) {
+        carPositionService.deleteCarPosition(userDetails, carPositionId);
     }
 }
