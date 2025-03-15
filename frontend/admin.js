@@ -9,7 +9,9 @@ $(document).ready(function () {
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/admin`,
             method: 'GET',
-            headers: {'Authorization': 'Bearer ' + token},
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function (response) {
                 let tableBody = $("#userTableBody");
                 tableBody.empty();
@@ -48,7 +50,9 @@ $(document).ready(function () {
             url: `${CONFIG.API_BASE_URL}/admin/delete`,
             method: 'POST',
             data: {id},
-            headers: {'Authorization': 'Bearer ' + token},
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function () {
                 fetchUsers();
             },
@@ -107,7 +111,9 @@ $(document).ready(function () {
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/admin/update`,
             method: 'POST',
-            headers: {'Authorization': 'Bearer ' + token},
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             contentType: 'application/json',
             data: JSON.stringify({id, name, password, age, roles}),
             success: function () {
@@ -146,7 +152,9 @@ $(document).ready(function () {
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/admin/create`,
             method: 'POST',
-            headers: {'Authorization': 'Bearer ' + token},
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             contentType: 'application/json',
             data: JSON.stringify({name, email, password, age, roles}),
             success: function () {

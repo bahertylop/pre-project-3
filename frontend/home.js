@@ -18,6 +18,7 @@ $(document).ready(function () {
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ email, password }),
+            headers: {'ngrok-skip-browser-warning': 'true'},
             success: function (response) {
                 localStorage.setItem('jwtToken', response.token);
                 window.location.href = "profile.html";
@@ -52,6 +53,7 @@ $(document).ready(function () {
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ name, email, password, age }),
+            headers: {'ngrok-skip-browser-warning': 'true'},
             success: function (response) {
                 localStorage.setItem('jwtToken', response.token);
                 window.location.href = "profile.html";

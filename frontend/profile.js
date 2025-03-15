@@ -10,7 +10,9 @@ $(document).ready(function () {
             url: `${CONFIG.API_BASE_URL}/user`,
             method: 'GET',
             headers: { 'Authorization': 'Bearer ' + token,
-                        'content-type': 'application/json'},
+                'content-type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function (response) {
                 $("#profileId").text(response.id);
                 $("#profileName").text(response.name);
@@ -48,7 +50,9 @@ $(document).ready(function () {
             url: `${CONFIG.API_BASE_URL}/user/update`,
             method: 'POST',
             contentType: 'application/json',
-            headers: { 'Authorization': 'Bearer ' + token },
+            headers: { 'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             data: JSON.stringify({ name, password, age }),
             success: function () {
                 fetchProfile();
@@ -74,7 +78,9 @@ $(document).ready(function () {
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/user/delete`,
             method: 'POST',
-            headers: { 'Authorization': 'Bearer ' + token },
+            headers: { 'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function () {
                 localStorage.removeItem('jwtToken');
                 window.location.href = "home.html";

@@ -26,7 +26,8 @@ $(document).ready(function () {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
             },
             success: function (car) {
                 $("#carTitle").text(`${car.brand} ${car.model}`);

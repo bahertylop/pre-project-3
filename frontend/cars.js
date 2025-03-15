@@ -12,7 +12,8 @@ $(document).ready(function () {
             url: `${CONFIG.API_BASE_URL}/cars`,
             method: 'GET',
             headers: { 'Authorization': 'Bearer ' + token,
-                        'content-type': 'application/json'},
+                        'content-type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'},
             success: function (response) {
                 let tableBody = $("#carTableBody")
                 tableBody.empty();
@@ -48,7 +49,9 @@ $(document).ready(function () {
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/brands`,
             method: 'GET',
-            headers: { 'Authorization': 'Bearer ' + token },
+            headers: { 'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function (brands) {
                 let brandSelect = $("#brandSelect");
                 brandSelect.append(brands.map(b => `<option value="${b.id}">${b.name}</option>`));
@@ -68,7 +71,9 @@ $(document).ready(function () {
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/models?brandId=${brandId}`,
             method: 'GET',
-            headers: { 'Authorization': 'Bearer ' + localStorage.getItem('jwtToken') },
+            headers: { 'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function (models) {
                 modelSelect.prop('disabled', false).empty()
                     .append(`<option value="">Выберите модель</option>`)
@@ -104,7 +109,8 @@ $(document).ready(function () {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + token,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
             },
             data: JSON.stringify(carData),
             complete: function () {
