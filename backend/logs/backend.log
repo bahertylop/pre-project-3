@@ -1,6 +1,6 @@
 2025-03-16 15:06:30 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
-2025-03-16 15:06:30 [main] INFO  org.backend.Main - Starting Main using Java 20.0.2 on god_vaper with PID 22008 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
-2025-03-16 15:06:30 [main] INFO  org.backend.Main - No active profile set, falling back to 1 default profile: "default"
+2025-03-16 15:06:30 [main] INFO  org.backend.BackendMain - Starting Main using Java 20.0.2 on god_vaper with PID 22008 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-16 15:06:30 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
 2025-03-16 15:06:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2025-03-16 15:06:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 6 JPA repository interfaces.
 2025-03-16 15:06:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
@@ -27,7 +27,7 @@
 2025-03-16 15:06:33 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
 2025-03-16 15:06:33 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 2025-03-16 15:06:33 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2025-03-16 15:06:33 [main] INFO  org.backend.Main - Started Main in 3.098 seconds (JVM running for 3.726)
+2025-03-16 15:06:33 [main] INFO  org.backend.BackendMain - Started Main in 3.098 seconds (JVM running for 3.726)
 2025-03-16 15:06:35 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-16 15:06:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-03-16 15:06:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
