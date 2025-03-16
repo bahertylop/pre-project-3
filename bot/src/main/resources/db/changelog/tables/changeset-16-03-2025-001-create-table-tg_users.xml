@@ -10,10 +10,10 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="email" type="varchar(255)">
+            <column name="email" type="varchar(255)"/>
+            <column name="chat_id" type="bigint">
                 <constraints unique="true" nullable="false"/>
             </column>
-            <column name="chat_id" type="varchar(255)"/>
             <column name="tg_username" type="varchar(255)"/>
             <column name="jwt" type="text"/>
             <column name="refresh" type="text"/>

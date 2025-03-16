@@ -2,16 +2,18 @@ package org.bot.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Table(name = "tg_users")
-public class User {
+public class TgUser {
 
     @Id
     @SequenceGenerator(name = "tg_users_id_seq", sequenceName = "tg_users_id_seq", allocationSize = 1)
@@ -22,10 +24,10 @@ public class User {
     private String email;
 
     @Column(name = "chat_id")
-    private String chatId;
+    private Long chatId;
 
     @Column(name = "tg_username")
-    private String thUserName;
+    private String tgUserName;
 
     @Column(name = "jwt")
     private String jwtToken;
@@ -38,6 +40,8 @@ public class User {
     private BotState botState;
 
     public enum BotState {
-        REGISTER;
+        EMAIL,
+        PASSWORD,
+        WORKING
     }
 }

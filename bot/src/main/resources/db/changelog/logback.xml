@@ -6,9 +6,9 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>backend/logs/backend.log</file>
+        <file>bot/logs/bot.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>backend/logs/backend_logs.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>bot/logs/bot_logs.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -27,7 +27,7 @@
                 <pattern>
                     <pattern>
                         {
-                        "app": "pre-project-3 : backend",
+                        "app": "pre-project-3 : bot",
                         "message": "%message%n%ex{full}"
                         }
                     </pattern>
