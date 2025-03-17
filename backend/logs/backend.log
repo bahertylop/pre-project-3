@@ -881,3 +881,8 @@ Caused by: java.io.IOException: Found 2 files that match classpath:db/changelog/
 2025-03-17 21:13:32 [http-nio-8080-exec-1] INFO  o.b.service.AuthenticationService - sign in user with email: levka288@gmail.com
 2025-03-17 21:13:32 [http-nio-8080-exec-1] INFO  o.b.service.AuthenticationService - user with email: levka288@gmail.com signed in
 2025-03-17 21:13:32 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka288@gmail.com","password":"Kaka3600"}]
+2025-03-17 21:48:08 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 21:48:08 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 21:48:08 [http-nio-8080-exec-9] INFO  o.b.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-17 21:48:08 [http-nio-8080-exec-9] INFO  o.b.service.AuthenticationService - user with email: levka288@gmail.com signed in
+2025-03-17 21:48:08 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka288@gmail.com","password":"Kaka3600"}]

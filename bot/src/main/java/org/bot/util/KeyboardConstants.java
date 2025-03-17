@@ -1,7 +1,10 @@
 package org.bot.util;
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,20 @@ public class KeyboardConstants {
         row.add(signUpButton);
         rows.add(row);
         keyboardMarkup.setKeyboard(rows);
+        return keyboardMarkup;
+    }
+
+    public static ReplyKeyboardMarkup botButtons() {
+        ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
+        List<KeyboardRow> keyboard = new ArrayList<>();
+        KeyboardRow keyboardRow = new KeyboardRow();
+
+        keyboardRow.add(new KeyboardButton("профиль"));
+        keyboardRow.add(new KeyboardButton("машины"));
+
+        keyboard.add(keyboardRow);
+        keyboardMarkup.setKeyboard(keyboard);
+
         return keyboardMarkup;
     }
 }

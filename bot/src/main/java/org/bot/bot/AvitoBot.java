@@ -15,6 +15,7 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.generics.LongPollingBot;
 
@@ -68,7 +69,7 @@ public class AvitoBot extends TelegramLongPollingBot {
         }
     }
 
-    public void sendMessage(Long chatId, String text, InlineKeyboardMarkup keyboard) {
+    public void sendMessage(Long chatId, String text, ReplyKeyboard keyboard) {
         SendMessage sendMessage = new SendMessage(chatId.toString(), text);
         sendMessage.setReplyMarkup(keyboard);
 

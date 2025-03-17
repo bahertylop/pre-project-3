@@ -10,6 +10,7 @@ import org.bot.util.KeyboardConstants;
 import org.bot.util.MessagesConstants;
 import org.bot.util.PasswordValidator;
 import org.springframework.stereotype.Component;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 @Slf4j
 @Component
@@ -32,7 +33,7 @@ public class PasswordMessageHandler implements MessageHandler {
         }
 
         if (userService.signInUser(sender, text)) {
-            bot.sendMessage(sender.getChatId(), MessagesConstants.SUCCESS_SIGN_IN);
+            bot.sendMessage(sender.getChatId(), MessagesConstants.SUCCESS_SIGN_IN, KeyboardConstants.botButtons());
         } else {
             bot.sendMessage(sender.getChatId(), MessagesConstants.FAILED_SIGN_IN, KeyboardConstants.authCommands());
         }

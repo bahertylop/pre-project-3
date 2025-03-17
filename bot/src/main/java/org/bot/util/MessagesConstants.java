@@ -6,6 +6,7 @@ public class MessagesConstants {
 
     public static final String ADD_EMAIL_MESSAGE = "Введите почту";
 
+    public static final String USER_ALREADY_SIGNED_IN = "Вы уже вошли";
     public static final String NOT_VALID_EMAIL_MESSAGE = "Введена некорректная почта, попробуйте еще раз";
 
     public static final String ADD_PASSWORD_MESSAGE = "Введите пароль";

@@ -70,6 +70,7 @@ public class UserService {
 
             tgUser.setJwtToken(response.getAccess());
             tgUser.setRefreshToken(response.getRefresh());
+            tgUser.setBotState(TgUser.BotState.WORKING);
             userRepository.save(tgUser);
 
             log.info("user email: {} signed in", tgUser.getEmail());
