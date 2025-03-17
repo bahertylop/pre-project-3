@@ -43,7 +43,7 @@ public class AuthClient {
             log.warn("sign-in request returned status: {}, body: {}", response.getStatusCode(), response.getBody());
             throw new AuthException("sign-in request returned " + response.getStatusCode(), response.getStatusCode());
         } catch (RestClientException e) {
-            log.error("sign-in request failed", e);
+            log.error("sign-in request failed url: {}", signInApiUrl, e);
             throw new AuthException("api is unavailable", HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
@@ -67,7 +67,7 @@ public class AuthClient {
             log.warn("refresh request returned status: {}, body: {}", response.getStatusCode(), response.getBody());
             throw new AuthException("refresh request returned " + response.getStatusCode(), response.getStatusCode());
         } catch (RestClientException e) {
-            log.error("refresh request failed", e);
+            log.error("refresh request failed url: {}", refreshApiUrl, e);
             throw new AuthException("api is unavailable", HttpStatus.SERVICE_UNAVAILABLE);
         }
     }

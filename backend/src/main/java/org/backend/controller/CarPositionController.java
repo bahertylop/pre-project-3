@@ -1,7 +1,7 @@
 package org.backend.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.backend.dto.CarPositionDto;
+import org.dto.CarPositionDto;
 import org.backend.dto.response.CarPositionResponse;
 import org.backend.service.CarPositionService;
 import org.dto.request.CreateCarPositionRequest;

@@ -2,7 +2,8 @@ package org.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.backend.dto.CarPositionDto;
+import org.backend.mapper.CarPositionMapper;
+import org.dto.CarPositionDto;
 import org.backend.dto.response.CarPositionResponse;
 import org.backend.exception.*;
 import org.backend.model.CarBrand;
@@ -35,10 +36,12 @@ public class CarPositionService {
 
     private final PositionParsingService positionParsingService;
 
+    private final CarPositionMapper carPositionMapper;
+
     public List<CarPositionDto> getUserCars(UserDetails userDetails) {
         User user = (User) userDetails;
         log.info("user gets car positions userId: {}", user.getId());
-        return CarPositionDto.from(carPositionRepository.findByUserId(user.getId()));
+        return carPositionMapper.toDto(carPositionRepository.findByUserId(user.getId()));
     }
 
     public List<CarPositionDto> getUserCars(Long userid) {
@@ -47,7 +50,7 @@ public class CarPositionService {
         }
 
         log.info("get user car positions by userId: {}", userid);
-        return CarPositionDto.from(carPositionRepository.findByUserId(userid));
+        return carPositionMapper.toDto(carPositionRepository.findByUserId(userid));
     }
 
     public CarPositionResponse getUserCarPosition(UserDetails userDetails, Long carPositionId) {

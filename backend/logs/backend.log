@@ -886,3 +886,16 @@ Caused by: java.io.IOException: Found 2 files that match classpath:db/changelog/
 2025-03-17 21:48:08 [http-nio-8080-exec-9] INFO  o.b.service.AuthenticationService - sign in user with email: levka288@gmail.com
 2025-03-17 21:48:08 [http-nio-8080-exec-9] INFO  o.b.service.AuthenticationService - user with email: levka288@gmail.com signed in
 2025-03-17 21:48:08 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka288@gmail.com","password":"Kaka3600"}]
+2025-03-17 21:50:47 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 21:50:47 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 21:50:47 [http-nio-8080-exec-5] INFO  o.b.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-17 21:50:47 [http-nio-8080-exec-5] INFO  o.b.service.AuthenticationService - user with email: levka288@gmail.com signed in
+2025-03-17 21:50:47 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka288@gmail.com","password":"Kaka3600"}]
+2025-03-17 23:39:29 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-17 23:39:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-17 23:39:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-17 23:39:40 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-17 23:39:40 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 13244 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-17 23:39:40 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
+2025-03-17 23:39:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-17 23:39:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 6 JPA repository interfaces.

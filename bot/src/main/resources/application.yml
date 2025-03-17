@@ -27,3 +27,4 @@ api:
   url:
     sign-in: http://localhost:8080/auth/signin
     refresh: http://localhost:8080/auth/refresh
+    get-car-positions: http://localhost:8080/cars
