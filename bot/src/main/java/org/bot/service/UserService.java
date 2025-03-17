@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.bot.api.AuthClient;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
+import org.bot.exception.AuthException;
 import org.bot.model.TgUser;
 import org.bot.repository.UserRepository;
 import org.dto.request.LoginRequest;
@@ -12,7 +13,6 @@ import org.dto.response.JwtTokensResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 
-import javax.security.auth.message.AuthException;
 import java.util.Optional;
 
 

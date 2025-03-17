@@ -805,3 +805,79 @@ Caused by: java.io.IOException: Found 2 files that match classpath:db/changelog/
 2025-03-17 20:59:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
 2025-03-17 20:59:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
 2025-03-17 20:59:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-17 20:59:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-17 20:59:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1060 ms
+2025-03-17 20:59:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-17 20:59:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-17 20:59:04 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-17 20:59:04 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-17 20:59:04 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-17 20:59:04 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-17 20:59:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-17 20:59:05 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-17 20:59:05 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-17 20:59:05 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-17 20:59:05 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-17 20:59:05 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-17 20:59:06 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-17 20:59:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54418834, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54d6f172, org.springframework.security.web.context.SecurityContextPersistenceFilter@735d7b99, org.springframework.security.web.header.HeaderWriterFilter@674b9b85, org.springframework.security.web.authentication.logout.LogoutFilter@5a0b925a, org.backend.config.jwt.JwtAuthenticationFilter@77737e3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3577e37c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a90b5e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d21a69f, org.springframework.security.web.session.SessionManagementFilter@7510824, org.springframework.security.web.access.ExceptionTranslationFilter@7df994ec, org.springframework.security.web.access.intercept.AuthorizationFilter@11b234aa]
+2025-03-17 20:59:06 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-17 20:59:06 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-17 20:59:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-17 20:59:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-17 20:59:06 [main] INFO  org.backend.BackendMain - Started BackendMain in 4.091 seconds (JVM running for 4.826)
+2025-03-17 20:59:10 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-17 20:59:10 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-17 20:59:10 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-03-17 20:59:10 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 20:59:10 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 20:59:10 [http-nio-8080-exec-1] INFO  o.b.service.AuthenticationService - sign in user with email: tolya@mail
+2025-03-17 20:59:10 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={
+    "email": "tolya@mail", 
+    "password": "Qwerty125"
+}]
+2025-03-17 20:59:19 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 20:59:19 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 20:59:19 [http-nio-8080-exec-6] INFO  o.b.service.AuthenticationService - sign in user with email: tolya@mail
+2025-03-17 20:59:19 [http-nio-8080-exec-6] INFO  o.b.service.AuthenticationService - user with email: tolya@mail signed in
+2025-03-17 20:59:19 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={
+    "email": "tolya@mail", 
+    "password": "Qwerty123"
+}]
+2025-03-17 20:59:27 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 20:59:27 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 20:59:27 [http-nio-8080-exec-9] INFO  o.b.service.AuthenticationService - sign in user with email: tolya@mail
+2025-03-17 20:59:27 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={
+    "email": "tolya@mail", 
+    "password": "Qwerty12"
+}]
+2025-03-17 20:59:34 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 20:59:34 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 20:59:34 [http-nio-8080-exec-2] INFO  o.b.service.AuthenticationService - sign in user with email: tolya@mal
+2025-03-17 20:59:34 [http-nio-8080-exec-2] ERROR o.b.service.UserDetailsServiceImpl - user with email: tolya@mal not found
+2025-03-17 20:59:34 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={
+    "email": "tolya@mal", 
+    "password": "Qwerty123"
+}]
+2025-03-17 21:07:40 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 21:07:40 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 21:07:40 [http-nio-8080-exec-7] INFO  o.b.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-17 21:07:40 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka288@gmail.com","password":"Password1"}]
+2025-03-17 21:08:15 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 21:08:15 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 21:08:15 [http-nio-8080-exec-4] INFO  o.b.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-17 21:08:15 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka288@gmail.com","password":"Qwerty123"}]
+2025-03-17 21:12:45 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 21:12:45 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 21:12:45 [http-nio-8080-exec-3] INFO  o.b.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-17 21:12:45 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka288@gmail.com","password":"ggcdrcddgvS3"}]
+2025-03-17 21:13:09 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 21:13:09 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 21:13:09 [http-nio-8080-exec-10] INFO  o.b.service.AuthenticationService - sign in user with email: levka3208@gmail.com
+2025-03-17 21:13:09 [http-nio-8080-exec-10] ERROR o.b.service.UserDetailsServiceImpl - user with email: levka3208@gmail.com not found
+2025-03-17 21:13:09 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka3208@gmail.com","password":"Paassgdgdb2"}]
+2025-03-17 21:13:32 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /auth/signin]
+2025-03-17 21:13:32 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-17 21:13:32 [http-nio-8080-exec-1] INFO  o.b.service.AuthenticationService - sign in user with email: levka288@gmail.com
+2025-03-17 21:13:32 [http-nio-8080-exec-1] INFO  o.b.service.AuthenticationService - user with email: levka288@gmail.com signed in
+2025-03-17 21:13:32 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /auth/signin, payload={"email":"levka288@gmail.com","password":"Kaka3600"}]
