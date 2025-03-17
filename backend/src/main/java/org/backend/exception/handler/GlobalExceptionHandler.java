@@ -5,6 +5,7 @@ import org.backend.dto.ErrorDto;
 import org.backend.exception.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -34,6 +35,24 @@ public class GlobalExceptionHandler {
         errorResponse.put("message", ex.getMessage());
         log.error("error, user not found", ex);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handleUsernameNotFoundException(UsernameNotFoundException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Не найден пользователь");
+        errorResponse.put("message", ex.getMessage());
+        log.error("error, user not found", ex);
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(errorResponse);
+    }
+
+    @ExceptionHandler(InvalidOrExpiredRefreshTokenException.class)
+    public ResponseEntity<Map<String, String>> handleInvalidOrExpiredRefreshTokenException(InvalidOrExpiredRefreshTokenException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "not valid or expired refresh token");
+        errorResponse.put("message", ex.getMessage());
+        log.error("not valid or expired refresh token", ex);
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
     }
 
     @ExceptionHandler(IllegalRequestArgumentException.class)

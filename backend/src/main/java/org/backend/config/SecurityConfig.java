@@ -43,7 +43,7 @@ public class SecurityConfig {
 //                }))
                 .authorizeHttpRequests(request -> request
                         .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .antMatchers("/", "/signup", "/login", "/signin", "/qqq").permitAll()
+                        .antMatchers("/", "/signup", "/auth/**").permitAll()
                         .antMatchers("/user/**", "/cars/**", "/brands/**", "/models/**").hasAnyRole("ADMIN", "USER")
                         .antMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
