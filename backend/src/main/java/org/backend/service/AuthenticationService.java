@@ -4,24 +4,20 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.backend.config.jwt.JwtService;
 import org.backend.dto.CreateUserDto;
-import org.backend.dto.request.LoginRequest;
-import org.backend.dto.request.RefreshTokenRequest;
-import org.backend.dto.request.SignUpRequest;
-import org.backend.dto.response.JwtTokensResponse;
 import org.backend.exception.InvalidOrExpiredRefreshTokenException;
 import org.backend.model.Role;
 import org.backend.model.User;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.dto.request.LoginRequest;
+import org.dto.request.RefreshTokenRequest;
+import org.dto.request.SignUpRequest;
+import org.dto.response.JwtTokensResponse;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @Slf4j

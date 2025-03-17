@@ -21,3 +21,9 @@ spring:
 
 server:
   port: 8081
+
+
+api:
+  url:
+    sign-in: http://localhost:8080/auth/signin
+    refresh: http://localhost:8080/auth/refresh

@@ -4,13 +4,13 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.backend.dto.CreateUserDto;
 import org.backend.dto.UserDto;
-import org.backend.dto.request.UpdateUserInfoRequest;
 import org.backend.exception.IllegalRequestArgumentException;
 import org.backend.exception.UserAlreadyExistsException;
 import org.backend.exception.UserNotFoundException;
 import org.backend.model.User;
 import org.backend.repository.RoleRepository;
 import org.backend.repository.UserRepository;
+import org.backend.dto.request.UpdateUserInfoRequest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

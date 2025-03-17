@@ -13,4 +13,6 @@ public class MessagesConstants {
     public static final String NOT_VALID_PASSWORD_MESSAGE = "Введен некорректный пароль, длина от 8 до 50 символов, только латинский алфавит, хотя-бы одна маленькая буква, хотя-бы одна заглавная буква, хотя-бы одна цифра. Попробуйте еще раз";
 
     public static final String SUCCESS_SIGN_IN = "успешный вход, теперь можете пользоваться функциями бота";
+
+    public static final String FAILED_SIGN_IN = "ошибка при входе, попробуйте еще раз";
 }

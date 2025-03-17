@@ -1,4 +1,4 @@
-package org.backend.dto.request;
+package org.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

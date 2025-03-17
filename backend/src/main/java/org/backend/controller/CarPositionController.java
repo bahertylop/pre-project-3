@@ -2,9 +2,9 @@ package org.backend.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.backend.dto.CarPositionDto;
-import org.backend.dto.request.CreateCarPositionRequest;
 import org.backend.dto.response.CarPositionResponse;
 import org.backend.service.CarPositionService;
+import org.dto.request.CreateCarPositionRequest;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;

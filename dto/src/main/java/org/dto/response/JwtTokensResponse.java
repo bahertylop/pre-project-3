@@ -1,4 +1,4 @@
-package org.backend.dto.response;
+package org.dto.response;
 
 import lombok.*;
 

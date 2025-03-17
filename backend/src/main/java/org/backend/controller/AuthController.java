@@ -2,12 +2,13 @@ package org.backend.controller;
 
 import lombok.RequiredArgsConstructor;
 
-import org.backend.dto.request.LoginRequest;
-import org.backend.dto.request.RefreshTokenRequest;
-import org.backend.dto.request.SignUpRequest;
-import org.backend.dto.response.JwtTokensResponse;
+
 import org.backend.service.AuthenticationService;
 
+import org.dto.request.LoginRequest;
+import org.dto.request.RefreshTokenRequest;
+import org.dto.request.SignUpRequest;
+import org.dto.response.JwtTokensResponse;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package org.backend.dto.request;
+package org.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,10 +11,14 @@ import javax.validation.constraints.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UpdateProfileRequest {
+public class SignUpRequest {
 
     @NotBlank(message = "Имя не должно быть пустым")
     private String name;
+
+    @NotBlank(message = "Email не должен быть пустым")
+    @Email(message = "Некорректный формат email")
+    private String email;
 
     @NotBlank(message = "Пароль не должен быть пустым")
     @Size(min = 8, max = 50, message = "Пароль должен содержать от 8 до 50 символов")

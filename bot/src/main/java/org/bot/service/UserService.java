@@ -2,12 +2,17 @@ package org.bot.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.bot.api.AuthClient;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
 import org.bot.model.TgUser;
 import org.bot.repository.UserRepository;
+import org.dto.request.LoginRequest;
+import org.dto.response.JwtTokensResponse;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 
+import javax.security.auth.message.AuthException;
 import java.util.Optional;
 
 
@@ -17,6 +22,8 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+
+    private final AuthClient authClient;
 
     public Optional<TgUserDto> getUserByChatId(Long chatId) {
         return userRepository.getUserByChatId(chatId).map(TgUserDto::from);
@@ -54,7 +61,24 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void signInUser(SenderDto sender, String password) {
-        log.info("типо авторизация");
+    public boolean signInUser(SenderDto sender, String password) {
+        LoginRequest loginRequest = new LoginRequest(sender.getUser().getEmail(), password);
+        TgUser tgUser = getTgUserByChatId(sender.getChatId()).get();
+        JwtTokensResponse response;
+        try {
+            response = authClient.signIn(loginRequest);
+
+            tgUser.setJwtToken(response.getAccess());
+            tgUser.setRefreshToken(response.getRefresh());
+            userRepository.save(tgUser);
+
+            log.info("user email: {} signed in", tgUser.getEmail());
+            return true;
+        } catch (AuthException e) {
+            log.warn("error with sign-in user email: {}", tgUser.getEmail(), e);
+            tgUser.setBotState(TgUser.BotState.EMAIL);
+            userRepository.save(tgUser);
+            return false;
+        }
     }
 }

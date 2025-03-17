@@ -6,6 +6,7 @@ import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.model.TgUser;
 import org.bot.service.UserService;
+import org.bot.util.KeyboardConstants;
 import org.bot.util.MessagesConstants;
 import org.bot.util.PasswordValidator;
 import org.springframework.stereotype.Component;
@@ -30,11 +31,10 @@ public class PasswordMessageHandler implements MessageHandler {
             return true;
         }
 
-        try {
-            userService.signInUser(sender, text);
+        if (userService.signInUser(sender, text)) {
             bot.sendMessage(sender.getChatId(), MessagesConstants.SUCCESS_SIGN_IN);
-        } catch (Exception e) {
-            log.error("не получилось авторизовать пользователя");
+        } else {
+            bot.sendMessage(sender.getChatId(), MessagesConstants.FAILED_SIGN_IN, KeyboardConstants.authCommands());
         }
         return true;
     }

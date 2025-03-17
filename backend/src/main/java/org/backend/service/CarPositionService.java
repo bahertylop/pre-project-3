@@ -3,7 +3,6 @@ package org.backend.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.backend.dto.CarPositionDto;
-import org.backend.dto.request.CreateCarPositionRequest;
 import org.backend.dto.response.CarPositionResponse;
 import org.backend.exception.*;
 import org.backend.model.CarBrand;
@@ -13,6 +12,7 @@ import org.backend.model.User;
 import org.backend.repository.CarBrandRepository;
 import org.backend.repository.CarModelRepository;
 import org.backend.repository.CarPositionRepository;
+import org.dto.request.CreateCarPositionRequest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 

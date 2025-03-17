@@ -2,8 +2,8 @@ package org.backend.service;
 
 import org.backend.dto.CreateUserDto;
 import org.backend.dto.UserDto;
-import org.backend.dto.request.UpdateUserInfoRequest;
 import org.backend.model.User;
+import org.backend.dto.request.UpdateUserInfoRequest;
 
 import java.util.List;
 import java.util.Optional;

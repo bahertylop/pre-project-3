@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.backend.model.Role;
-import org.backend.util.ValidPassword;
 
 
 import javax.validation.constraints.*;
@@ -27,7 +26,6 @@ public class UpdateUserInfoRequest {
             regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$",
             message = "Пароль должен содержать хотя бы одну заглавную букву, одну строчную букву и одну цифру"
     )
-    @ValidPassword
     private String password;
 
     @NotNull(message = "Возраст не должен быть пустым")

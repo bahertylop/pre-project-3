@@ -3,9 +3,9 @@ package org.backend.controller;
 import lombok.RequiredArgsConstructor;
 import org.backend.dto.CreateUserDto;
 import org.backend.dto.UserDto;
-import org.backend.dto.request.UpdateUserInfoRequest;
 import org.backend.model.User;
 import org.backend.service.UserService;
+import org.backend.dto.request.UpdateUserInfoRequest;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
