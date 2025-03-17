@@ -5,6 +5,7 @@ import io.jsonwebtoken.JwtException;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -69,13 +70,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         } catch (JwtException e) {
             log.error("not valid jwt token for request", e);
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setStatus(HttpStatus.FORBIDDEN.value());
             response.setContentType("text/plain; charset=UTF-8");
             response.getWriter().write("Невалидный jwt токен");
             return;
         } catch (UsernameNotFoundException e) {
             log.error("user not found", e);
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            response.setStatus(HttpStatus.FORBIDDEN.value());
             response.setContentType("text/plain; charset=UTF-8");
             response.getWriter().write("Пользователь не найден");
             return;

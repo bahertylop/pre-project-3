@@ -24,12 +24,14 @@ public class CarsService {
     private final UserService userService;
 
     public List<CarPositionDto> getCarPositions(SenderDto senderDto) {
+        System.out.println(senderDto.getUser().getJwtToken());
         try {
             return carPositionClient.getCarPositions(senderDto);
         } catch (ForbiddenException e) {
             if (userService.refreshUserTokens(senderDto)) {
                 try {
-                    carPositionClient.getCarPositions(senderDto);
+                    System.out.println(senderDto.getUser().getJwtToken());
+                    return carPositionClient.getCarPositions(senderDto);
                 } catch (ForbiddenException ex) {
                     log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
                 } catch (ApiException exApi) {

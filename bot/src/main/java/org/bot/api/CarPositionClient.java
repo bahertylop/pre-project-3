@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -42,16 +43,16 @@ public class CarPositionClient {
 
             if (response.getStatusCode().is2xxSuccessful() && response.hasBody()) {
                 return response.getBody();
-            } else if (response.getStatusCode().equals(HttpStatus.FORBIDDEN)) {
-                throw new ForbiddenException("get car positions request returned 403");
             }
 
             log.warn("get car positions request returned status: {}, body: {}", response.getStatusCode(), response.getBody());
             throw new ApiException("sign-in request returned" + response.getStatusCode());
+        } catch (HttpClientErrorException.Forbidden e) {
+            log.info("get car positions request returned 403 ");
+            throw new ForbiddenException("");
         } catch (RestClientException e) {
             log.error("get car positions request failed url: {}", getCarPositionsApiUrl, e);
             throw new ApiException("api unavailable", e);
         }
-
     }
 }
