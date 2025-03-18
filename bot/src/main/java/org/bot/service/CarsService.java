@@ -2,23 +2,21 @@ package org.bot.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.bot.api.AuthClient;
 import org.bot.api.CarPositionClient;
 import org.bot.dto.SenderDto;
 import org.bot.exception.ApiException;
-import org.bot.exception.AuthException;
 import org.bot.exception.ForbiddenException;
+import org.bot.model.CreateCarPositionData;
 import org.bot.model.TgUser;
-import org.bot.util.MessagesConstants;
+import org.bot.repository.CreateCarPositionDataRepository;
 import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.dto.CarPositionDto;
-import org.dto.request.RefreshTokenRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -28,6 +26,8 @@ public class CarsService {
     private final CarPositionClient carPositionClient;
 
     private final UserService userService;
+
+    private final CreateCarPositionDataService carPositionDataService;
 
     public List<CarPositionDto> getCarPositions(SenderDto senderDto) {
         System.out.println(senderDto.getUser().getJwtToken());
@@ -58,19 +58,22 @@ public class CarsService {
             return Optional.empty();
         }
 
+        carPositionDataService.deleteAllCarPositionDataByChatId(sender.getChatId());
+        carPositionDataService.createCarPositionData(sender.getChatId(), foundCarBrand.get().getName());
+
         List<CarModelDto> carModels = carPositionClient.getCarModels(foundCarBrand.get());
         userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_MODEL);
         return Optional.of(carModels);
     }
 
     private Optional<CarBrandDto> findCarBrandName(List<CarBrandDto> carBrands, String inputCarBrand) {
-        List<String> carBrandNamesLow = carBrands.stream().map(CarBrandDto::getName).map(String::toLowerCase).toList();
+        return carBrands.stream()
+                .filter(brand -> brand.getName().equalsIgnoreCase(inputCarBrand))
+                .findFirst();
+    }
 
-        for (int i = 0; i < carBrandNamesLow.size(); i++) {
-            if (carBrandNamesLow.get(i).equals(inputCarBrand.toLowerCase())) {
-                return Optional.of(carBrands.get(i));
-            }
-        }
-        return Optional.empty();
+    public void processCarModel(SenderDto sender, String carModelName) {
+        carPositionDataService.setModelToCarCreatePositionData(sender.getChatId(), carModelName);
+        userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_PARAMS);
     }
 }

@@ -44,6 +44,7 @@ public class TgUser {
         PASSWORD,
         WORKING,
         ADD_CAR_BRAND,
-        ADD_CAR_MODEL
+        ADD_CAR_MODEL,
+        ADD_CAR_PARAMS
     }
 }
