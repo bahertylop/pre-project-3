@@ -2,7 +2,7 @@ package org.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.backend.dto.response.ProfileResponse;
+import org.dto.response.ProfileResponse;
 import org.backend.model.Role;
 import org.backend.model.User;
 import org.dto.request.UpdateProfileRequest;
@@ -27,7 +27,7 @@ public class ProfileService {
                 .name(user.getName())
                 .email(user.getEmail())
                 .age(user.getAge())
-                .roles(user.getRoles().stream().map(Role::getRole).collect(Collectors.toSet()))
+                .roles(user.getRoles().stream().map(Role::getRole).map(Enum::toString).collect(Collectors.toSet()))
                 .build();
     }
 

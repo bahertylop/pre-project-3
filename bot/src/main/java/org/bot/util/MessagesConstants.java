@@ -1,6 +1,7 @@
 package org.bot.util;
 
 import org.dto.CarPositionDto;
+import org.dto.response.ProfileResponse;
 
 import java.util.List;
 
@@ -29,6 +30,17 @@ public class MessagesConstants {
             sb.append("kms to: ").append(car.getMileageBefore() == null ? "-" : car.getMileageBefore()).append("\n");
             sb.append("\n");
         }
+        return sb.toString();
+    }
+
+    public static String profileResponseMessage(ProfileResponse response) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("id: ").append(response.getId()).append("\n");
+        sb.append("name: ").append(response.getName()).append("\n");
+        sb.append("email: ").append(response.getEmail()).append("\n");
+        sb.append("age: ").append(response.getAge()).append("\n");
+        sb.append("roles: ").append(response.getRoles());
+
         return sb.toString();
     }
 }

@@ -3,14 +3,18 @@ package org.bot.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bot.api.AuthClient;
+import org.bot.api.UserClient;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
+import org.bot.exception.ApiException;
 import org.bot.exception.AuthException;
+import org.bot.exception.ForbiddenException;
 import org.bot.model.TgUser;
 import org.bot.repository.UserRepository;
 import org.dto.request.LoginRequest;
 import org.dto.request.RefreshTokenRequest;
 import org.dto.response.JwtTokensResponse;
+import org.dto.response.ProfileResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 
@@ -25,6 +29,8 @@ public class UserService {
     private final UserRepository userRepository;
 
     private final AuthClient authClient;
+
+    private final UserClient userClient;
 
     public Optional<TgUserDto> getUserByChatId(Long chatId) {
         return userRepository.getUserByChatId(chatId).map(TgUserDto::from);
@@ -97,5 +103,25 @@ public class UserService {
             log.error("tokens not refreshed", e);
             return false;
         }
+    }
+
+    public Optional<ProfileResponse> getProfileInfo(SenderDto senderDto) {
+        try {
+            return Optional.of(userClient.getProfileInfo(senderDto));
+        } catch (ForbiddenException e) {
+            log.info("forbidden for get profile info request");
+            if (refreshUserTokens(senderDto)) {
+                try {
+                    return Optional.of(userClient.getProfileInfo(senderDto));
+                } catch (ForbiddenException ex) {
+                    log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
+                } catch (ApiException ex) {
+                    log.warn("api exception after forbidden chatId: {}", senderDto.getChatId(), ex);
+                }
+            }
+        } catch (ApiException e) {
+            log.warn("api exception from get profile request");
+        }
+        return Optional.empty();
     }
 }

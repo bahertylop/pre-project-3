@@ -1,10 +1,9 @@
-package org.backend.dto.response;
+package org.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.backend.model.Role;
 
 import java.util.Set;
 
@@ -22,5 +21,5 @@ public class ProfileResponse {
 
     private Integer age;
 
-    private Set<Role.ROLES> roles;
+    private Set<String> roles;
 }

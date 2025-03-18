@@ -2,7 +2,7 @@ package org.backend.controller;
 
 import lombok.RequiredArgsConstructor;
 
-import org.backend.dto.response.ProfileResponse;
+import org.dto.response.ProfileResponse;
 import org.backend.service.ProfileService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;

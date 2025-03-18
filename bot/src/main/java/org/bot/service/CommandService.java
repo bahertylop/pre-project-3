@@ -34,6 +34,12 @@ public class CommandService {
             case "cars" -> {
                 return "carsCommandHandler";
             }
+            case "add_car" -> {
+                return "addCarPositionCommandHandler";
+            }
+            case "profile" -> {
+                return "profileCommandHandler";
+            }
             default -> {
                 return "";
             }
