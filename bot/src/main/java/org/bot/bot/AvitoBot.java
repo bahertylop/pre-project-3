@@ -34,8 +34,6 @@ public class AvitoBot extends TelegramLongPollingBot {
     @Value("${bot.token}")
     private String botToken;
 
-    private final UserService userService;
-
     private final TextMessageHandlingService textMessageHandlingService;
 
     private final CallbackHandlingService callbackHandlingService;
@@ -66,7 +64,7 @@ public class AvitoBot extends TelegramLongPollingBot {
         try {
             execute(sendMessage);
         } catch (TelegramApiException e) {
-            log.warn("не удалось отправить сообщение, chatId: {}", chatId);
+            log.warn("не удалось отправить сообщение, chatId: {}", chatId, e);
         }
     }
 
@@ -77,7 +75,7 @@ public class AvitoBot extends TelegramLongPollingBot {
         try {
             execute(sendMessage);
         } catch (TelegramApiException e) {
-            log.warn("не удалось отправить сообщение, chatId: {}", chatId);
+            log.warn("не удалось отправить сообщение, chatId: {}", chatId, e);
         }
     }
 

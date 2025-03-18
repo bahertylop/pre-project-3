@@ -31,3 +31,6 @@ api:
     get-car-positions: http://localhost:8080/cars
     get-brands: http://localhost:8080/brands
     get-models: http://localhost:8080/models
+  constraint:
+    min-year-from: 1900
+    max-mileage: 5000000

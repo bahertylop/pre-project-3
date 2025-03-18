@@ -16,6 +16,7 @@ import org.dto.request.RefreshTokenRequest;
 import org.dto.response.JwtTokensResponse;
 import org.dto.response.ProfileResponse;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestClientException;
 
 import java.util.Optional;
@@ -68,6 +69,7 @@ public class UserService {
         userRepository.save(user);
     }
 
+    @Transactional
     public void changeUserBotStatus(SenderDto sender, TgUser.BotState newBotState) {
         TgUser tgUser = getTgUserByChatId(sender.getChatId()).get();
 

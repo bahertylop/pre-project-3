@@ -45,6 +45,9 @@ public class TgUser {
         WORKING,
         ADD_CAR_BRAND,
         ADD_CAR_MODEL,
-        ADD_CAR_PARAMS
+        ADD_CAR_PARAM_YEAR_FROM,
+        ADD_CAR_PARAM_YEAR_BEFORE,
+        ADD_CAR_PARAM_MILEAGE_FROM,
+        ADD_CAR_PARAM_MILEAGE_BEFORE
     }
 }

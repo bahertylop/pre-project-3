@@ -29,9 +29,11 @@ public class CreateCarPositionRequest {
     private Integer yearBefore;
 
     @Min(value = 0, message = "Пробег не может быть отрицательным")
+    @Max(value = 5000000, message = "Пробег не может быть больше 5000000")
     private Integer mileageFrom;
 
     @Min(value = 0, message = "Пробег не может быть отрицательным")
+    @Max(value = 5000000, message = "Пробег не может быть больше 5000000")
     private Integer mileageBefore;
 
     @AssertTrue(message = "Год начала не может быть больше года окончания")

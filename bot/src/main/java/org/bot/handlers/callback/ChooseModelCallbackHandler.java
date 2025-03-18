@@ -21,7 +21,7 @@ public class ChooseModelCallbackHandler implements CallbackHandler {
             return;
         }
 
-        String modelName = callback.getData().substring(8);
+        String modelName = callback.getData().substring(7);
         carsService.processCarModel(sender, modelName);
 
         bot.deleteMessage(sender.getChatId(), callback.getMessage().getMessageId());
