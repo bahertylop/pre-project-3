@@ -58,6 +58,9 @@ public class CallbackHandlingService {
             case "/signIn" -> {
                 return "signInCallbackHandler";
             }
+            case "/model" -> {
+                return "chooseModelCallbackHandler";
+            }
             default -> {
                 return "";
             }

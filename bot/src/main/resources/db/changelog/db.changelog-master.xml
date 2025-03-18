@@ -6,4 +6,5 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
         <include file="db/changelog/tables/changeset-16-03-2025-001-create-table-tg_users.xml"/>
+        <include file="db/changelog/tables/changeset-18-03-2025-001-create-table-car_position.xml"/>
 </databaseChangeLog>

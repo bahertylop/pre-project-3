@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+
+    <changeSet id="create-table-car-position" author="lev">
+        <createTable tableName="car_position">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="chat_id" type="bigint">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="car_brand" type="varchar(255)"/>
+            <column name="car_model" type="varchar(255)"/>
+            <column name="year_from" type="int"/>
+            <column name="year_before" type="int"/>
+            <column name="mileage_from" type="int"/>
+            <column name="mileage_before" type="int"/>
+        </createTable>
+
+        <createSequence sequenceName="car_position_id_seq" startValue="1" incrementBy="1"/>
+    </changeSet>
+</databaseChangeLog>
