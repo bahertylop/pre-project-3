@@ -42,6 +42,8 @@ public class TgUser {
     public enum BotState {
         EMAIL,
         PASSWORD,
-        WORKING
+        WORKING,
+        ADD_CAR_BRAND,
+        ADD_CAR_MODEL
     }
 }

@@ -68,6 +68,13 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void changeUserBotStatus(SenderDto sender, TgUser.BotState newBotState) {
+        TgUser tgUser = getTgUserByChatId(sender.getChatId()).get();
+
+        tgUser.setBotState(newBotState);
+        userRepository.save(tgUser);
+    }
+
     public boolean signInUser(SenderDto sender, String password) {
         LoginRequest loginRequest = new LoginRequest(sender.getUser().getEmail(), password);
         TgUser tgUser = getTgUserByChatId(sender.getChatId()).get();

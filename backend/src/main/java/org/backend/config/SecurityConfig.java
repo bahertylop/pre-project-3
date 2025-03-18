@@ -43,8 +43,8 @@ public class SecurityConfig {
 //                }))
                 .authorizeHttpRequests(request -> request
                         .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .antMatchers("/", "/signup", "/auth/**").permitAll()
-                        .antMatchers("/user/**", "/cars/**", "/brands/**", "/models/**").hasAnyRole("ADMIN", "USER")
+                        .antMatchers("/", "/signup", "/auth/**", "/brands/**", "/models/**").permitAll()
+                        .antMatchers("/user/**", "/cars/**").hasAnyRole("ADMIN", "USER")
                         .antMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))

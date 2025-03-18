@@ -1,0 +1,19 @@
+package org.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class CarBrandDto {
+
+    private Long id;
+
+    private String name;
+
+    private String value;
+}

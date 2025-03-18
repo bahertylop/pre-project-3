@@ -1,5 +1,6 @@
 package org.bot.util;
 
+import org.dto.CarModelDto;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -30,6 +31,7 @@ public class KeyboardConstants {
 
     public static ReplyKeyboardMarkup botButtons() {
         ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
+        keyboardMarkup.setResizeKeyboard(true);
         List<KeyboardRow> keyboard = new ArrayList<>();
         KeyboardRow keyboardRow = new KeyboardRow();
 
@@ -39,6 +41,25 @@ public class KeyboardConstants {
         keyboard.add(keyboardRow);
         keyboardMarkup.setKeyboard(keyboard);
 
+        return keyboardMarkup;
+    }
+
+    public static InlineKeyboardMarkup carModelsButtons(List<CarModelDto> carModels) {
+        InlineKeyboardMarkup keyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+        List<InlineKeyboardButton> buttons = new ArrayList<>();
+        for (CarModelDto carModel : carModels) {
+            InlineKeyboardButton button = new InlineKeyboardButton();
+            button.setText(carModel.getName());
+            button.setCallbackData("/model_" + carModel.getName());
+            buttons.add(button);
+            if (buttons.size() == 3) {
+                rows.add(buttons);
+                buttons = new ArrayList<>();
+            }
+        }
+        rows.add(buttons);
+        keyboardMarkup.setKeyboard(rows);
         return keyboardMarkup;
     }
 }

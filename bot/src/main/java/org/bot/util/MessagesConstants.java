@@ -15,7 +15,6 @@ public class MessagesConstants {
     public static final String NOT_VALID_PASSWORD_MESSAGE = "Введен некорректный пароль, длина от 8 до 50 символов, только латинский алфавит, хотя-бы одна маленькая буква, хотя-бы одна заглавная буква, хотя-бы одна цифра. Попробуйте еще раз";
     public static final String SUCCESS_SIGN_IN = "успешный вход, теперь можете пользоваться функциями бота";
     public static final String FAILED_SIGN_IN = "ошибка при входе, попробуйте еще раз";
-
     public static final String EMPTY_CAR_POSITION_LIST = "Вы пока не добавили ни одной машины";
 
     public static String carPositionListMessage(List<CarPositionDto> cars) {
@@ -43,4 +42,12 @@ public class MessagesConstants {
 
         return sb.toString();
     }
+
+    public static final String INPUT_CAR_BRAND_MESSAGE = "Введите марку автомобиля";
+    public static final String INPUT_CAR_MODEL_MESSAGE = "Выберите модель автомобиля";
+    public static final String INPUT_YEAR_FROM_MESSAGE = "Введите параметр год от, если не хотите указывать отправьте -";
+    public static final String INPUT_YEAR_BEFORE_MESSAGE = "Введите параметр год до, если не хотите указывать отправьте -";
+    public static final String INPUT_MILEAGE_FROM_MESSAGE = "Введите параметр пробег от, если не хотите указывать отправьте -";
+    public static final String INPUT_MILEAGE_BEFORE_MESSAGE = "Введите параметр пробег до, если не хотите указывать отправьте -";
+    public static final String NOT_FOUND_CAR_BRAND = "Не найдена введенная марка, возможно написано с ошибкой";
 }

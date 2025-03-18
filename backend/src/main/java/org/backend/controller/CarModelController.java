@@ -1,7 +1,7 @@
 package org.backend.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.backend.dto.CarModelDto;
+import org.dto.CarModelDto;
 import org.backend.service.CarModelService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
