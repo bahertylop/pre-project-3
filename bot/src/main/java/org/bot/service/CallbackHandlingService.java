@@ -1,6 +1,7 @@
 package org.bot.service;
 
 import liquibase.command.core.InternalGenerateChangelogCommandStep;
+import liquibase.util.StringUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -8,6 +9,9 @@ import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
 import org.bot.handlers.callback.CallbackHandler;
+import org.bot.handlers.callback.ChooseModelCallbackHandler;
+import org.bot.handlers.callback.GetCarPositionCallbackHandler;
+import org.bot.handlers.callback.SignInCallbackHandler;
 import org.bot.model.TgUser;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
@@ -56,12 +60,16 @@ public class CallbackHandlingService {
 
         switch (callbackNameUn) {
             case "/signIn" -> {
-                return "signInCallbackHandler";
+                return StringUtils.uncapitalize(SignInCallbackHandler.class.getSimpleName());
             }
             case "/model" -> {
-                return "chooseModelCallbackHandler";
+                return StringUtils.uncapitalize(ChooseModelCallbackHandler.class.getSimpleName());
+            }
+            case "/car" -> {
+                return StringUtils.uncapitalize(GetCarPositionCallbackHandler.class.getSimpleName());
             }
             default -> {
+                log.warn("unexpected callbackName: {}", callbackName);
                 return "";
             }
         }
