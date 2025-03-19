@@ -16,6 +16,7 @@ import org.backend.repository.CarPositionRepository;
 import org.dto.request.CreateCarPositionRequest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
@@ -78,6 +79,7 @@ public class CarPositionService {
         return CarPositionResponse.from(carPositionOp.get());
     }
 
+    @Transactional
     public void createCarPosition(UserDetails userDetails, CreateCarPositionRequest request) {
         User user = (User) userDetails;
 
@@ -110,7 +112,7 @@ public class CarPositionService {
 
         carPositionRepository.save(carPosition);
 
-        positionParsingService.parseCarPosition(carPosition);
+        positionParsingService.parseCarPositionAsync(carPosition);
     }
 
     public void deleteCarPosition(UserDetails userDetails, Long carPositionId) {

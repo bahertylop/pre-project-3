@@ -14,6 +14,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -39,6 +40,12 @@ public class PositionParsingService {
             "disabledFilters%5Bids%5D%5B0%5D=byTitle&" +
             "disabledFilters%5Bslugs%5D%5B0%5D=bt&" +
             "countOnly=1&";
+
+    @Async
+    public void parseCarPositionAsync(CarPosition carPosition) {
+        log.info("start async parsing position with id: {}", carPosition.getId());
+        parseCarPosition(carPosition);
+    }
 
     public void parseCarPosition(CarPosition carPosition) {
         String apiUrl = getUrlByParams(carPosition);

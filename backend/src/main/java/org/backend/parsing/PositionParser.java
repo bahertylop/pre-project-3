@@ -20,7 +20,7 @@ public class PositionParser {
 
     private final PositionParsingService positionParsingService;
 
-    @Scheduled(cron = "0 0 11 * * ?")
+    @Scheduled(cron = "0 0 2 * * ?")
     public void parsePositionPrice() {
         List<CarPosition> carPositions = carPositionRepository.findAll();
 
