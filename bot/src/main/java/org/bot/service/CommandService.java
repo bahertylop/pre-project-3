@@ -1,11 +1,12 @@
 package org.bot.service;
 
+import liquibase.util.StringUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
-import org.bot.handlers.command.CommandHandler;
+import org.bot.handlers.command.*;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -22,7 +23,7 @@ public class CommandService {
 
         CommandHandler handler = handlers.get(commandNameToBeanName(commandName));
         if (handler != null) {
-            handler.handle(bot, senderDto, commandName);
+            handler.handle(bot, senderDto, command);
         } else {
             log.info("unexpected command: {} chatId: {}", commandName, senderDto.getChatId());
         }
@@ -32,16 +33,16 @@ public class CommandService {
         String commandNameUn = StringUtils.uncapitalize(commandName);
         switch (commandNameUn) {
             case "cars" -> {
-                return "carsCommandHandler";
+                return StringUtils.uncapitalize(CarsCommandHandler.class.getSimpleName());
             }
             case "add_car" -> {
-                return "addCarPositionCommandHandler";
+                return StringUtils.uncapitalize(AddCarPositionCommandHandler.class.getSimpleName());
             }
             case "profile" -> {
-                return "profileCommandHandler";
+                return StringUtils.uncapitalize(ProfileCommandHandler.class.getSimpleName());
             }
             default -> {
-                return "";
+                return StringUtils.uncapitalize(DefaultCommandHandler.class.getSimpleName());
             }
         }
     }

@@ -18,6 +18,7 @@ public class LoginRequest {
 
     @NotBlank(message = "Email не должен быть пустым")
     @Email(message = "Некорректный формат email")
+    @Pattern(regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$", message = "Некорректный формат email")
     private String email;
 
     @NotBlank(message = "Пароль не должен быть пустым")

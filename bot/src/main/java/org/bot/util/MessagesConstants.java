@@ -14,8 +14,8 @@ public class MessagesConstants {
     public static final String NOT_VALID_EMAIL_MESSAGE = "Введена некорректная почта, попробуйте еще раз";
     public static final String ADD_PASSWORD_MESSAGE = "Введите пароль";
     public static final String NOT_VALID_PASSWORD_MESSAGE = "Введен некорректный пароль, длина от 8 до 50 символов, только латинский алфавит, хотя-бы одна маленькая буква, хотя-бы одна заглавная буква, хотя-бы одна цифра. Попробуйте еще раз";
-    public static final String SUCCESS_SIGN_IN = "успешный вход, теперь можете пользоваться функциями бота";
-    public static final String FAILED_SIGN_IN = "ошибка при входе, попробуйте еще раз";
+    public static final String SUCCESS_SIGN_IN = "Успешный вход, теперь можете пользоваться функциями бота";
+    public static final String FAILED_SIGN_IN = "Ошибка при входе, попробуйте еще раз";
     public static final String EMPTY_CAR_POSITION_LIST = "Вы пока не добавили ни одной машины";
 
     public static final String CAR_POSITION_LIST_MESSAGE = "Список ваших машин:";
@@ -75,4 +75,6 @@ public class MessagesConstants {
                 .append(mileageBefore == null ? "_" : mileageBefore)
                 .append("\n");
     }
+
+    public static final String UNDEFINED_COMMAND_MESSAGE = "Команда не распознана";
 }

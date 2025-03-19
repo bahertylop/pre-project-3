@@ -18,9 +18,8 @@ public class MessageService {
     public void handleMessage(AvitoBot bot, SenderDto sender, String text) {
         for (MessageHandler handler : messageHandlers) {
             if (handler.handleMessage(bot, sender, text)) {
-                break;
+                return;
             }
         }
-
     }
 }

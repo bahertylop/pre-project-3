@@ -35,14 +35,17 @@ public class KeyboardConstants {
         ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
         keyboardMarkup.setResizeKeyboard(true);
         List<KeyboardRow> keyboard = new ArrayList<>();
-        KeyboardRow keyboardRow = new KeyboardRow();
 
+        KeyboardRow keyboardRow = new KeyboardRow();
         keyboardRow.add(new KeyboardButton("профиль"));
         keyboardRow.add(new KeyboardButton("машины"));
-
         keyboard.add(keyboardRow);
-        keyboardMarkup.setKeyboard(keyboard);
 
+        KeyboardRow keyboardRow2 = new KeyboardRow();
+        keyboardRow2.add(new KeyboardButton("добавить машину"));
+        keyboard.add(keyboardRow2);
+
+        keyboardMarkup.setKeyboard(keyboard);
         return keyboardMarkup;
     }
 

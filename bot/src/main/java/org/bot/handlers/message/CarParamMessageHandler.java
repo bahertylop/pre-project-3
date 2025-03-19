@@ -36,7 +36,7 @@ public class CarParamMessageHandler implements MessageHandler {
     }
 
     public void handleAddYearFrom(HandlerArgs args) {
-        if (args.text.equals("-") || carsService.processYearFrom(args.sender, args.text)) {
+        if (carsService.processYearFrom(args.sender, args.text)) {
             args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.INPUT_YEAR_BEFORE_MESSAGE);
             return;
         }
@@ -44,7 +44,7 @@ public class CarParamMessageHandler implements MessageHandler {
     }
 
     public void handleAddYearBefore(HandlerArgs args) {
-        if (args.text.equals("-") || carsService.processYearBefore(args.sender, args.text)) {
+        if (carsService.processYearBefore(args.sender, args.text)) {
             args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.INPUT_MILEAGE_FROM_MESSAGE);
             return;
         }
@@ -52,7 +52,7 @@ public class CarParamMessageHandler implements MessageHandler {
     }
 
     public void handleAddMileageFrom(HandlerArgs args) {
-        if (args.text.equals("-") || carsService.processMileageFrom(args.sender, args.text)) {
+        if (carsService.processMileageFrom(args.sender, args.text)) {
             args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.INPUT_MILEAGE_BEFORE_MESSAGE);
             return;
         }
@@ -60,7 +60,7 @@ public class CarParamMessageHandler implements MessageHandler {
     }
 
     public void handleAddMileageBefore(HandlerArgs args) {
-        if (args.text.equals("-") || carsService.processMileageBefore(args.sender, args.text)) {
+        if (carsService.processMileageBefore(args.sender, args.text)) {
 
             if (carsService.createCarPosition(args.sender)) {
                 args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.SUCCESS_ADD_CAR_POSITION);
