@@ -1,6 +1,7 @@
 package org.bot.util;
 
 import liquibase.pro.packaged.I;
+import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.dto.CarPositionDto;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
@@ -48,6 +49,26 @@ public class KeyboardConstants {
         keyboardMarkup.setKeyboard(keyboard);
         return keyboardMarkup;
     }
+
+    public static InlineKeyboardMarkup carBrandsButtons(List<CarBrandDto> carBrands) {
+        InlineKeyboardMarkup keyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+        List<InlineKeyboardButton> buttons = new ArrayList<>();
+        for (CarBrandDto carBrand : carBrands) {
+            InlineKeyboardButton button = new InlineKeyboardButton();
+            button.setText(carBrand.getName());
+            button.setCallbackData("/brand_" + carBrand.getId());
+            buttons.add(button);
+            if (buttons.size() == 2) {
+                rows.add(buttons);
+                buttons = new ArrayList<>();
+            }
+        }
+        rows.add(buttons);
+        keyboardMarkup.setKeyboard(rows);
+        return keyboardMarkup;
+    }
+
 
     public static InlineKeyboardMarkup carModelsButtons(List<CarModelDto> carModels) {
         InlineKeyboardMarkup keyboardMarkup = new InlineKeyboardMarkup();

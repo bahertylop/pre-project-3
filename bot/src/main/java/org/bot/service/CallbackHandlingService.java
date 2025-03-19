@@ -8,10 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
-import org.bot.handlers.callback.CallbackHandler;
-import org.bot.handlers.callback.ChooseModelCallbackHandler;
-import org.bot.handlers.callback.GetCarPositionCallbackHandler;
-import org.bot.handlers.callback.SignInCallbackHandler;
+import org.bot.handlers.callback.*;
 import org.bot.model.TgUser;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
@@ -61,6 +58,9 @@ public class CallbackHandlingService {
         switch (callbackNameUn) {
             case "/signIn" -> {
                 return StringUtils.uncapitalize(SignInCallbackHandler.class.getSimpleName());
+            }
+            case "/brand" -> {
+                return StringUtils.uncapitalize(ChooseCarBrandCallbackHandler.class.getSimpleName());
             }
             case "/model" -> {
                 return StringUtils.uncapitalize(ChooseModelCallbackHandler.class.getSimpleName());

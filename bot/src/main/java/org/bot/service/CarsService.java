@@ -7,6 +7,7 @@ import org.bot.api.CarPositionClient;
 import org.bot.dto.SenderDto;
 import org.bot.exception.ApiException;
 import org.bot.exception.ForbiddenException;
+import org.bot.model.CarBrand;
 import org.bot.model.CreateCarPositionData;
 import org.bot.model.TgUser;
 import org.bot.util.MessagesConstants;
@@ -35,6 +36,8 @@ public class CarsService {
     private final UserService userService;
 
     private final CreateCarPositionDataService carPositionDataService;
+
+    private final CarBrandService carBrandService;
 
     @Value("${api.constraint.min-year-from}")
     private Integer minYearFromParam;
@@ -109,18 +112,20 @@ public class CarsService {
         return Optional.empty();
     }
 
-    public Optional<List<CarModelDto>> processCarBrand(SenderDto sender, String carBrand) {
-        List<CarBrandDto> carBrands = carPositionClient.getCarBrands();
+    public List<CarBrandDto> processCarBrand(SenderDto sender, String carBrand) {
+        carPositionDataService.deleteAllCarPositionDataByChatId(sender.getChatId());
+        userService.changeUserBotStatus(sender, TgUser.BotState.CHOOSE_CAR_BRAND);
+        return carBrandService.getSimilarCarBrands(carBrand);
+    }
 
-        Optional<CarBrandDto> foundCarBrand = findCarBrandName(carBrands, carBrand);
-        if (foundCarBrand.isEmpty()) {
+    public Optional<List<CarModelDto>> processChooseCarBrand(SenderDto sender, Long carBrandId) {
+        Optional<CarBrandDto> brandOp = carBrandService.getCarBrandById(carBrandId);
+        if (brandOp.isEmpty()) {
             return Optional.empty();
         }
+        carPositionDataService.createCarPositionData(sender.getChatId(), brandOp.get().getName());
 
-        carPositionDataService.deleteAllCarPositionDataByChatId(sender.getChatId());
-        carPositionDataService.createCarPositionData(sender.getChatId(), foundCarBrand.get().getName());
-
-        List<CarModelDto> carModels = carPositionClient.getCarModels(foundCarBrand.get());
+        List<CarModelDto> carModels = carPositionClient.getCarModels(brandOp.get());
         userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_MODEL);
         return Optional.of(carModels);
     }

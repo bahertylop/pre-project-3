@@ -44,6 +44,7 @@ public class MessagesConstants {
     }
 
     public static final String INPUT_CAR_BRAND_MESSAGE = "Введите марку автомобиля";
+    public static final String CHOOSE_CAR_BRAND_MESSAGE = "Выберитк марку автомобиля";
     public static final String INPUT_CAR_MODEL_MESSAGE = "Выберите модель автомобиля";
     public static final String INPUT_YEAR_FROM_MESSAGE = "Введите параметр год от, если не хотите указывать отправьте -";
     public static final String INPUT_YEAR_BEFORE_MESSAGE = "Введите параметр год до, если не хотите указывать отправьте -";

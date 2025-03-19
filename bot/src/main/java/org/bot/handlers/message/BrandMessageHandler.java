@@ -8,6 +8,7 @@ import org.bot.model.TgUser;
 import org.bot.service.CarsService;
 import org.bot.util.KeyboardConstants;
 import org.bot.util.MessagesConstants;
+import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.springframework.stereotype.Component;
 
@@ -26,11 +27,12 @@ public class BrandMessageHandler implements MessageHandler {
             return false;
         }
 
-        Optional<List<CarModelDto>> carModels = carsService.processCarBrand(sender, text);
-        carModels.ifPresentOrElse(
-                models -> bot.sendMessage(sender.getChatId(), MessagesConstants.INPUT_CAR_MODEL_MESSAGE, KeyboardConstants.carModelsButtons(models)),
-                () -> bot.sendMessage(sender.getChatId(), MessagesConstants.NOT_FOUND_CAR_BRAND)
-        );
+        List<CarBrandDto> similarCarBrands = carsService.processCarBrand(sender, text);
+        bot.sendMessage(sender.getChatId(), MessagesConstants.CHOOSE_CAR_BRAND_MESSAGE, KeyboardConstants.carBrandsButtons(similarCarBrands));
+//        carModels.ifPresentOrElse(
+//                models -> bot.sendMessage(sender.getChatId(), MessagesConstants.INPUT_CAR_MODEL_MESSAGE, KeyboardConstants.carModelsButtons(models)),
+//                () -> bot.sendMessage(sender.getChatId(), MessagesConstants.NOT_FOUND_CAR_BRAND)
+//        );
 
         return true;
     }
