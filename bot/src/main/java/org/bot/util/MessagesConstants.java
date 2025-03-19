@@ -17,16 +17,24 @@ public class MessagesConstants {
     public static final String FAILED_SIGN_IN = "ошибка при входе, попробуйте еще раз";
     public static final String EMPTY_CAR_POSITION_LIST = "Вы пока не добавили ни одной машины";
 
+    public static final String CAR_POSITION_LIST_MESSAGE = "Список ваших машин:";
+
     public static String carPositionListMessage(List<CarPositionDto> cars) {
         StringBuilder sb = new StringBuilder();
-        for (CarPositionDto car : cars) {
-            sb.append("id: ").append(car.getId()).append("\n");
-            sb.append("brand: ").append(car.getBrand()).append("\n");
-            sb.append("model: ").append(car.getModel()).append("\n");
-            sb.append("year from: ").append(car.getYearFrom() == null ? "-" : car.getYearFrom()).append("\n");
-            sb.append("year to: ").append(car.getYearBefore() == null ? "-" : car.getYearBefore()).append("\n");
-            sb.append("kms from: ").append(car.getMileageFrom() == null ? "-" : car.getMileageFrom()).append("\n");
-            sb.append("kms to: ").append(car.getMileageBefore() == null ? "-" : car.getMileageBefore()).append("\n");
+        sb.append("Список ваших машин:\n");
+        for (int i = 0; i < cars.size(); i++) {
+            CarPositionDto car = cars.get(i);
+            sb.append(i + 1).append(". ").append(car.getBrand()).append(" ").append(car.getModel()).append("\n");
+            sb.append("Год: ")
+                    .append(car.getYearFrom() == null ? "_" : car.getYearFrom())
+                    .append(" - ")
+                    .append(car.getYearBefore() == null ? "_" : car.getYearBefore())
+                    .append("\n");
+            sb.append("Пробег: ")
+                    .append(car.getMileageFrom() == null ? "_" : car.getMileageFrom())
+                    .append(" - ")
+                    .append(car.getMileageBefore() == null ? "_" : car.getMileageBefore())
+                    .append("\n");
             sb.append("\n");
         }
         return sb.toString();

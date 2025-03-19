@@ -5,6 +5,7 @@ import org.bot.api.CarPositionClient;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.service.CarsService;
+import org.bot.util.KeyboardConstants;
 import org.bot.util.MessagesConstants;
 import org.dto.CarPositionDto;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,7 @@ public class CarsCommandHandler implements CommandHandler {
         if (carPositions.isEmpty()) {
             bot.sendMessage(senderDto.getChatId(), MessagesConstants.EMPTY_CAR_POSITION_LIST);
         } else {
-            bot.sendMessage(senderDto.getChatId(), MessagesConstants.carPositionListMessage(carPositions));
+            bot.sendMessage(senderDto.getChatId(), MessagesConstants.carPositionListMessage(carPositions), KeyboardConstants.carPositionListButtons(carPositions));
         }
     }
 }

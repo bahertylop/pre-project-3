@@ -772,3 +772,194 @@ java.net.SocketException: Connection reset
 2025-03-19 11:59:47 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
 2025-03-19 11:59:47 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 21128 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
 2025-03-19 11:59:47 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
+2025-03-19 11:59:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-19 11:59:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
+2025-03-19 11:59:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-19 11:59:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-19 11:59:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-19 11:59:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-19 11:59:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-19 11:59:48 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1107 ms
+2025-03-19 11:59:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-19 11:59:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-19 11:59:49 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-19 11:59:49 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-19 11:59:49 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-19 11:59:49 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-19 11:59:49 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-19 11:59:49 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-19 11:59:49 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-19 11:59:49 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-19 11:59:50 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-19 11:59:50 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 11:59:50 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-19 11:59:51 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35ec3604, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ab5954d, org.springframework.security.web.context.SecurityContextPersistenceFilter@79690a0a, org.springframework.security.web.header.HeaderWriterFilter@240a717d, org.springframework.security.web.authentication.logout.LogoutFilter@15ec3c0c, org.backend.config.jwt.JwtAuthenticationFilter@3956df0a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@294aaa6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2298d741, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@466f7259, org.springframework.security.web.session.SessionManagementFilter@13617139, org.springframework.security.web.access.ExceptionTranslationFilter@8eda949, org.springframework.security.web.access.intercept.AuthorizationFilter@64bb6ba7]
+2025-03-19 11:59:51 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19 11:59:51 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-19 11:59:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-19 11:59:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-19 11:59:51 [main] INFO  org.backend.BackendMain - Started BackendMain in 4.25 seconds (JVM running for 5.208)
+2025-03-19 12:00:27 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-19 12:00:27 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-19 12:00:27 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-19 12:00:27 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-19 12:00:27 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-19 12:00:27 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-19 12:00:34 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-19 12:00:34 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-19 12:00:34 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-19 12:00:39 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /brands]
+2025-03-19 12:00:39 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-19 12:00:39 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /brands]
+2025-03-19 12:00:45 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /models?brandId=37]
+2025-03-19 12:00:45 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - request not have auth header
+2025-03-19 12:00:45 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /models?brandId=37]
+2025-03-19 12:01:36 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: POST /cars]
+2025-03-19 12:01:36 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 12:01:36 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 12:01:37 [task-1] INFO  o.b.service.PositionParsingService - start async parsing position with id: 18
+2025-03-19 12:01:37 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: POST /cars, payload={"brand":"Bentley","model":"Bentayga","yearFrom":2018,"yearBefore":2020,"mileageFrom":10000,"mileageBefore":null,"mileageRangeValid":true,"yearRangeValid":true}]
+2025-03-19 12:01:37 [task-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 134.0.6998.88 (resolved driver for Chrome 134)
+2025-03-19 12:01:37 [task-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\levic\.cache\selenium\chromedriver\win64\134.0.6998.88\chromedriver.exe
+2025-03-19 12:01:38 [Forwarding newSession on session null to remote] INFO  o.o.s.remote.ProtocolHandshake - Detected dialect: W3C
+2025-03-19 12:01:38 [task-1] WARN  o.o.s.devtools.CdpVersionFinder - Unable to find an exact match for CDP version 134, so returning the closest version found: 132
+2025-03-19 12:01:38 [task-1] INFO  o.o.s.devtools.CdpVersionFinder - Found CDP implementation for version 134 of 132
+2025-03-19 12:01:40 [task-1] INFO  o.b.service.PositionParsingService - url: https://www.avito.ru/all/avtomobili/bentley/bentayga-ASgBAgICAkTgtg3ilyjitg3Cnyg?cd=1&f=ASgBAgECAkTgtg3ilyjitg3CnygCRf4pGHsiZnJvbSI6MTAwMDAsInRvIjpudWxsffqMFBd7ImZyb20iOjIwMTgsInRvIjoyMDIwfQ
+2025-03-19 12:01:40 [task-1] INFO  o.b.service.PositionParsingService - ads found: 26
+2025-03-19 12:01:58 [AsyncHttpClient-1-4] WARN  o.a.netty.handler.WebSocketHandler - onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+2025-03-19 12:01:58 [AsyncHttpClient-1-4] WARN  o.o.selenium.remote.http.WebSocket - Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+2025-03-19 12:02:11 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-19 12:02:11 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 12:02:11 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 12:02:11 [http-nio-8080-exec-6] INFO  o.backend.service.CarPositionService - user gets car positions userId: 1
+2025-03-19 12:02:11 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-19 12:05:23 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 12:05:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-19 12:05:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-19 13:11:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-19 13:11:45 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 21512 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-19 13:11:45 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
+2025-03-19 13:11:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-19 13:11:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 6 JPA repository interfaces.
+2025-03-19 13:11:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-19 13:11:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-19 13:11:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-19 13:11:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-19 13:11:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-19 13:11:46 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1039 ms
+2025-03-19 13:11:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-19 13:11:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-19 13:11:47 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-19 13:11:47 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-19 13:11:47 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-19 13:11:47 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-19 13:11:48 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-19 13:11:48 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-19 13:11:48 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-19 13:11:48 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-19 13:11:48 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-19 13:11:49 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 13:11:49 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-19 13:11:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@9203db8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64d0b8e3, org.springframework.security.web.context.SecurityContextPersistenceFilter@6eb6750f, org.springframework.security.web.header.HeaderWriterFilter@7712c315, org.springframework.security.web.authentication.logout.LogoutFilter@23657729, org.backend.config.jwt.JwtAuthenticationFilter@78b29e00, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55b7f0d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ea1fc9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65d3a83, org.springframework.security.web.session.SessionManagementFilter@3299ee2c, org.springframework.security.web.access.ExceptionTranslationFilter@44a972b4, org.springframework.security.web.access.intercept.AuthorizationFilter@7cd239f6]
+2025-03-19 13:11:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19 13:11:49 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-19 13:11:49 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-19 13:11:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-19 13:11:49 [main] INFO  org.backend.BackendMain - Started BackendMain in 4.403 seconds (JVM running for 5.187)
+2025-03-19 13:12:07 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-19 13:12:07 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-19 13:12:07 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-19 13:12:07 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-19 13:12:07 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 13:12:07 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 13:12:07 [http-nio-8080-exec-1] INFO  o.backend.service.CarPositionService - user gets car positions userId: 1
+2025-03-19 13:12:08 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-19 13:13:15 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 13:13:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-19 13:13:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-19 13:13:17 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-19 13:13:17 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 23196 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-19 13:13:17 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
+2025-03-19 13:13:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-19 13:13:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 6 JPA repository interfaces.
+2025-03-19 13:13:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-19 13:13:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-19 13:13:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-19 13:13:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-19 13:13:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-19 13:13:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 927 ms
+2025-03-19 13:13:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-19 13:13:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-19 13:13:18 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-19 13:13:18 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-19 13:13:18 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-19 13:13:19 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-19 13:13:19 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-19 13:13:19 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-19 13:13:19 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-19 13:13:19 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-19 13:13:19 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-19 13:13:19 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 13:13:20 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-19 13:13:20 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74474fc0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cd239f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@59cbeaee, org.springframework.security.web.header.HeaderWriterFilter@645b67d6, org.springframework.security.web.authentication.logout.LogoutFilter@fee1e32, org.backend.config.jwt.JwtAuthenticationFilter@5c438795, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@542759f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@55b7f0d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ba7391b, org.springframework.security.web.session.SessionManagementFilter@154fcedd, org.springframework.security.web.access.ExceptionTranslationFilter@3f8c4bcf, org.springframework.security.web.access.intercept.AuthorizationFilter@31773d5b]
+2025-03-19 13:13:20 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19 13:13:20 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-19 13:13:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-19 13:13:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-19 13:13:20 [main] INFO  org.backend.BackendMain - Started BackendMain in 3.734 seconds (JVM running for 4.503)
+2025-03-19 13:13:25 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-19 13:13:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-19 13:13:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-19 13:13:25 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-19 13:13:25 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 13:13:25 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 13:13:25 [http-nio-8080-exec-1] INFO  o.backend.service.CarPositionService - user gets car positions userId: 1
+2025-03-19 13:13:25 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-19 13:25:04 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-19 13:25:04 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 13:25:04 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 13:25:04 [http-nio-8080-exec-2] INFO  o.backend.service.CarPositionService - user gets car positions userId: 1
+2025-03-19 13:25:04 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-19 13:25:53 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-19 13:25:53 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 13:25:53 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 13:25:53 [http-nio-8080-exec-5] INFO  o.backend.service.CarPositionService - user gets car positions userId: 1
+2025-03-19 13:25:53 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-19 13:27:36 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars]
+2025-03-19 13:27:36 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 13:27:36 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 13:27:36 [http-nio-8080-exec-7] INFO  o.backend.service.CarPositionService - user gets car positions userId: 1
+2025-03-19 13:27:36 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars]
+2025-03-19 13:29:09 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 13:29:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-19 13:29:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
