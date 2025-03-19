@@ -1,11 +1,10 @@
-package org.backend.dto.response;
+package org.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.backend.dto.CarPositionPriceDto;
-import org.backend.model.CarPosition;
+import org.dto.CarPositionPriceDto;
 
 import java.util.Comparator;
 import java.util.List;
@@ -32,17 +31,4 @@ public class CarPositionResponse {
     private Integer mileageBefore;
 
     private List<CarPositionPriceDto> prices;
-
-    public static CarPositionResponse from(CarPosition carPosition) {
-        return CarPositionResponse.builder()
-                .id(carPosition.getId())
-                .brand(carPosition.getBrand().getName())
-                .model(carPosition.getModel().getName())
-                .yearFrom(carPosition.getYearFrom())
-                .yearBefore(carPosition.getYearBefore())
-                .mileageFrom(carPosition.getMileageFrom())
-                .mileageBefore(carPosition.getMileageBefore())
-                .prices(CarPositionPriceDto.from(carPosition.getPrices()).stream().sorted(Comparator.comparing(CarPositionPriceDto::getDate)).collect(Collectors.toList()))
-                .build();
-    }
 }

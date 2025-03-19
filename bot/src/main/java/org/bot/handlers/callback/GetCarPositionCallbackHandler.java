@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.service.CarsService;
+import org.dto.CarPositionDto;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 
@@ -15,6 +16,6 @@ public class GetCarPositionCallbackHandler implements CallbackHandler {
 
     @Override
     public void handleCallback(AvitoBot bot, SenderDto sender, CallbackQuery callback, String[] data) {
-        
+
     }
 }

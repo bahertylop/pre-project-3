@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.backend.mapper.CarPositionMapper;
 import org.dto.CarPositionDto;
-import org.backend.dto.response.CarPositionResponse;
+import org.dto.response.CarPositionResponse;
 import org.backend.exception.*;
 import org.backend.model.CarBrand;
 import org.backend.model.CarModel;
@@ -67,7 +67,7 @@ public class CarPositionService {
             throw new CarPositionAccessDeniedException("Пользователь обращается не к своей позиции");
         }
 
-        return CarPositionResponse.from(carPositionOp.get());
+        return carPositionMapper.toCarPositionResponse(carPositionOp.get());
     }
 
     public CarPositionResponse getCarPosition(Long carPositionId) {
@@ -76,7 +76,7 @@ public class CarPositionService {
             log.info("CarPosition with id: {} not found", carPositionId);
             throw new CarPositionNotFoundException("Позиция с id: " + carPositionId + " не найдена");
         }
-        return CarPositionResponse.from(carPositionOp.get());
+        return carPositionMapper.toCarPositionResponse(carPositionOp.get());
     }
 
     @Transactional
