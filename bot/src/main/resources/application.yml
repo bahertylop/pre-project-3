@@ -29,6 +29,7 @@ api:
     refresh: http://localhost:8080/auth/refresh
     get-profile: http://localhost:8080/user
     get-car-positions: http://localhost:8080/cars
+    get-car-position: http://localhost:8080/cars/
     create-car-position: http://localhost:8080/cars
     get-brands: http://localhost:8080/brands
     get-models: http://localhost:8080/models

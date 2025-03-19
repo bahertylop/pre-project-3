@@ -4,11 +4,14 @@ import lombok.RequiredArgsConstructor;
 import org.backend.service.CarPositionService;
 import org.dto.CarPositionDto;
 import org.backend.model.CarPosition;
+import org.dto.CarPositionPriceDto;
 import org.dto.response.CarPositionResponse;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,7 +50,9 @@ public class CarPositionMapper {
                 .yearBefore(carPosition.getYearBefore())
                 .mileageFrom(carPosition.getMileageFrom())
                 .mileageBefore(carPosition.getMileageBefore())
-                .prices(pricesMapper.toDto(carPosition.getPrices()))
+                .prices(pricesMapper.toDto(carPosition.getPrices()).stream()
+                        .sorted(Comparator.comparing(CarPositionPriceDto::getDate))
+                        .collect(Collectors.toList()))
                 .build();
     }
 }

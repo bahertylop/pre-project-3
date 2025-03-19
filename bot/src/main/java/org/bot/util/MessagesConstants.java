@@ -1,6 +1,7 @@
 package org.bot.util;
 
 import org.dto.CarPositionDto;
+import org.dto.response.CarPositionResponse;
 import org.dto.response.ProfileResponse;
 
 import java.util.List;
@@ -25,16 +26,7 @@ public class MessagesConstants {
         for (int i = 0; i < cars.size(); i++) {
             CarPositionDto car = cars.get(i);
             sb.append(i + 1).append(". ").append(car.getBrand()).append(" ").append(car.getModel()).append("\n");
-            sb.append("Год: ")
-                    .append(car.getYearFrom() == null ? "_" : car.getYearFrom())
-                    .append(" - ")
-                    .append(car.getYearBefore() == null ? "_" : car.getYearBefore())
-                    .append("\n");
-            sb.append("Пробег: ")
-                    .append(car.getMileageFrom() == null ? "_" : car.getMileageFrom())
-                    .append(" - ")
-                    .append(car.getMileageBefore() == null ? "_" : car.getMileageBefore())
-                    .append("\n");
+            carPositionParamsToString(sb, car.getYearFrom(), car.getYearBefore(), car.getMileageFrom(), car.getMileageBefore());
             sb.append("\n");
         }
         return sb.toString();
@@ -61,4 +53,26 @@ public class MessagesConstants {
     public static final String SUCCESS_ADD_CAR_POSITION = "Успешно добавлена новая машина, начат парсинг цен";
     public static final String FAILED_TO_ADD_CAR_POSITION = "Не удалось добавить новую машину, попробуйте снова";
 
+    public static final String FAILED_TO_GET_CAR_POSITION = "Не удалось получить информацию о машине";
+    public static final String EMPTY_CAR_POSITION_PRICES_LIST = "Цены еще не загружены, попробуйте немного позже";
+
+    public static String getCarPositionMessage(CarPositionResponse response) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(response.getBrand()).append(" ").append(response.getModel()).append("\n");
+        carPositionParamsToString(sb, response.getYearFrom(), response.getYearBefore(), response.getMileageFrom(), response.getMileageBefore());
+        return sb.toString();
+    }
+
+    private static void carPositionParamsToString(StringBuilder sb, Integer yearFrom, Integer yearBefore, Integer mileageFrom, Integer mileageBefore) {
+        sb.append("Год: ")
+                .append(yearFrom == null ? "_" : yearFrom)
+                .append(" - ")
+                .append(yearBefore == null ? "_" : yearBefore)
+                .append("\n");
+        sb.append("Пробег: ")
+                .append(mileageFrom == null ? "_" : mileageFrom)
+                .append(" - ")
+                .append(mileageBefore == null ? "_" : mileageBefore)
+                .append("\n");
+    }
 }

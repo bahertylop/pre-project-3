@@ -963,3 +963,355 @@ java.net.SocketException: Connection reset
 2025-03-19 13:29:09 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-19 13:29:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-03-19 13:29:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-19 15:05:39 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-19 15:05:39 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 2180 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-19 15:05:39 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
+2025-03-19 15:05:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-19 15:05:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2025-03-19 15:05:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-19 15:05:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-19 15:05:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-19 15:05:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-19 15:05:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-19 15:05:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1017 ms
+2025-03-19 15:05:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-19 15:05:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-19 15:05:40 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-19 15:05:40 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-19 15:05:41 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-19 15:05:41 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-19 15:05:41 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-19 15:05:41 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-19 15:05:41 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-19 15:05:41 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-19 15:05:41 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-19 15:05:41 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 15:05:42 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-19 15:05:42 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2d2710a8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50b1dfab, org.springframework.security.web.context.SecurityContextPersistenceFilter@7712c315, org.springframework.security.web.header.HeaderWriterFilter@3fe1b278, org.springframework.security.web.authentication.logout.LogoutFilter@28d2afd8, org.backend.config.jwt.JwtAuthenticationFilter@40e90634, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5529fd4e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f4bc3ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c85ed05, org.springframework.security.web.session.SessionManagementFilter@1926806c, org.springframework.security.web.access.ExceptionTranslationFilter@1738d3b2, org.springframework.security.web.access.intercept.AuthorizationFilter@65630116]
+2025-03-19 15:05:42 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19 15:05:42 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-19 15:05:42 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-19 15:05:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-19 15:05:42 [main] INFO  org.backend.BackendMain - Started BackendMain in 3.56 seconds (JVM running for 4.307)
+2025-03-19 15:05:44 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-19 15:05:44 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-19 15:05:44 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-19 15:05:44 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:05:44 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:05:44 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:05:45 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:10:41 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 15:10:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-19 15:10:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-19 15:10:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-19 15:10:44 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 10356 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-19 15:10:44 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
+2025-03-19 15:10:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-19 15:10:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 6 JPA repository interfaces.
+2025-03-19 15:10:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-19 15:10:44 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-19 15:10:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-19 15:10:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-19 15:10:44 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-19 15:10:44 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 857 ms
+2025-03-19 15:10:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-19 15:10:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-19 15:10:45 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-19 15:10:45 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-19 15:10:45 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-19 15:10:45 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-19 15:10:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-19 15:10:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-19 15:10:45 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-19 15:10:45 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-19 15:10:46 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-19 15:10:46 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 15:10:46 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-19 15:10:46 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64d0b8e3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65d3a83, org.springframework.security.web.context.SecurityContextPersistenceFilter@13231e7b, org.springframework.security.web.header.HeaderWriterFilter@5a9a187b, org.springframework.security.web.authentication.logout.LogoutFilter@365291bd, org.backend.config.jwt.JwtAuthenticationFilter@40e90634, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e0faed6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75e068dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7be9582e, org.springframework.security.web.session.SessionManagementFilter@542759f, org.springframework.security.web.access.ExceptionTranslationFilter@4848681d, org.springframework.security.web.access.intercept.AuthorizationFilter@5ba7391b]
+2025-03-19 15:10:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19 15:10:46 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-19 15:10:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-19 15:10:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-19 15:10:47 [main] INFO  org.backend.BackendMain - Started BackendMain in 3.208 seconds (JVM running for 3.876)
+2025-03-19 15:10:56 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-19 15:10:56 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-19 15:10:56 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-03-19 15:10:56 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:10:56 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:10:56 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:10:56 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:21:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 15:21:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-19 15:21:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-19 15:21:28 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-19 15:21:28 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 17048 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-19 15:21:28 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
+2025-03-19 15:21:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-19 15:21:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 6 JPA repository interfaces.
+2025-03-19 15:21:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-19 15:21:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-19 15:21:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-19 15:21:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-19 15:21:29 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-19 15:21:29 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 936 ms
+2025-03-19 15:21:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-19 15:21:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-19 15:21:29 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-19 15:21:29 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-19 15:21:29 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-19 15:21:29 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-19 15:21:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-19 15:21:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-19 15:21:29 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-19 15:21:29 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-19 15:21:30 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-19 15:21:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 15:21:30 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-19 15:21:30 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2d2710a8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50b1dfab, org.springframework.security.web.context.SecurityContextPersistenceFilter@7712c315, org.springframework.security.web.header.HeaderWriterFilter@3fe1b278, org.springframework.security.web.authentication.logout.LogoutFilter@28d2afd8, org.backend.config.jwt.JwtAuthenticationFilter@40e90634, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5529fd4e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f4bc3ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c85ed05, org.springframework.security.web.session.SessionManagementFilter@1926806c, org.springframework.security.web.access.ExceptionTranslationFilter@1738d3b2, org.springframework.security.web.access.intercept.AuthorizationFilter@65630116]
+2025-03-19 15:21:30 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19 15:21:31 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-19 15:21:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-19 15:21:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-19 15:21:31 [main] INFO  org.backend.BackendMain - Started BackendMain in 3.354 seconds (JVM running for 4.156)
+2025-03-19 15:22:36 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-19 15:22:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-19 15:22:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-19 15:22:36 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:22:36 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:22:36 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:22:36 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:23:45 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:23:45 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:23:45 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:23:45 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:26:07 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/15]
+2025-03-19 15:26:07 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:26:07 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:26:07 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/15]
+2025-03-19 15:26:22 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:26:22 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:26:22 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:26:22 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:27:22 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/9]
+2025-03-19 15:27:22 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:27:22 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:27:22 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/9]
+2025-03-19 15:27:32 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:27:32 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:27:32 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:27:32 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:28:19 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-19 15:28:19 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:28:19 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:28:19 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-19 15:28:27 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/8]
+2025-03-19 15:28:27 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:28:27 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:28:27 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/8]
+2025-03-19 15:28:33 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/9]
+2025-03-19 15:28:33 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:28:33 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:28:33 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/9]
+2025-03-19 15:28:39 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/13]
+2025-03-19 15:28:39 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:28:39 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:28:39 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/13]
+2025-03-19 15:28:45 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/15]
+2025-03-19 15:28:45 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:28:45 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:28:45 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/15]
+2025-03-19 15:28:55 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/17]
+2025-03-19 15:28:55 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:28:55 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:28:55 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/17]
+2025-03-19 15:29:45 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/18]
+2025-03-19 15:29:45 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:29:45 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:29:45 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/18]
+2025-03-19 15:30:04 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:30:04 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:30:04 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:30:04 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:30:27 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:30:27 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:30:27 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:30:27 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:34:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 15:34:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-19 15:34:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-19 15:34:56 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-19 15:34:56 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 27700 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-19 15:34:56 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"
+2025-03-19 15:34:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-19 15:34:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 6 JPA repository interfaces.
+2025-03-19 15:34:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-19 15:34:57 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-19 15:34:57 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-19 15:34:57 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-03-19 15:34:57 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-19 15:34:57 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 890 ms
+2025-03-19 15:34:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-19 15:34:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-19 15:34:57 [main] INFO  liquibase.database - Set default schema name to public
+2025-03-19 15:34:57 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-03-19 15:34:57 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-03-19 15:34:57 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-03-19 15:34:57 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-19 15:34:57 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-03-19 15:34:58 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-19 15:34:58 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-03-19 15:34:58 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-19 15:34:58 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 15:34:58 [main] DEBUG o.s.w.f.CommonsRequestLoggingFilter - Filter 'commonsRequestLoggingFilter' configured for use
+2025-03-19 15:34:59 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@fee1e32, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d2710a8, org.springframework.security.web.context.SecurityContextPersistenceFilter@4848681d, org.springframework.security.web.header.HeaderWriterFilter@539953af, org.springframework.security.web.authentication.logout.LogoutFilter@4cce889e, org.backend.config.jwt.JwtAuthenticationFilter@7acbd3d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a9a187b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35129b9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50b1dfab, org.springframework.security.web.session.SessionManagementFilter@645b67d6, org.springframework.security.web.access.ExceptionTranslationFilter@14a3a66c, org.springframework.security.web.access.intercept.AuthorizationFilter@598f6c93]
+2025-03-19 15:34:59 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-19 15:34:59 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-19 15:34:59 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-19 15:34:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-19 15:34:59 [main] INFO  org.backend.BackendMain - Started BackendMain in 3.389 seconds (JVM running for 4.061)
+2025-03-19 15:35:07 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-19 15:35:07 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-19 15:35:07 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-19 15:35:07 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:35:07 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:35:07 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:35:07 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:35:28 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-19 15:35:28 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:35:28 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:35:28 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-19 15:35:36 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/8]
+2025-03-19 15:35:36 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:35:36 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:35:36 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/8]
+2025-03-19 15:35:45 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/17]
+2025-03-19 15:35:45 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:35:45 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:35:45 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/17]
+2025-03-19 15:36:21 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:36:21 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:36:21 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:36:21 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:37:38 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:37:38 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:37:38 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:37:38 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:40:15 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:40:15 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:15 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:15 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:40:16 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:40:16 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:16 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:16 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:40:27 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-19 15:40:27 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:27 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:27 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-19 15:40:32 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/8]
+2025-03-19 15:40:32 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:32 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:32 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/8]
+2025-03-19 15:40:35 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/18]
+2025-03-19 15:40:35 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:35 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:35 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/18]
+2025-03-19 15:40:39 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/17]
+2025-03-19 15:40:39 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:39 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:39 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/17]
+2025-03-19 15:40:41 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/15]
+2025-03-19 15:40:41 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:41 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:41 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/15]
+2025-03-19 15:40:46 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/13]
+2025-03-19 15:40:46 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:46 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:46 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/13]
+2025-03-19 15:40:51 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/9]
+2025-03-19 15:40:51 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:40:51 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:40:51 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/9]
+2025-03-19 15:41:05 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/8]
+2025-03-19 15:41:05 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:05 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:05 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/8]
+2025-03-19 15:41:15 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/6]
+2025-03-19 15:41:15 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:15 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:15 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/6]
+2025-03-19 15:41:18 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:41:18 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:18 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:18 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:41:23 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:41:23 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:23 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:23 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:41:24 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:41:24 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:24 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:24 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:41:24 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:41:24 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:24 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:24 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:41:24 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:41:24 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:24 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:24 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:41:26 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:41:26 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:26 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:26 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:41:38 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:41:38 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:38 [http-nio-8080-exec-3] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:38 [http-nio-8080-exec-3] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:41:39 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:41:39 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:41:39 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:41:39 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:42:37 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:42:37 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:42:37 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:42:37 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:42:38 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:42:38 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:42:38 [http-nio-8080-exec-2] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:42:38 [http-nio-8080-exec-2] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:42:48 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:42:48 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:42:48 [http-nio-8080-exec-4] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:42:48 [http-nio-8080-exec-4] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:42:49 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:42:49 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:42:49 [http-nio-8080-exec-1] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:42:49 [http-nio-8080-exec-1] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:42:50 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:42:50 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:42:50 [http-nio-8080-exec-6] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:42:50 [http-nio-8080-exec-6] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:42:50 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:42:50 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:42:50 [http-nio-8080-exec-8] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:42:50 [http-nio-8080-exec-8] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:42:51 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:42:51 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:42:51 [http-nio-8080-exec-10] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:42:51 [http-nio-8080-exec-10] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:42:53 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/4]
+2025-03-19 15:42:53 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:42:53 [http-nio-8080-exec-5] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:42:53 [http-nio-8080-exec-5] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/4]
+2025-03-19 15:44:12 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/18]
+2025-03-19 15:44:12 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:44:12 [http-nio-8080-exec-7] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:44:12 [http-nio-8080-exec-7] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/18]
+2025-03-19 15:44:35 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST START: GET /cars/18]
+2025-03-19 15:44:35 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - request by user with email: levka288@gmail.com
+2025-03-19 15:44:35 [http-nio-8080-exec-9] INFO  o.b.c.jwt.JwtAuthenticationFilter - user with email: levka288@gmail.com authorized
+2025-03-19 15:44:35 [http-nio-8080-exec-9] DEBUG o.s.w.f.CommonsRequestLoggingFilter - REQUEST END: GET /cars/18]
+2025-03-19 17:44:13 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-19 17:44:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-19 17:44:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

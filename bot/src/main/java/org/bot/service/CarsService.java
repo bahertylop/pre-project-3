@@ -9,10 +9,12 @@ import org.bot.exception.ApiException;
 import org.bot.exception.ForbiddenException;
 import org.bot.model.CreateCarPositionData;
 import org.bot.model.TgUser;
+import org.bot.util.MessagesConstants;
 import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.dto.CarPositionDto;
 import org.dto.request.CreateCarPositionRequest;
+import org.dto.response.CarPositionResponse;
 import org.hibernate.annotations.Target;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -88,6 +90,23 @@ public class CarsService {
             log.warn("api exception from get car positions request");
         }
         return false;
+    }
+
+    public Optional<CarPositionResponse> getCarPosition(SenderDto sender, Long carPositionId) {
+        try {
+            return Optional.of(carPositionClient.getCarPosition(sender, carPositionId));
+        } catch (ForbiddenException e) {
+            if (userService.refreshUserTokens(sender)) {
+                try {
+                    return Optional.of(carPositionClient.getCarPosition(sender, carPositionId));
+                } catch (ForbiddenException ex) {
+                    log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
+                }
+            }
+        } catch (ApiException e) {
+            log.warn("api exception from get car position request");
+        }
+        return Optional.empty();
     }
 
     public Optional<List<CarModelDto>> processCarBrand(SenderDto sender, String carBrand) {

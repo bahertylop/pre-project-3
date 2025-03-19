@@ -10,6 +10,7 @@ import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.dto.CarPositionDto;
 import org.dto.request.CreateCarPositionRequest;
+import org.dto.response.CarPositionResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
@@ -20,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.net.http.HttpClient;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +32,9 @@ public class CarPositionClient {
 
     @Value("${api.url.get-car-positions}")
     private String getCarPositionsApiUrl;
+
+    @Value("${api.url.get-car-position}")
+    private String getCarPositionApiUrl;
 
     @Value("${api.url.create-car-position}")
     private String createCarPositionApiUrl;
@@ -62,12 +67,42 @@ public class CarPositionClient {
             }
 
             log.warn("get car positions request returned status: {}, body: {}", response.getStatusCode(), response.getBody());
-            throw new ApiException("sign-in request returned" + response.getStatusCode());
+            throw new ApiException("get car positions request returned" + response.getStatusCode());
         } catch (HttpClientErrorException.Forbidden e) {
             log.info("get car positions request returned 403 ");
             throw new ForbiddenException("");
         } catch (RestClientException e) {
             log.error("get car positions request failed url: {}", getCarPositionsApiUrl, e);
+            throw new ApiException("api unavailable", e);
+        }
+    }
+
+    public CarPositionResponse getCarPosition(SenderDto sender, Long carPositionId) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(sender.getUser().getJwtToken());
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        try {
+            ResponseEntity<CarPositionResponse> response = restTemplate.exchange(
+                    getCarPositionApiUrl + carPositionId,
+                    HttpMethod.GET,
+                    entity,
+                    CarPositionResponse.class
+            );
+
+            if (response.getStatusCode().is2xxSuccessful() || response.hasBody()) {
+                return response.getBody();
+            }
+
+            log.warn("get car positions request id: {} returned status: {}, body: {}", carPositionId, response.getStatusCode(), response.getBody());
+            throw new ApiException("get car position request returned" + response.getStatusCode());
+        } catch (HttpClientErrorException.Forbidden e) {
+            log.info("get car position id: {} request returned 403", carPositionId);
+            throw new ForbiddenException("get car position request returned 403");
+        } catch (RestClientException e) {
+            log.error("get car position id: {} request failed url: {}", carPositionId, getCarPositionsApiUrl, e);
             throw new ApiException("api unavailable", e);
         }
     }
