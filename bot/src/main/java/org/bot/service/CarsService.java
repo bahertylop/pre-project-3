@@ -12,6 +12,7 @@ import org.bot.model.TgUser;
 import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.dto.CarPositionDto;
+import org.dto.request.CreateCarPositionRequest;
 import org.hibernate.annotations.Target;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -60,6 +61,35 @@ public class CarsService {
         return List.of();
     }
 
+    public boolean createCarPosition(SenderDto sender) {
+        CreateCarPositionData data = carPositionDataService.getCarPosition(sender.getChatId());
+        CreateCarPositionRequest request = CreateCarPositionRequest.builder()
+                .brand(data.getBrandName())
+                .model(data.getModelName())
+                .yearFrom(data.getYearFrom())
+                .yearBefore(data.getYearTo())
+                .mileageFrom(data.getMileageFrom())
+                .mileageBefore(data.getMileageBefore())
+                .build();
+
+        try {
+            carPositionClient.addCarPosition(sender, request);
+            return true;
+        } catch (ForbiddenException e) {
+            if (userService.refreshUserTokens(sender)) {
+                try {
+                    carPositionClient.addCarPosition(sender, request);
+                    return true;
+                } catch (ForbiddenException ex) {
+                    log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
+                }
+            }
+        } catch (ApiException e) {
+            log.warn("api exception from get car positions request");
+        }
+        return false;
+    }
+
     public Optional<List<CarModelDto>> processCarBrand(SenderDto sender, String carBrand) {
         List<CarBrandDto> carBrands = carPositionClient.getCarBrands();
 
@@ -87,7 +117,6 @@ public class CarsService {
         userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_PARAM_YEAR_FROM);
     }
 
-    @Transactional
     public boolean processYearFrom(SenderDto sender, String yearFrom) {
         if (yearFrom.equals("-")) {
             userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_PARAM_YEAR_BEFORE);
@@ -108,7 +137,6 @@ public class CarsService {
         }
     }
 
-    @Transactional
     public boolean processYearBefore(SenderDto sender, String yearBefore) {
         if (yearBefore.equals("-")) {
             userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_PARAM_MILEAGE_FROM);
@@ -132,7 +160,6 @@ public class CarsService {
         }
     }
 
-    @Transactional
     public boolean processMileageFrom(SenderDto sender, String mileageFrom) {
         if (mileageFrom.equals("-")) {
             userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_PARAM_MILEAGE_BEFORE);

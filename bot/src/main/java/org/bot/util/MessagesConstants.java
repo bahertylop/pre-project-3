@@ -50,4 +50,7 @@ public class MessagesConstants {
     public static final String INPUT_MILEAGE_FROM_MESSAGE = "Введите параметр пробег от, если не хотите указывать отправьте -";
     public static final String INPUT_MILEAGE_BEFORE_MESSAGE = "Введите параметр пробег до, если не хотите указывать отправьте -";
     public static final String NOT_FOUND_CAR_BRAND = "Не найдена введенная марка, возможно написано с ошибкой";
+    public static final String SUCCESS_ADD_CAR_POSITION = "Успешно добавлена новая машина, начат парсинг цен";
+    public static final String FAILED_TO_ADD_CAR_POSITION = "Не удалось добавить новую машину, попробуйте снова";
+
 }

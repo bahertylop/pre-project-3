@@ -1,5 +1,6 @@
 package org.bot.api;
 
+import liquibase.pro.packaged.J;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.core.ApplicationPushBuilder;
 import org.bot.dto.SenderDto;
@@ -8,6 +9,7 @@ import org.bot.exception.ForbiddenException;
 import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.dto.CarPositionDto;
+import org.dto.request.CreateCarPositionRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
@@ -17,6 +19,7 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +30,9 @@ public class CarPositionClient {
 
     @Value("${api.url.get-car-positions}")
     private String getCarPositionsApiUrl;
+
+    @Value("${api.url.create-car-position}")
+    private String createCarPositionApiUrl;
 
     @Value("${api.url.get-brands}")
     private String getCarBrandsApiUrl;
@@ -62,6 +68,30 @@ public class CarPositionClient {
             throw new ForbiddenException("");
         } catch (RestClientException e) {
             log.error("get car positions request failed url: {}", getCarPositionsApiUrl, e);
+            throw new ApiException("api unavailable", e);
+        }
+    }
+
+    public void addCarPosition(SenderDto sender, CreateCarPositionRequest request) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setBearerAuth(sender.getUser().getJwtToken());
+
+        HttpEntity<CreateCarPositionRequest> entity = new HttpEntity<>(request, headers);
+
+        try {
+            ResponseEntity<Void> response = restTemplate.exchange(
+                    createCarPositionApiUrl,
+                    HttpMethod.POST,
+                    entity,
+                    Void.class
+            );
+        } catch (HttpClientErrorException.Forbidden e) {
+            log.info("create car position returned 403");
+            throw new ForbiddenException("create car position returned 403");
+        }
+        catch (RestClientException e) {
+            log.error("create car position request failed url: {}", createCarPositionApiUrl, e);
             throw new ApiException("api unavailable", e);
         }
     }

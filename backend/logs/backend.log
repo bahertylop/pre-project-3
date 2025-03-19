@@ -769,3 +769,6 @@ java.net.SocketException: Connection reset
 2025-03-19 11:18:50 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-19 11:18:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-03-19 11:18:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-19 11:59:47 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-03-19 11:59:47 [main] INFO  org.backend.BackendMain - Starting BackendMain using Java 20.0.2 on god_vaper with PID 21128 (D:\android_developing\IdiaProjects\pre-project-3\backend\target\classes started by levic in D:\android_developing\IdiaProjects\pre-project-3)
+2025-03-19 11:59:47 [main] INFO  org.backend.BackendMain - No active profile set, falling back to 1 default profile: "default"

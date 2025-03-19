@@ -61,7 +61,12 @@ public class CarParamMessageHandler implements MessageHandler {
 
     public void handleAddMileageBefore(HandlerArgs args) {
         if (args.text.equals("-") || carsService.processMileageBefore(args.sender, args.text)) {
-            args.bot.sendMessage(args.sender.getChatId(), "Машинка добавлена");
+
+            if (carsService.createCarPosition(args.sender)) {
+                args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.SUCCESS_ADD_CAR_POSITION);
+            } else {
+                args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.FAILED_TO_ADD_CAR_POSITION);
+            }
             return;
         }
         args.bot.sendMessage(args.sender.getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_MILEAGE_BEFORE_MESSAGE);
