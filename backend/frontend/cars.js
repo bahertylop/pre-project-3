@@ -28,6 +28,9 @@ $(document).ready(function () {
                         <td>${car.yearBefore || '-'}</td>
                         <td>${car.mileageFrom || '-'}</td>
                         <td>${car.mileageBefore || '-'}</td>
+                        <td>    
+                            <button class="btn btn-danger btn-sm" onclick="deleteCarPosition(${car.id})">Удалить</button>
+                        </td>
                     </tr>
                     `);
 
@@ -120,6 +123,22 @@ $(document).ready(function () {
             }
         });
     });
+
+    window.deleteCarPosition = function (id) {
+        $.ajax({
+            url: `${CONFIG.API_BASE_URL}/cars/${id}`,
+            method: 'DELETE',
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
+            success: function () {
+                fetchCars();
+            },
+            error: function () {
+                alert("Ошибка при удалении позиции.");
+            }
+        });
+    }
 
     $("#logoutBtn").click(function () {
         localStorage.removeItem('jwtToken');

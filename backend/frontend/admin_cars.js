@@ -94,41 +94,6 @@ $(document).ready(function () {
         });
     });
 
-    $("#addCarBtn").click(function () {
-        fetchBrands();
-        $("#addCarModal").modal('show');
-    });
-
-    $("#addCarForm").submit(function (e) {
-        e.preventDefault();
-        $(".loading").show();
-
-        let carData = {
-            brand: $("#brandSelect option:selected").text(),
-            model: $("#modelSelect").val(),
-            yearFrom: $("#yearFrom").val() || null,
-            yearBefore: $("#yearBefore").val() || null,
-            mileageFrom: $("#mileageFrom").val() || null,
-            mileageBefore: $("#mileageBefore").val() || null
-        };
-
-        $.ajax({
-            url: `${CONFIG.API_BASE_URL}/cars/create`,
-            method: 'POST',
-            headers: {
-                'Authorization': 'Bearer ' + token,
-                'Content-Type': 'application/json',
-                'ngrok-skip-browser-warning': 'true'
-            },
-            data: JSON.stringify(carData),
-            complete: function () {
-                $(".loading").hide();
-                $("#addCarModal").modal('hide');
-                fetchCars();
-            }
-        });
-    });
-
     $("#logoutBtn").click(function () {
         localStorage.removeItem('jwtToken');
         window.location.href = "home.html"
