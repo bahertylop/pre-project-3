@@ -76,6 +76,7 @@ jobs:
             cd project
             echo "DB_USERNAME=${{ secrets.POSTGRES_USERNAME }}" > .env
             echo DB_PASSWORD = ${{ secrets.POSTGRES_PASSWORD }} >> .env
+            echo AVITO_BOT_TOKEN = ${{ secrets.AVITO_BOT_TOKEN }} >> .env
             
             docker stop frontend
             docker stop bot
