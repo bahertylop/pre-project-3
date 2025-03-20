@@ -69,8 +69,8 @@ $(document).ready(function () {
                     legend: { display: false }
                 },
                 scales: {
-                    x: { title: { display: true, text: 'Дата' } },
-                    y: { title: { display: true, text: 'Цена (₽)' }, beginAtZero: false }
+                    x: { title: { display: true, text: 'Дата' }},
+                    y: { title: { display: true, text: 'Цена (₽)' }, beginAtZero: true, suggestedMin: 0}
                 }
             }
         });
