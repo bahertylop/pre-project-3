@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '20'
-          distribution: 'adopt-openj20'
+          distribution: 'adopt'
 
       - name: build by maven
         run: |
@@ -77,14 +77,14 @@ jobs:
           port: 22
           script: |
             cd project
-            echo DB_USERNAME = ${{ secrets.POSTGRES_USERNAME }} >> .env
+            echo "DB_USERNAME=${{ secrets.POSTGRES_USERNAME }}" > .env
             echo DB_PASSWORD = ${{ secrets.POSTGRES_PASSWORD }} >> .env
             
             docker stop frontend
             docker stop bot
             
             docker rm frontend
-            docker rm bor
+            docker rm bot
             
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/frontend-http-server
