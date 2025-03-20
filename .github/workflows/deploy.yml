@@ -35,13 +35,11 @@ jobs:
           distribution: 'adopt'
 
       - name: build by maven
-        run: |
-          cd bot
-          mvn clean install -pl bot -am
+        run: mvn clean install -pl bot -am
 
       - name: build docker images
         run: |
-          # api
+          # bot
           docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot:latest ./bot
           
           # frontend
