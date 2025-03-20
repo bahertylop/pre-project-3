@@ -36,7 +36,9 @@ jobs:
 
       - name: build by maven
         run: |
-          cd bot
+          cd dto
+          mvn clean install
+          cd ../bot
           mvn clean package
           cd ..
 
