@@ -44,8 +44,6 @@ services:
     build:
       context: frontend
     container_name: frontend
-    depends_on:
-      - app
     ports:
       - "3000:3000"
 #    environment:
