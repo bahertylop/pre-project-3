@@ -1,0 +1,38 @@
+bot:
+  token: ${BOT_TOKEN}
+  name: car_price_tracking_bot
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/avito_bot_database
+    username: postgres
+    password: agroycg592:ggg
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        format_sql: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+server:
+  port: 8081
+
+
+api:
+  url:
+    sign-in: https://a488-185-223-93-175.ngrok-free.app/auth/signin
+    refresh: https://a488-185-223-93-175.ngrok-free.app/auth/refresh
+    get-profile: https://a488-185-223-93-175.ngrok-free.app/user
+    get-car-positions: https://a488-185-223-93-175.ngrok-free.app/cars
+    get-car-position: https://a488-185-223-93-175.ngrok-free.app/cars/
+    create-car-position: https://a488-185-223-93-175.ngrok-free.app/cars
+    get-brands: https://a488-185-223-93-175.ngrok-free.app/brands
+    get-models: https://a488-185-223-93-175.ngrok-free.app/models
+  constraint:
+    min-year-from: 1900
+    max-mileage: 5000000

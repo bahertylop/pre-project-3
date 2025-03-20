@@ -10,7 +10,9 @@ $(document).ready(function () {
             url: `${CONFIG.API_BASE_URL}/user`,
             method: 'GET',
             headers: { 'Authorization': 'Bearer ' + token,
-                        'content-type': 'application/json'},
+                'content-type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function (response) {
                 $("#profileId").text(response.id);
                 $("#profileName").text(response.name);
@@ -45,10 +47,12 @@ $(document).ready(function () {
         const age = $("#editAge").val();
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/user/update`,
-            method: 'POST',
+            url: `${CONFIG.API_BASE_URL}/user`,
+            method: 'PUT',
             contentType: 'application/json',
-            headers: { 'Authorization': 'Bearer ' + token },
+            headers: { 'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             data: JSON.stringify({ name, password, age }),
             success: function () {
                 fetchProfile();
@@ -72,9 +76,11 @@ $(document).ready(function () {
         if (!confirm("Вы уверены, что хотите удалить аккаунт?")) return;
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/user/delete`,
-            method: 'POST',
-            headers: { 'Authorization': 'Bearer ' + token },
+            url: `${CONFIG.API_BASE_URL}/user`,
+            method: 'DELETE',
+            headers: { 'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function () {
                 localStorage.removeItem('jwtToken');
                 window.location.href = "home.html";

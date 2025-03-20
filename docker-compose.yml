@@ -1,20 +1,33 @@
 version: '2'
 
 services:
-  app:
-    image: 'bahertylop/docker-spring-boot-postgres:latest'
+#  app:
+#    image: 'bahertylop/docker-spring-boot-postgres:latest'
+#    build:
+#      context: ..
+#    container_name: app
+#    depends_on:
+#      - db
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/pre_project_3
+#      - SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
+#      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+#      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+#    ports:
+#      - "8080:8080"
+  bot:
+    image: 'bahertylop/avito-bot:latest'
     build:
-      context: .
-    container_name: app
+      context: bot
+    container_name: bot
     depends_on:
       - db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/pre_project_3
+      - BOT_TOKEN=${AVITO_BOT_TOKEN}
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/bot_db
       - SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
       - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-    ports:
-      - "8080:8080"
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
 
   db:
     image: 'postgres:latest'
@@ -22,14 +35,14 @@ services:
     environment:
       - POSTGRES_USER=${DB_USERNAME}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=pre_project_3
+      - POSTGRES_DB=bot_db
     ports:
       - "5434:5432"
 
   frontend:
     image: 'bahertylop/frontend-http-server:latest'
     build:
-      context: ./frontend
+      context: frontend
     container_name: frontend
     depends_on:
       - app

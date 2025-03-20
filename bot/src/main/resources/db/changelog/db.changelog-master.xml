@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+        <include file="db/changelog/tables/changeset-16-03-2025-001-create-table-tg_users.xml"/>
+        <include file="db/changelog/tables/changeset-18-03-2025-001-create-table-car_position.xml"/>
+        <include file="db/changelog/tables/changeset-19-03-2025-001-create-table-brand.xml"/>
+        <include file="db/changelog/indexes/changeset-20-03-2025-001-create-gist-idx-to-brand-name.xml"/>
+</databaseChangeLog>

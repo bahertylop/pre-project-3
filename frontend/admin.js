@@ -9,13 +9,15 @@ $(document).ready(function () {
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/admin`,
             method: 'GET',
-            headers: {'Authorization': 'Bearer ' + token},
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function (response) {
                 let tableBody = $("#userTableBody");
                 tableBody.empty();
 
                 response.forEach(user => {
-                    tableBody.append(`
+                    let row = $(`
                     <tr data-id="${user.id}">
                         <td>${user.id}</td>
                         <td class="user-name">${user.name}</td>
@@ -28,6 +30,12 @@ $(document).ready(function () {
                         </td>
                     </tr>
                 `);
+
+                    row.click(function () {
+                        window.location.href = `admin_cars?userId=${user.id}`
+                    });
+
+                    tableBody.append(row);
                 });
             },
             error: function () {
@@ -39,10 +47,11 @@ $(document).ready(function () {
 
     window.deleteUser = function (id) {
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/admin/delete`,
-            method: 'POST',
-            data: {id},
-            headers: {'Authorization': 'Bearer ' + token},
+            url: `${CONFIG.API_BASE_URL}/admin/${id}`,
+            method: 'DELETE',
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             success: function () {
                 fetchUsers();
             },
@@ -99,9 +108,11 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/admin/update`,
-            method: 'POST',
-            headers: {'Authorization': 'Bearer ' + token},
+            url: `${CONFIG.API_BASE_URL}/admin`,
+            method: 'PUT',
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             contentType: 'application/json',
             data: JSON.stringify({id, name, password, age, roles}),
             success: function () {
@@ -138,9 +149,11 @@ $(document).ready(function () {
             roles.push("ROLE_ADMIN");
         }
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/admin/create`,
+            url: `${CONFIG.API_BASE_URL}/admin`,
             method: 'POST',
-            headers: {'Authorization': 'Bearer ' + token},
+            headers: {'Authorization': 'Bearer ' + token,
+                'ngrok-skip-browser-warning': 'true'
+            },
             contentType: 'application/json',
             data: JSON.stringify({name, email, password, age, roles}),
             success: function () {

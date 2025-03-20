@@ -14,12 +14,13 @@ $(document).ready(function () {
         const password = $("#signinPassword").val();
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/signin`,
+            url: `${CONFIG.API_BASE_URL}/auth/signin`,
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ email, password }),
+            headers: {'ngrok-skip-browser-warning': 'true'},
             success: function (response) {
-                localStorage.setItem('jwtToken', response.token);
+                localStorage.setItem('jwtToken', response.access);
                 window.location.href = "profile.html";
             },
             error: function (xhr) {
@@ -48,12 +49,13 @@ $(document).ready(function () {
         const age = $("#signupAge").val();
 
         $.ajax({
-            url: `${CONFIG.API_BASE_URL}/signup`,
+            url: `${CONFIG.API_BASE_URL}/auth/signup`,
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ name, email, password, age }),
+            headers: {'ngrok-skip-browser-warning': 'true'},
             success: function (response) {
-                localStorage.setItem('jwtToken', response.token);
+                localStorage.setItem('jwtToken', response.access);
                 window.location.href = "profile.html";
             },
             error: function (xhr) {
