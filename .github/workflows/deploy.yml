@@ -36,11 +36,8 @@ jobs:
 
       - name: build by maven
         run: |
-          cd dto
-          mvn clean install
-          cd ../bot
-          mvn clean package
-          cd ..
+          cd bot
+          mvn clean install -pl bot -am
 
       - name: build docker images
         run: |
