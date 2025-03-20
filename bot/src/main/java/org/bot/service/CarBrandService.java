@@ -5,6 +5,7 @@ import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.bot.mapper.CarBrandMapper;
 import org.bot.repository.CarBrandRepository;
 import org.dto.CarBrandDto;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -36,5 +37,10 @@ public class CarBrandService {
                         )
                 )
                 .limit(6).toList();
+    }
+
+    public List<CarBrandDto> getSimilarCarBrandsUsePG(String brandName) {
+        Pageable pageable = Pageable.ofSize(6);
+        return carBrandMapper.toDto(carBrandRepository.getSimilarCarBrands(brandName, pageable));
     }
 }

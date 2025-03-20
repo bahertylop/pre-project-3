@@ -115,7 +115,8 @@ public class CarsService {
     public List<CarBrandDto> processCarBrand(SenderDto sender, String carBrand) {
         carPositionDataService.deleteAllCarPositionDataByChatId(sender.getChatId());
         userService.changeUserBotStatus(sender, TgUser.BotState.CHOOSE_CAR_BRAND);
-        return carBrandService.getSimilarCarBrands(carBrand);
+//        return carBrandService.getSimilarCarBrands(carBrand);
+        return carBrandService.getSimilarCarBrandsUsePG(carBrand);
     }
 
     public Optional<List<CarModelDto>> processChooseCarBrand(SenderDto sender, Long carBrandId) {
