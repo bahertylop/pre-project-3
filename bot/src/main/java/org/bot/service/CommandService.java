@@ -32,18 +32,14 @@ public class CommandService {
     private String commandNameToBeanName(String commandName) {
         String commandNameUn = StringUtils.uncapitalize(commandName);
         switch (commandNameUn) {
-            case "cars" -> {
+            case "cars":
                 return StringUtils.uncapitalize(CarsCommandHandler.class.getSimpleName());
-            }
-            case "add_car" -> {
+            case "add_car":
                 return StringUtils.uncapitalize(AddCarPositionCommandHandler.class.getSimpleName());
-            }
-            case "profile" -> {
+            case "profile":
                 return StringUtils.uncapitalize(ProfileCommandHandler.class.getSimpleName());
-            }
-            default -> {
+            default:
                 return StringUtils.uncapitalize(DefaultCommandHandler.class.getSimpleName());
-            }
         }
     }
 }

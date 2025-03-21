@@ -56,22 +56,18 @@ public class CallbackHandlingService {
         String callbackNameUn = StringUtils.uncapitalize(callbackName);
 
         switch (callbackNameUn) {
-            case "/signIn" -> {
+            case "/signIn":
                 return StringUtils.uncapitalize(SignInCallbackHandler.class.getSimpleName());
-            }
-            case "/brand" -> {
+            case "/brand":
                 return StringUtils.uncapitalize(ChooseCarBrandCallbackHandler.class.getSimpleName());
-            }
-            case "/model" -> {
+            case "/model":
                 return StringUtils.uncapitalize(ChooseModelCallbackHandler.class.getSimpleName());
-            }
-            case "/car" -> {
+            case "/car":
                 return StringUtils.uncapitalize(GetCarPositionCallbackHandler.class.getSimpleName());
-            }
-            default -> {
+            default:
                 log.warn("unexpected callbackName: {}", callbackName);
                 return "";
-            }
         }
     }
+
 }

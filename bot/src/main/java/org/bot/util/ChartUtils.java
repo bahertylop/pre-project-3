@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ChartUtils {
 
@@ -30,10 +31,10 @@ public class ChartUtils {
                 prices.stream()
                         .map(CarPositionPriceDto::getDate)
                         .map((localDate) -> Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()))
-                        .toList(),
+                        .collect(Collectors.toList()),
                 prices.stream()
                         .map(CarPositionPriceDto::getPrice)
-                        .toList()
+                        .collect(Collectors.toList())
         );
 
         chart.getStyler().setDatePattern("dd-MM-yyyy");
