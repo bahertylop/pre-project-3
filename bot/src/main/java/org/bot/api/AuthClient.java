@@ -1,5 +1,6 @@
 package org.bot.api;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bot.exception.AuthException;
 import org.dto.request.LoginRequest;
@@ -14,17 +15,15 @@ import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class AuthClient {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @Value("${api.url.sign-in}")
-    private String signInApiUrl;
-
-    @Value("${api.url.refresh}")
-    private String refreshApiUrl;
+    private final ApiProperties apiProperties;
 
     public JwtTokensResponse signIn(LoginRequest loginRequest) {
+        String apiUrlSignIn = apiProperties.getUrl().getSignIn();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -32,7 +31,7 @@ public class AuthClient {
 
         try {
             ResponseEntity<JwtTokensResponse> response = restTemplate.postForEntity(
-                    signInApiUrl,
+                    apiUrlSignIn,
                     request,
                     JwtTokensResponse.class
             );
@@ -43,12 +42,13 @@ public class AuthClient {
             log.warn("sign-in request returned status: {}, body: {}", response.getStatusCode(), response.getBody());
             throw new AuthException("sign-in request returned " + response.getStatusCode(), response.getStatusCode());
         } catch (RestClientException e) {
-            log.error("sign-in request failed url: {}", signInApiUrl, e);
+            log.error("sign-in request failed url: {}", apiUrlSignIn, e);
             throw new AuthException("api is unavailable", HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
 
     public JwtTokensResponse refreshTokens(RefreshTokenRequest refreshTokenRequest) {
+        String apiUrlRefresh = apiProperties.getUrl().getRefresh();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -56,7 +56,7 @@ public class AuthClient {
 
         try {
             ResponseEntity<JwtTokensResponse> response = restTemplate.postForEntity(
-                    refreshApiUrl,
+                    apiUrlRefresh,
                     request,
                     JwtTokensResponse.class
             );
@@ -67,7 +67,7 @@ public class AuthClient {
             log.warn("refresh request returned status: {}, body: {}", response.getStatusCode(), response.getBody());
             throw new AuthException("refresh request returned " + response.getStatusCode(), response.getStatusCode());
         } catch (RestClientException e) {
-            log.error("refresh request failed url: {}", refreshApiUrl, e);
+            log.error("refresh request failed url: {}", apiUrlRefresh, e);
             throw new AuthException("api is unavailable", HttpStatus.SERVICE_UNAVAILABLE);
         }
     }

@@ -25,14 +25,14 @@ server:
 
 api:
   url:
-    sign-in: https://a488-185-223-93-175.ngrok-free.app/auth/signin
-    refresh: https://a488-185-223-93-175.ngrok-free.app/auth/refresh
-    get-profile: https://a488-185-223-93-175.ngrok-free.app/user
-    get-car-positions: https://a488-185-223-93-175.ngrok-free.app/cars
-    get-car-position: https://a488-185-223-93-175.ngrok-free.app/cars/
-    create-car-position: https://a488-185-223-93-175.ngrok-free.app/cars
-    get-brands: https://a488-185-223-93-175.ngrok-free.app/brands
-    get-models: https://a488-185-223-93-175.ngrok-free.app/models
+    sign-in: http://localhost:8080/auth/signin
+    refresh: http://localhost:8080/auth/refresh
+    get-profile: http://localhost:8080/user
+    get-car-positions: http://localhost:8080/cars
+    get-car-position: http://localhost:8080/cars/
+    create-car-position: http://localhost:8080/cars
+    get-brands: http://localhost:8080/brands
+    get-models: http://localhost:8080/models
   constraint:
     min-year-from: 1900
     max-mileage: 5000000

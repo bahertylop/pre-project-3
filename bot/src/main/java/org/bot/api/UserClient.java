@@ -18,12 +18,12 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class UserClient {
 
-    @Value("${api.url.get-profile}")
-    private String getProfileApiUrl;
-
     private final RestTemplate restTemplate = new RestTemplate();
 
+    private final ApiProperties apiProperties;
+
     public ProfileResponse getProfileInfo(SenderDto senderDto) {
+        String apiUrlGetProfile = apiProperties.getUrl().getGetProfile();
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(senderDto.getUser().getJwtToken());
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -32,7 +32,7 @@ public class UserClient {
 
         try {
             ResponseEntity<ProfileResponse> response = restTemplate.exchange(
-                getProfileApiUrl,
+                apiUrlGetProfile,
                 HttpMethod.GET,
                 entity,
                 ProfileResponse.class
@@ -48,7 +48,7 @@ public class UserClient {
             log.error("get profile info request returned 403");
             throw new ForbiddenException("");
         } catch (RestClientException e) {
-            log.warn("aye", e);
+            log.warn("error with request get profile url: {}", apiUrlGetProfile, e);
             throw new ApiException("api exception");
         }
     }

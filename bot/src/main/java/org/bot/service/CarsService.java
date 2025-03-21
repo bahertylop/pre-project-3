@@ -3,6 +3,7 @@ package org.bot.service;
 import liquibase.pro.packaged.B;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.bot.api.ApiProperties;
 import org.bot.api.CarPositionClient;
 import org.bot.dto.SenderDto;
 import org.bot.exception.ApiException;
@@ -39,11 +40,7 @@ public class CarsService {
 
     private final CarBrandService carBrandService;
 
-    @Value("${api.constraint.min-year-from}")
-    private Integer minYearFromParam;
-
-    @Value("${api.constraint.max-mileage}")
-    private Integer maxMileageParam;
+    private final ApiProperties apiProperties;
 
     public List<CarPositionDto> getCarPositions(SenderDto senderDto) {
         System.out.println(senderDto.getUser().getJwtToken());
@@ -148,8 +145,8 @@ public class CarsService {
             return true;
         }
         try {
-            Integer year = Integer.parseInt(yearFrom);
-            if (year < minYearFromParam || year > LocalDate.now().getYear()) {
+            int year = Integer.parseInt(yearFrom);
+            if (year < apiProperties.getConstraint().getMinYearFrom() || year > LocalDate.now().getYear()) {
                 log.debug("user input not valid yearFrom: {}", year);
                 return false;
             }
@@ -191,8 +188,8 @@ public class CarsService {
             return true;
         }
         try {
-            Integer mileage = Integer.parseInt(mileageFrom);
-            if (mileage < 0 || mileage > maxMileageParam) {
+            int mileage = Integer.parseInt(mileageFrom);
+            if (mileage < 0 || mileage > apiProperties.getConstraint().getMaxMileage()) {
                 log.debug("user input negative mileageFrom");
                 return false;
             }
@@ -213,9 +210,9 @@ public class CarsService {
             return true;
         }
         try {
-            Integer mileage = Integer.parseInt(mileageBefore);
+            int mileage = Integer.parseInt(mileageBefore);
             CreateCarPositionData data = carPositionDataService.getCarPosition(sender.getChatId());
-            if (mileage < 0 || mileage > maxMileageParam ||
+            if (mileage < 0 || mileage > apiProperties.getConstraint().getMaxMileage() ||
                 data.getMileageFrom() != null && data.getMileageFrom() > mileage
             ) {
                 log.debug("user input not valid yearBefore: {}", mileage);

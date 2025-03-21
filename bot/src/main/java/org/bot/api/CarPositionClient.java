@@ -1,6 +1,7 @@
 package org.bot.api;
 
 import liquibase.pro.packaged.J;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.core.ApplicationPushBuilder;
 import org.bot.dto.SenderDto;
@@ -28,26 +29,15 @@ import java.util.Map;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class CarPositionClient {
-
-    @Value("${api.url.get-car-positions}")
-    private String getCarPositionsApiUrl;
-
-    @Value("${api.url.get-car-position}")
-    private String getCarPositionApiUrl;
-
-    @Value("${api.url.create-car-position}")
-    private String createCarPositionApiUrl;
-
-    @Value("${api.url.get-brands}")
-    private String getCarBrandsApiUrl;
-
-    @Value("${api.url.get-models}")
-    private String getCarModelsApiUrl;
 
     private final RestTemplate restTemplate = new RestTemplate();
 
+    private final ApiProperties apiProperties;
+
     public List<CarPositionDto> getCarPositions(SenderDto senderDto) {
+        String apiUrlGetCarPositions = apiProperties.getUrl().getGetCarPositions();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setBearerAuth(senderDto.getUser().getJwtToken());
@@ -56,7 +46,7 @@ public class CarPositionClient {
 
         try {
             ResponseEntity<List<CarPositionDto>> response = restTemplate.exchange(
-                    getCarPositionsApiUrl,
+                    apiUrlGetCarPositions,
                     HttpMethod.GET,
                     entity,
                     new ParameterizedTypeReference<List<CarPositionDto>>() {}
@@ -72,12 +62,13 @@ public class CarPositionClient {
             log.info("get car positions request returned 403 ");
             throw new ForbiddenException("");
         } catch (RestClientException e) {
-            log.error("get car positions request failed url: {}", getCarPositionsApiUrl, e);
+            log.error("get car positions request failed url: {}", apiUrlGetCarPositions, e);
             throw new ApiException("api unavailable", e);
         }
     }
 
     public CarPositionResponse getCarPosition(SenderDto sender, Long carPositionId) {
+        String apiUrlGetCarPosition = apiProperties.getUrl().getGetCarPosition();
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(sender.getUser().getJwtToken());
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -86,7 +77,7 @@ public class CarPositionClient {
 
         try {
             ResponseEntity<CarPositionResponse> response = restTemplate.exchange(
-                    getCarPositionApiUrl + carPositionId,
+                    apiUrlGetCarPosition + carPositionId,
                     HttpMethod.GET,
                     entity,
                     CarPositionResponse.class
@@ -102,12 +93,13 @@ public class CarPositionClient {
             log.info("get car position id: {} request returned 403", carPositionId);
             throw new ForbiddenException("get car position request returned 403");
         } catch (RestClientException e) {
-            log.error("get car position id: {} request failed url: {}", carPositionId, getCarPositionsApiUrl, e);
+            log.error("get car position id: {} request failed url: {}", carPositionId, apiUrlGetCarPosition, e);
             throw new ApiException("api unavailable", e);
         }
     }
 
     public void addCarPosition(SenderDto sender, CreateCarPositionRequest request) {
+        String apiUrlCreateCarPosition = apiProperties.getUrl().getCreateCarPosition();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setBearerAuth(sender.getUser().getJwtToken());
@@ -116,7 +108,7 @@ public class CarPositionClient {
 
         try {
             ResponseEntity<Void> response = restTemplate.exchange(
-                    createCarPositionApiUrl,
+                    apiUrlCreateCarPosition,
                     HttpMethod.POST,
                     entity,
                     Void.class
@@ -126,12 +118,13 @@ public class CarPositionClient {
             throw new ForbiddenException("create car position returned 403");
         }
         catch (RestClientException e) {
-            log.error("create car position request failed url: {}", createCarPositionApiUrl, e);
+            log.error("create car position request failed url: {}", apiUrlCreateCarPosition, e);
             throw new ApiException("api unavailable", e);
         }
     }
 
     public List<CarBrandDto> getCarBrands() {
+        String apiUrlGetBrands = apiProperties.getUrl().getGetBrands();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -139,7 +132,7 @@ public class CarPositionClient {
 
         try {
             ResponseEntity<List<CarBrandDto>> response = restTemplate.exchange(
-                    getCarBrandsApiUrl,
+                    apiUrlGetBrands,
                     HttpMethod.GET,
                     entity,
                     new ParameterizedTypeReference<List<CarBrandDto>>() {}
@@ -147,12 +140,13 @@ public class CarPositionClient {
 
             return response.getBody();
         } catch (RestClientException e) {
-            log.error("get car brands request error: ", e);
+            log.error("get car brands request error url: {}", apiUrlGetBrands, e);
             throw new ApiException("get car brands request error");
         }
     }
 
     public List<CarModelDto> getCarModels(CarBrandDto carBrand) {
+        String apiUrlGetModels = apiProperties.getUrl().getGetModels();
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> entity = new HttpEntity<>(httpHeaders);
@@ -160,7 +154,7 @@ public class CarPositionClient {
         Map<String, String> params = new HashMap<>();
         params.put("brandId", carBrand.getId().toString());
 
-        String url = UriComponentsBuilder.fromHttpUrl(getCarModelsApiUrl).queryParam("brandId", "{brandId}").encode().toUriString();
+        String url = UriComponentsBuilder.fromHttpUrl(apiUrlGetModels).queryParam("brandId", "{brandId}").encode().toUriString();
         try {
             ResponseEntity<List<CarModelDto>> response = restTemplate.exchange(
                     url,
@@ -172,7 +166,7 @@ public class CarPositionClient {
 
             return response.getBody();
         } catch (RestClientException e) {
-            log.error("get car models request error: ", e);
+            log.error("get car models request error url: {}", url, e);
             throw new ApiException("get car models request error");
         }
     }
