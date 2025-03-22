@@ -31,6 +31,8 @@ public class UserService {
 
     private final ProfileFeignClient profileFeignClient;
 
+    private final RetryService retryService;
+
     public Optional<TgUserDto> getUserByChatId(Long chatId) {
         return userRepository.getUserByChatId(chatId).map(TgUserDto::from);
     }
@@ -113,24 +115,10 @@ public class UserService {
     }
 
     public Optional<ProfileResponse> getProfileInfo(SenderDto senderDto) {
-        try {
-            return Optional.of(profileFeignClient.getProfileInfo(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken())));
-        } catch (FeignException e) {
-            if (e.status() == HttpStatus.FORBIDDEN.value() && refreshUserTokens(senderDto)) {
-                log.info("forbidden for get profile info request");
-                try {
-                    return Optional.of(profileFeignClient.getProfileInfo(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken())));
-                } catch (FeignException ex) {
-                    if (ex.status() == HttpStatus.FORBIDDEN.value()) {
-                        log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
-                    } else {
-                        log.warn("error request after forbidden chatId: {}", senderDto.getChatId(), ex);
-                    }
-                    return Optional.empty();
-                }
-            }
-            log.warn("error request get profile chatId: {}", senderDto.getChatId(), e);
-            return Optional.empty();
-        }
+        return Optional.ofNullable(retryService.executeWithRetry(
+                () -> profileFeignClient.getProfileInfo(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken())),
+                senderDto,
+                null
+        ));
     }
 }

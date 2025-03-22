@@ -39,47 +39,22 @@ public class CarsService {
 
     private final ApiProperties apiProperties;
 
-    public List<CarPositionDto> getCarPositions(SenderDto senderDto) {
-        try {
-            return carPositionFeignClient.getCarPositions(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken()));
-        } catch (FeignException e) {
-            if (e.status() == HttpStatus.FORBIDDEN.value() && userService.refreshUserTokens(senderDto)) {
-                log.info("forbidden for get car positions info request");
-                try {
-                    return carPositionFeignClient.getCarPositions(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken()));
-                } catch (FeignException ex) {
-                    if (ex.status() == HttpStatus.FORBIDDEN.value()) {
-                        log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
-                    } else {
-                        log.warn("error request get car positions after forbidden chatId: {}", senderDto.getChatId(), ex);
-                    }
-                    return List.of();
-                }
-            }
-            log.warn("error request get car positions chatId: {}", senderDto.getChatId(), e);
-            return List.of();
-        }
+    private final RetryService retryService;
+
+    public List<CarPositionDto> getCarPositions(SenderDto sender) {
+        return retryService.executeWithRetry(
+                () -> carPositionFeignClient.getCarPositions(JwtTokenUtil.bearerToken(sender.getUser().getJwtToken())),
+                sender,
+                List.of()
+        );
     }
 
     public Optional<CarPositionResponse> getCarPosition(SenderDto sender, Long carPositionId) {
-        try {
-            return Optional.of(carPositionFeignClient.getCarPosition(JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()), carPositionId));
-        } catch (FeignException e) {
-            if (e.status() == HttpStatus.FORBIDDEN.value() && userService.refreshUserTokens(sender)) {
-                try {
-                    return Optional.of(carPositionFeignClient.getCarPosition(JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()), carPositionId));
-                } catch (FeignException ex) {
-                    if (ex.status() == HttpStatus.FORBIDDEN.value()) {
-                        log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
-                    } else {
-                        log.warn("error request get car position after forbidden chatId: {}", sender.getChatId(), ex);
-                    }
-                    return Optional.empty();
-                }
-            }
-            log.warn("error request get car position chatId: {}", sender.getChatId(), e);
-            return Optional.empty();
-        }
+        return Optional.ofNullable(retryService.executeWithRetry(
+                () -> carPositionFeignClient.getCarPosition(JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()), carPositionId),
+                sender,
+                null
+        ));
     }
 
     public boolean createCarPosition(SenderDto sender) {
@@ -93,27 +68,14 @@ public class CarsService {
                 .mileageBefore(data.getMileageBefore())
                 .build();
 
-        try {
-            carPositionFeignClient.addCarPosition(request, JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()));
-            return true;
-        } catch (FeignException e) {
-            if (e.status() == HttpStatus.FORBIDDEN.value() && userService.refreshUserTokens(sender)) {
-                log.info("forbidden for add car position info request");
-                try {
+        return retryService.executeWithRetry(
+                () -> {
                     carPositionFeignClient.addCarPosition(request, JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()));
                     return true;
-                } catch (FeignException ex) {
-                    if (ex.status() == HttpStatus.FORBIDDEN.value()) {
-                        log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
-                    } else {
-                        log.warn("error request after forbidden chatId: {}", sender.getChatId(), ex);
-                    }
-                    return false;
-                }
-            }
-            log.warn("error request from get car positions chatId: {}", sender.getChatId(), e);
-            return false;
-        }
+                },
+                sender,
+                false
+        );
     }
 
     public List<CarBrandDto> processCarBrand(SenderDto sender, String carBrand) {
