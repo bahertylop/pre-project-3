@@ -1,28 +1,23 @@
 package org.bot.service;
 
-import liquibase.pro.packaged.B;
+import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bot.api.ApiProperties;
-import org.bot.api.CarPositionClient;
+import org.bot.api.CarPositionFeignClient;
+import org.bot.api.ModelsFeignClient;
 import org.bot.dto.SenderDto;
-import org.bot.exception.ApiException;
-import org.bot.exception.ForbiddenException;
-import org.bot.model.CarBrand;
 import org.bot.model.CreateCarPositionData;
 import org.bot.model.TgUser;
-import org.bot.util.MessagesConstants;
+import org.bot.util.JwtTokenUtil;
 import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.dto.CarPositionDto;
 import org.dto.request.CreateCarPositionRequest;
 import org.dto.response.CarPositionResponse;
-import org.hibernate.annotations.Target;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -32,7 +27,9 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CarsService {
 
-    private final CarPositionClient carPositionClient;
+    private final ModelsFeignClient modelsFeignClient;
+
+    private final CarPositionFeignClient carPositionFeignClient;
 
     private final UserService userService;
 
@@ -43,24 +40,46 @@ public class CarsService {
     private final ApiProperties apiProperties;
 
     public List<CarPositionDto> getCarPositions(SenderDto senderDto) {
-        System.out.println(senderDto.getUser().getJwtToken());
         try {
-            return carPositionClient.getCarPositions(senderDto);
-        } catch (ForbiddenException e) {
-            if (userService.refreshUserTokens(senderDto)) {
+            return carPositionFeignClient.getCarPositions(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken()));
+        } catch (FeignException e) {
+            if (e.status() == HttpStatus.FORBIDDEN.value() && userService.refreshUserTokens(senderDto)) {
+                log.info("forbidden for get car positions info request");
                 try {
-                    System.out.println(senderDto.getUser().getJwtToken());
-                    return carPositionClient.getCarPositions(senderDto);
-                } catch (ForbiddenException ex) {
-                    log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
-                } catch (ApiException exApi) {
-                    log.warn("api exception after forbidden chatId: {}", senderDto.getChatId(), exApi);
+                    return carPositionFeignClient.getCarPositions(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken()));
+                } catch (FeignException ex) {
+                    if (ex.status() == HttpStatus.FORBIDDEN.value()) {
+                        log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
+                    } else {
+                        log.warn("error request get car positions after forbidden chatId: {}", senderDto.getChatId(), ex);
+                    }
+                    return List.of();
                 }
             }
-        } catch (ApiException e) {
-            log.warn("api exception from get car positions request");
+            log.warn("error request get car positions chatId: {}", senderDto.getChatId(), e);
+            return List.of();
         }
-        return List.of();
+    }
+
+    public Optional<CarPositionResponse> getCarPosition(SenderDto sender, Long carPositionId) {
+        try {
+            return Optional.of(carPositionFeignClient.getCarPosition(JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()), carPositionId));
+        } catch (FeignException e) {
+            if (e.status() == HttpStatus.FORBIDDEN.value() && userService.refreshUserTokens(sender)) {
+                try {
+                    return Optional.of(carPositionFeignClient.getCarPosition(JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()), carPositionId));
+                } catch (FeignException ex) {
+                    if (ex.status() == HttpStatus.FORBIDDEN.value()) {
+                        log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
+                    } else {
+                        log.warn("error request get car position after forbidden chatId: {}", sender.getChatId(), ex);
+                    }
+                    return Optional.empty();
+                }
+            }
+            log.warn("error request get car position chatId: {}", sender.getChatId(), e);
+            return Optional.empty();
+        }
     }
 
     public boolean createCarPosition(SenderDto sender) {
@@ -75,38 +94,26 @@ public class CarsService {
                 .build();
 
         try {
-            carPositionClient.addCarPosition(sender, request);
+            carPositionFeignClient.addCarPosition(request, JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()));
             return true;
-        } catch (ForbiddenException e) {
-            if (userService.refreshUserTokens(sender)) {
+        } catch (FeignException e) {
+            if (e.status() == HttpStatus.FORBIDDEN.value() && userService.refreshUserTokens(sender)) {
+                log.info("forbidden for add car position info request");
                 try {
-                    carPositionClient.addCarPosition(sender, request);
+                    carPositionFeignClient.addCarPosition(request, JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()));
                     return true;
-                } catch (ForbiddenException ex) {
-                    log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
+                } catch (FeignException ex) {
+                    if (ex.status() == HttpStatus.FORBIDDEN.value()) {
+                        log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
+                    } else {
+                        log.warn("error request after forbidden chatId: {}", sender.getChatId(), ex);
+                    }
+                    return false;
                 }
             }
-        } catch (ApiException e) {
-            log.warn("api exception from get car positions request");
+            log.warn("error request from get car positions chatId: {}", sender.getChatId(), e);
+            return false;
         }
-        return false;
-    }
-
-    public Optional<CarPositionResponse> getCarPosition(SenderDto sender, Long carPositionId) {
-        try {
-            return Optional.of(carPositionClient.getCarPosition(sender, carPositionId));
-        } catch (ForbiddenException e) {
-            if (userService.refreshUserTokens(sender)) {
-                try {
-                    return Optional.of(carPositionClient.getCarPosition(sender, carPositionId));
-                } catch (ForbiddenException ex) {
-                    log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
-                }
-            }
-        } catch (ApiException e) {
-            log.warn("api exception from get car position request");
-        }
-        return Optional.empty();
     }
 
     public List<CarBrandDto> processCarBrand(SenderDto sender, String carBrand) {
@@ -123,7 +130,14 @@ public class CarsService {
         }
         carPositionDataService.createCarPositionData(sender.getChatId(), brandOp.get().getName());
 
-        List<CarModelDto> carModels = carPositionClient.getCarModels(brandOp.get());
+        List<CarModelDto> carModels;
+        try {
+            carModels = modelsFeignClient.getCarModelsByBrand(brandOp.get().getId());
+        } catch (FeignException e) {
+            log.warn("error request get car models chatId: {}", sender.getChatId(), e);
+            return Optional.empty();
+        }
+
         userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_MODEL);
         return Optional.of(carModels);
     }

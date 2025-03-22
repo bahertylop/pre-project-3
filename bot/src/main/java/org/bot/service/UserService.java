@@ -3,15 +3,10 @@ package org.bot.service;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.bot.api.AuthClient;
 import org.bot.api.AuthFeignClient;
 import org.bot.api.ProfileFeignClient;
-import org.bot.api.UserClient;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
-import org.bot.exception.ApiException;
-import org.bot.exception.AuthException;
-import org.bot.exception.ForbiddenException;
 import org.bot.model.TgUser;
 import org.bot.repository.UserRepository;
 import org.bot.util.JwtTokenUtil;
@@ -22,10 +17,8 @@ import org.dto.response.ProfileResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.client.RestClientException;
 
 import java.util.Optional;
-
 
 @Slf4j
 @Service
@@ -35,8 +28,6 @@ public class UserService {
     private final UserRepository userRepository;
 
     private final AuthFeignClient authFeignClient;
-
-    private final UserClient userClient;
 
     private final ProfileFeignClient profileFeignClient;
 

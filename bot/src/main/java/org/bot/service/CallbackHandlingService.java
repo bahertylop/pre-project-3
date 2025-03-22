@@ -1,7 +1,5 @@
 package org.bot.service;
 
-import liquibase.command.core.InternalGenerateChangelogCommandStep;
-import liquibase.util.StringUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -9,11 +7,9 @@ import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
 import org.bot.handlers.callback.*;
-import org.bot.model.TgUser;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Map;
 import java.util.Optional;
 
