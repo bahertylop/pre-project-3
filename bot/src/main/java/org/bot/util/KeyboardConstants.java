@@ -1,6 +1,5 @@
 package org.bot.util;
 
-import liquibase.pro.packaged.I;
 import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
 import org.dto.CarPositionDto;

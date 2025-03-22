@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.model.TgUser;
-import org.bot.service.CarsService;
 import org.bot.service.UserService;
 import org.bot.util.MessagesConstants;
 import org.springframework.stereotype.Component;

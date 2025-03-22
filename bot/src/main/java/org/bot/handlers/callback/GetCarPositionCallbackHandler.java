@@ -7,12 +7,10 @@ import org.bot.dto.SenderDto;
 import org.bot.service.CarsService;
 import org.bot.util.ChartUtils;
 import org.bot.util.MessagesConstants;
-import org.dto.CarPositionDto;
 import org.dto.response.CarPositionResponse;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
-import org.telegram.telegrambots.meta.bots.AbsSender;
 
 import java.io.IOException;
 import java.util.Optional;

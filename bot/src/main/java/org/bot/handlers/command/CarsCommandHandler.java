@@ -1,7 +1,6 @@
 package org.bot.handlers.command;
 
 import lombok.RequiredArgsConstructor;
-import org.bot.api.CarPositionClient;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.model.TgUser;
