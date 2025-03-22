@@ -5,6 +5,7 @@ import lombok.Data;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.model.TgUser;
+import org.bot.service.api.CarPositionApiService;
 import org.bot.service.CarsService;
 import org.bot.util.MessagesConstants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,10 @@ public class CarParamMessageHandler implements MessageHandler {
 
     private final CarsService carsService;
 
+    private final CarPositionApiService carPositionApiService;
+
     @Autowired
-    public CarParamMessageHandler(CarsService carsService) {
+    public CarParamMessageHandler(CarsService carsService, CarPositionApiService carPositionApiService) {
         Map<TgUser.BotState, Consumer<HandlerArgs>> tempHandlers = new HashMap<>();
         tempHandlers.put(TgUser.BotState.ADD_CAR_PARAM_YEAR_FROM, this::handleAddYearFrom);
         tempHandlers.put(TgUser.BotState.ADD_CAR_PARAM_YEAR_BEFORE, this::handleAddYearBefore);
@@ -30,6 +33,7 @@ public class CarParamMessageHandler implements MessageHandler {
         tempHandlers.put(TgUser.BotState.ADD_CAR_PARAM_MILEAGE_BEFORE, this::handleAddMileageBefore);
         handlers = tempHandlers;
         this.carsService = carsService;
+        this.carPositionApiService = carPositionApiService;
     }
 
     @Override
@@ -68,7 +72,7 @@ public class CarParamMessageHandler implements MessageHandler {
 
     public void handleAddMileageBefore(HandlerArgs args) {
         if (carsService.processMileageBefore(args.getSender(), args.getText())) {
-            if (carsService.createCarPosition(args.getSender())) {
+            if (carPositionApiService.createCarPosition(args.getSender())) {
                 args.getBot().sendMessage(args.getSender().getChatId(), MessagesConstants.SUCCESS_ADD_CAR_POSITION);
             } else {
                 args.getBot().sendMessage(args.getSender().getChatId(), MessagesConstants.FAILED_TO_ADD_CAR_POSITION);

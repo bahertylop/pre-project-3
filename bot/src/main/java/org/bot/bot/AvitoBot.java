@@ -2,8 +2,8 @@ package org.bot.bot;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.bot.service.CallbackHandlingService;
-import org.bot.service.TextMessageHandlingService;
+import org.bot.service.handling.CallbackHandlingService;
+import org.bot.service.handling.TextMessageHandlingService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;

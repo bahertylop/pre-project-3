@@ -1,4 +1,4 @@
-package org.bot.service;
+package org.bot.service.handling;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +7,7 @@ import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
 import org.bot.handlers.callback.*;
+import org.bot.service.UserService;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 
@@ -30,7 +31,6 @@ public class CallbackHandlingService {
 
         Optional<TgUserDto> userOp = userService.getUserByChatId(chatId);
         if (userOp.isEmpty()) {
-            // какая-то хуйня
             return;
         }
 

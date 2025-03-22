@@ -1,4 +1,4 @@
-package org.bot.service;
+package org.bot.service.handling;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

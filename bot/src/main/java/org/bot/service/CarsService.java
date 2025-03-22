@@ -1,21 +1,14 @@
 package org.bot.service;
 
-import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bot.api.ApiProperties;
-import org.bot.api.CarPositionFeignClient;
-import org.bot.api.ModelsFeignClient;
 import org.bot.dto.SenderDto;
 import org.bot.model.CreateCarPositionData;
 import org.bot.model.TgUser;
-import org.bot.util.JwtTokenUtil;
+import org.bot.service.api.ModelsApiService;
 import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
-import org.dto.CarPositionDto;
-import org.dto.request.CreateCarPositionRequest;
-import org.dto.response.CarPositionResponse;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -27,10 +20,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CarsService {
 
-    private final ModelsFeignClient modelsFeignClient;
-
-    private final CarPositionFeignClient carPositionFeignClient;
-
     private final UserService userService;
 
     private final CreateCarPositionDataService carPositionDataService;
@@ -39,44 +28,8 @@ public class CarsService {
 
     private final ApiProperties apiProperties;
 
-    private final RetryService retryService;
+    private final ModelsApiService modelsApiService;
 
-    public List<CarPositionDto> getCarPositions(SenderDto sender) {
-        return retryService.executeWithRetry(
-                () -> carPositionFeignClient.getCarPositions(JwtTokenUtil.bearerToken(sender.getUser().getJwtToken())),
-                sender,
-                List.of()
-        );
-    }
-
-    public Optional<CarPositionResponse> getCarPosition(SenderDto sender, Long carPositionId) {
-        return Optional.ofNullable(retryService.executeWithRetry(
-                () -> carPositionFeignClient.getCarPosition(JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()), carPositionId),
-                sender,
-                null
-        ));
-    }
-
-    public boolean createCarPosition(SenderDto sender) {
-        CreateCarPositionData data = carPositionDataService.getCarPosition(sender.getChatId());
-        CreateCarPositionRequest request = CreateCarPositionRequest.builder()
-                .brand(data.getBrandName())
-                .model(data.getModelName())
-                .yearFrom(data.getYearFrom())
-                .yearBefore(data.getYearTo())
-                .mileageFrom(data.getMileageFrom())
-                .mileageBefore(data.getMileageBefore())
-                .build();
-
-        return retryService.executeWithRetry(
-                () -> {
-                    carPositionFeignClient.addCarPosition(request, JwtTokenUtil.bearerToken(sender.getUser().getJwtToken()));
-                    return true;
-                },
-                sender,
-                false
-        );
-    }
 
     public List<CarBrandDto> processCarBrand(SenderDto sender, String carBrand) {
         carPositionDataService.deleteAllCarPositionDataByChatId(sender.getChatId());
@@ -92,13 +45,7 @@ public class CarsService {
         }
         carPositionDataService.createCarPositionData(sender.getChatId(), brandOp.get().getName());
 
-        List<CarModelDto> carModels;
-        try {
-            carModels = modelsFeignClient.getCarModelsByBrand(brandOp.get().getId());
-        } catch (FeignException e) {
-            log.warn("error request get car models chatId: {}", sender.getChatId(), e);
-            return Optional.empty();
-        }
+        List<CarModelDto> carModels = modelsApiService.getCarModelsByBrand(sender, carBrandId);
 
         userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_MODEL);
         return Optional.of(carModels);
