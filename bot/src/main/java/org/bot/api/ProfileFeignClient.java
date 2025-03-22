@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public interface ProfileFeignClient {
 
     @GetMapping(value = "${api.url.get-profile}")
-    ProfileResponse getProfileInfo(@RequestHeader("Authorization") String accessToken);
+    ProfileResponse getProfileInfo(@RequestHeader(name = "Authorization") String accessToken);
 }

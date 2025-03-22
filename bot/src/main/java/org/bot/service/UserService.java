@@ -1,8 +1,11 @@
 package org.bot.service;
 
+import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bot.api.AuthClient;
+import org.bot.api.AuthFeignClient;
+import org.bot.api.ProfileFeignClient;
 import org.bot.api.UserClient;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
@@ -11,10 +14,12 @@ import org.bot.exception.AuthException;
 import org.bot.exception.ForbiddenException;
 import org.bot.model.TgUser;
 import org.bot.repository.UserRepository;
+import org.bot.util.JwtTokenUtil;
 import org.dto.request.LoginRequest;
 import org.dto.request.RefreshTokenRequest;
 import org.dto.response.JwtTokensResponse;
 import org.dto.response.ProfileResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestClientException;
@@ -29,9 +34,11 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    private final AuthClient authClient;
+    private final AuthFeignClient authFeignClient;
 
     private final UserClient userClient;
+
+    private final ProfileFeignClient profileFeignClient;
 
     public Optional<TgUserDto> getUserByChatId(Long chatId) {
         return userRepository.getUserByChatId(chatId).map(TgUserDto::from);
@@ -80,9 +87,9 @@ public class UserService {
     public boolean signInUser(SenderDto sender, String password) {
         LoginRequest loginRequest = new LoginRequest(sender.getUser().getEmail(), password);
         TgUser tgUser = getTgUserByChatId(sender.getChatId()).get();
-        JwtTokensResponse response;
+
         try {
-            response = authClient.signIn(loginRequest);
+            JwtTokensResponse response = authFeignClient.signInUser(loginRequest);
 
             tgUser.setJwtToken(response.getAccess());
             tgUser.setRefreshToken(response.getRefresh());
@@ -91,7 +98,7 @@ public class UserService {
 
             log.info("user email: {} signed in", tgUser.getEmail());
             return true;
-        } catch (AuthException e) {
+        } catch (FeignException e) {
             log.warn("error with sign-in user email: {}", tgUser.getEmail(), e);
             tgUser.setBotState(TgUser.BotState.EMAIL);
             userRepository.save(tgUser);
@@ -101,14 +108,14 @@ public class UserService {
 
     public boolean refreshUserTokens(SenderDto sender) {
         try {
-            JwtTokensResponse response = authClient.refreshTokens(new RefreshTokenRequest(sender.getUser().getRefreshToken()));
+            JwtTokensResponse response = authFeignClient.refreshTokens(new RefreshTokenRequest(sender.getUser().getRefreshToken()));
 
             TgUser tgUser = getTgUserByChatId(sender.getChatId()).get();
             tgUser.setJwtToken(response.getAccess());
             tgUser.setRefreshToken(response.getRefresh());
             sender.setUser(TgUserDto.from(userRepository.save(tgUser)));
             return true;
-        } catch (AuthException e) {
+        } catch (FeignException e) {
             log.error("tokens not refreshed", e);
             return false;
         }
@@ -116,21 +123,23 @@ public class UserService {
 
     public Optional<ProfileResponse> getProfileInfo(SenderDto senderDto) {
         try {
-            return Optional.of(userClient.getProfileInfo(senderDto));
-        } catch (ForbiddenException e) {
-            log.info("forbidden for get profile info request");
-            if (refreshUserTokens(senderDto)) {
+            return Optional.of(profileFeignClient.getProfileInfo(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken())));
+        } catch (FeignException e) {
+            if (e.status() == HttpStatus.FORBIDDEN.value() && refreshUserTokens(senderDto)) {
+                log.info("forbidden for get profile info request");
                 try {
-                    return Optional.of(userClient.getProfileInfo(senderDto));
-                } catch (ForbiddenException ex) {
-                    log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
-                } catch (ApiException ex) {
-                    log.warn("api exception after forbidden chatId: {}", senderDto.getChatId(), ex);
+                    return Optional.of(profileFeignClient.getProfileInfo(JwtTokenUtil.bearerToken(senderDto.getUser().getJwtToken())));
+                } catch (FeignException ex) {
+                    if (ex.status() == HttpStatus.FORBIDDEN.value()) {
+                        log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
+                    } else {
+                        log.warn("error request after forbidden chatId: {}", senderDto.getChatId(), ex);
+                    }
+                    return Optional.empty();
                 }
             }
-        } catch (ApiException e) {
-            log.warn("api exception from get profile request");
+            log.warn("error request get profile chatId: {}", senderDto.getChatId(), e);
+            return Optional.empty();
         }
-        return Optional.empty();
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableConfigurationProperties(ApiProperties.class)
-@EnableFeignClients
+@EnableFeignClients(basePackages = "org.bot.api")
 public class BotMain {
     public static void main(String[] args) {
         SpringApplication.run(BotMain.class);
