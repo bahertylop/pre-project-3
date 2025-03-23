@@ -23,20 +23,20 @@ public class AuthController {
 
     private final AuthenticationService authenticationService;
 
+    @PostMapping("/tg_auth")
+    public JwtTokensResponse tgAuth(@RequestBody @Validated TgAuthRequest tgAuthRequest) {
+        return authenticationService.tgAuth(tgAuthRequest);
+    }
+
 //    @PostMapping("/signup")
 //    public JwtTokensResponse signUp(@RequestBody @Validated SignUpRequest request) {
 //        return authenticationService.signUp(request);
 //    }
 
-    @PostMapping("/tg_auth")
-    public JwtTokensResponse tgAuth(@RequestBody @Validated TgAuthRequest tgAuthRequest) {
-        return authenticationService.login(new LoginRequest());
-    }
-
-    @PostMapping("/signin")
-    public JwtTokensResponse signIn(@RequestBody @Validated LoginRequest request) {
-        return authenticationService.login(request);
-    }
+//    @PostMapping("/signin")
+//    public JwtTokensResponse signIn(@RequestBody @Validated LoginRequest request) {
+//        return authenticationService.login(request);
+//    }
 
     @PostMapping("/refresh")
     public JwtTokensResponse refresh(@RequestBody @Validated RefreshTokenRequest request) {
