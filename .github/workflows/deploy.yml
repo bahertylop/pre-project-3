@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'adopt-openj11'
+          distribution: 'adopt'
 
       - name: build by maven
         run: mvn clean install -pl bot -am
