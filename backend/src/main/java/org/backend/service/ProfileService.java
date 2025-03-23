@@ -21,30 +21,31 @@ public class ProfileService {
 
     public ProfileResponse getUserInfo(UserDetails userDetails) {
         User user = (User) userDetails;
-        log.info("get user info for user with email: {}", user.getEmail());
+        log.info("get user info for user with chatId: {}", user.getChatId());
         return ProfileResponse.builder()
                 .id(user.getId())
-                .name(user.getName())
-                .email(user.getEmail())
-                .age(user.getAge())
+                .chatId(user.getChatId())
+                .firstName(user.getFirstName())
+                .lastName(user.getLastName())
+                .userName(user.getUsername())
                 .roles(user.getRoles().stream().map(Role::getRole).map(Enum::toString).collect(Collectors.toSet()))
                 .build();
     }
 
     public void deleteProfile(UserDetails userDetails) {
         User user = (User) userDetails;
-        log.info("user delete account, email: {}", user.getEmail());
+        log.info("user delete account, chatId: {}", user.getChatId());
         userService.deleteUser(user.getId());
     }
 
     public void updateUserInfo(UserDetails userDetails, UpdateProfileRequest updateInfo) {
         User user = (User) userDetails;
-        log.info("user update account, email: {}", user.getEmail());
+        log.info("user update account, chatId: {}", user.getChatId());
         UpdateUserInfoRequest updateRequest = UpdateUserInfoRequest.builder()
                 .id(user.getId())
-                .name(updateInfo.getName())
-                .password(updateInfo.getPassword())
-                .age(updateInfo.getAge())
+                .firstName(updateInfo.getFirstName())
+                .lastName(updateInfo.getLastName())
+                .userName(updateInfo.getUserName())
                 .roles(user.getRoles().stream().map(Role::getRole).collect(Collectors.toSet()))
                 .build();
         userService.updateUser(updateRequest);

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+
+    <changeSet id="edit-users-table" author="lev">
+        <dropColumn tableName="users" columnName="age"/>
+        <dropColumn tableName="users" columnName="email"/>
+        <dropColumn tableName="users" columnName="name"/>
+        <dropColumn tableName="users" columnName="password"/>
+
+        <addColumn tableName="users">
+            <column name="chat_id" type="bigint">
+                <constraints unique="true"/>
+            </column>
+            <column name="first_name" type="varchar(255)"/>
+            <column name="last_name" type="varchar(255)"/>
+            <column name="username" type="varchar(255)"/>
+        </addColumn>
+
+        <rollback>
+            <addColumn tableName="users">
+                <column name="age" type="int"/>
+                <column name="email" type="varchar(255)">
+                    <constraints unique="true"/>
+                </column>
+                <column name="name" type="varchar(255)"/>
+                <column name="password" type="varchar(255)"/>
+            </addColumn>
+
+            <dropColumn tableName="users" columnName="chat_id"/>
+            <dropColumn tableName="users" columnName="first_name"/>
+            <dropColumn tableName="users" columnName="last_name"/>
+            <dropColumn tableName="users" columnName="username"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

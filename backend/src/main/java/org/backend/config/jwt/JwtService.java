@@ -54,7 +54,7 @@ public class JwtService {
         Map<String, Object> claims = new HashMap<>();
         User user = (User) userDetails;
         claims.put("id", user.getId());
-        claims.put("email", user.getEmail());
+        claims.put("chat_id", user.getChatId());
         claims.put("roles", user.getRoles().stream().map(Role::getAuthority).collect(Collectors.toSet()));
 
         return Jwts.builder().setClaims(claims).setSubject(userDetails.getUsername())

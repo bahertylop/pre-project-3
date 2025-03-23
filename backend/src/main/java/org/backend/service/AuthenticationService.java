@@ -33,22 +33,22 @@ public class AuthenticationService {
 
     private final AuthenticationManager authenticationManager;
 
-    public JwtTokensResponse signUp(SignUpRequest request) {
-        log.info("sign up user with email {}", request.getEmail());
-        Set<Role.ROLES> roles = new HashSet<>();
-        roles.add(Role.ROLES.ROLE_USER);
-
-        CreateUserDto createUserDto = CreateUserDto.builder()
-                .name(request.getName())
-                .email(request.getEmail())
-                .password(request.getPassword())
-                .age(request.getAge())
-                .roles(roles)
-                .build();
-        User createdUser = userService.addNewUser(createUserDto);
-        log.info("user with email {} signed up", createdUser.getEmail());
-        return jwtService.generateTokens(createdUser);
-    }
+//    public JwtTokensResponse signUp(SignUpRequest request) {
+//        log.info("sign up user with email {}", request.getEmail());
+//        Set<Role.ROLES> roles = new HashSet<>();
+//        roles.add(Role.ROLES.ROLE_USER);
+//
+//        CreateUserDto createUserDto = CreateUserDto.builder()
+//                .name(request.getName())
+//                .email(request.getEmail())
+//                .password(request.getPassword())
+//                .age(request.getAge())
+//                .roles(roles)
+//                .build();
+//        User createdUser = userService.addNewUser(createUserDto);
+//        log.info("user with chatId {} signed up", createdUser.getChatId());
+//        return jwtService.generateTokens(createdUser);
+//    }
 
     public JwtTokensResponse login(LoginRequest request) {
         log.info("sign in user with email: {}", request.getEmail());

@@ -14,7 +14,7 @@ public interface UserService {
 
     Optional<UserDto> getUserById(Long id);
 
-    Optional<UserDto> getUserByEmail(String email);
+    Optional<UserDto> getUserByChatId(Long chatId);
 
     User addNewUser(CreateUserDto createUserDto);
 

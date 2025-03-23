@@ -15,11 +15,13 @@ public class ProfileResponse {
 
     private Long id;
 
-    private String name;
+    private Long chatId;
 
-    private String email;
+    private String firstName;
 
-    private Integer age;
+    private String lastName;
+
+    private String userName;
 
     private Set<String> roles;
 }

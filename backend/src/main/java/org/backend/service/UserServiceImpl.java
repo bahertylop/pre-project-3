@@ -25,8 +25,6 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
-    private final PasswordEncoder passwordEncoder;
-
     private final RoleRepository roleRepository;
 
     @Override
@@ -41,24 +39,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<UserDto> getUserByEmail(String email) {
-        log.info("get user by email: {} ", email);
-        return userRepository.getUserByEmail(email).map(UserDto::from);
+    public Optional<UserDto> getUserByChatId(Long chatId) {
+        log.info("get user by chatId: {} ", chatId);
+        return userRepository.getUserByChatId(chatId).map(UserDto::from);
     }
 
     @Override
     public User addNewUser(CreateUserDto createUserDto) {
-        if (createUserDto == null || (createUserDto.getEmail() != null && userRepository.getUserByEmail(createUserDto.getEmail()).isPresent())) {
-            log.error("try to add registered user, email: {}", createUserDto != null ? createUserDto.getEmail() : null);
+        if (createUserDto == null || (createUserDto.getChatId() != null && userRepository.getUserByChatId(createUserDto.getChatId()).isPresent())) {
+            log.error("try to add registered user, chatId: {}", createUserDto != null ? createUserDto.getChatId() : null);
             throw new UserAlreadyExistsException("Пользователь уже зарегистрирован");
         }
-        log.info("add new user with email: {}", createUserDto.getEmail());
+        log.info("add new user with chatId: {}", createUserDto.getChatId());
 
         return userRepository.save(User.builder()
-                        .name(createUserDto.getName())
-                        .email(createUserDto.getEmail())
-                        .password(passwordEncoder.encode(createUserDto.getPassword()))
-                        .age(createUserDto.getAge())
+                        .chatId(createUserDto.getChatId())
+                        .firstName(createUserDto.getFirstName())
+                        .lastName(createUserDto.getLastName())
+                        .userName(createUserDto.getUsername())
                         .roles(roleRepository.findByRoleIn(createUserDto.getRoles()))
                         .build());
     }
@@ -91,19 +89,15 @@ public class UserServiceImpl implements UserService {
 
         User user = User.builder()
                 .id(userDtoOp.get().getId())
-                .name(request.getName())
-                .email(userDtoOp.get().getEmail())
-                .age(request.getAge())
+                .chatId(userDtoOp.get().getChatId())
+                .firstName(request.getFirstName())
+                .lastName(request.getLastName())
+                .userName(request.getUserName())
                 .roles(roleRepository.findByRoleIn(request.getRoles()))
                 .build();
-        if (request.getPassword() == null) {
-            user.setPassword(userDtoOp.get().getPassword());
-        } else {
-            user.setPassword(passwordEncoder.encode(request.getPassword()));
-        }
 
         User updatedUser = userRepository.save(user);
-        log.info("user with email: {} updated", updatedUser.getEmail());
+        log.info("user with chatId: {} updated", updatedUser.getChatId());
         return updatedUser;
     }
 }

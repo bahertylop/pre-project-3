@@ -20,17 +20,17 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "chat_id")
+    private Long chatId;
 
-    @Column(name = "email", unique = true)
-    private String email;
+    @Column(name = "first_name")
+    private String firstName;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "last_name")
+    private String lastName;
 
-    @Column(name = "age")
-    private Integer age;
+    @Column(name = "username")
+    private String userName;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -49,12 +49,12 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return password;
+        return "";
     }
 
     @Override
     public String getUsername() {
-        return email;
+        return String.valueOf(chatId);
     }
 
     @Override

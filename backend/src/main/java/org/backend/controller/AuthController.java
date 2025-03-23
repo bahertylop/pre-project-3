@@ -23,10 +23,10 @@ public class AuthController {
 
     private final AuthenticationService authenticationService;
 
-    @PostMapping("/signup")
-    public JwtTokensResponse signUp(@RequestBody @Validated SignUpRequest request) {
-        return authenticationService.signUp(request);
-    }
+//    @PostMapping("/signup")
+//    public JwtTokensResponse signUp(@RequestBody @Validated SignUpRequest request) {
+//        return authenticationService.signUp(request);
+//    }
 
     @PostMapping("/tg_auth")
     public JwtTokensResponse tgAuth(@RequestBody @Validated TgAuthRequest tgAuthRequest) {

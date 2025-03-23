@@ -19,24 +19,13 @@ public class UserDto {
 
     private Long id;
 
-    @NotBlank(message = "Имя не должно быть пустым")
-    private String name;
+    private Long chatId;
 
-    @NotBlank(message = "Email не должен быть пустым")
-    @Email(message = "Некорректный формат email")
-    private String email;
+    private String firstName;
 
-    @NotBlank(message = "Пароль не должен быть пустым")
-    @Size(min = 8, max = 50, message = "Пароль должен содержать от 8 до 50 символов")
-    @Pattern(
-            regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$",
-            message = "Пароль должен содержать хотя бы одну заглавную букву, одну строчную букву и одну цифру"
-    )
-    private String password;
+    private String lastName;
 
-    @NotNull(message = "Возраст не должен быть пустым")
-    @Min(value = 12, message = "Минимальный возраст - 12 лет")
-    private Integer age;
+    private String userName;
 
     @NotNull(message = "Не может не быть ролей")
     private Set<Role.ROLES> roles;
@@ -44,10 +33,10 @@ public class UserDto {
     public static UserDto from(User user) {
         return UserDto.builder()
                 .id(user.getId())
-                .name(user.getName())
-                .email(user.getEmail())
-                .password(user.getPassword())
-                .age(user.getAge())
+                .chatId(user.getChatId())
+                .firstName(user.getFirstName())
+                .lastName(user.getLastName())
+                .userName(user.getUsername())
                 .roles(user.getRoles().stream().map(Role::getRole).collect(Collectors.toSet()))
                 .build();
     }
