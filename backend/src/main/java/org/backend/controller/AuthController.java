@@ -8,6 +8,7 @@ import org.backend.service.AuthenticationService;
 import org.dto.request.LoginRequest;
 import org.dto.request.RefreshTokenRequest;
 import org.dto.request.SignUpRequest;
+import org.dto.request.TgAuthRequest;
 import org.dto.response.JwtTokensResponse;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,11 @@ public class AuthController {
     @PostMapping("/signup")
     public JwtTokensResponse signUp(@RequestBody @Validated SignUpRequest request) {
         return authenticationService.signUp(request);
+    }
+
+    @PostMapping("/tg_auth")
+    public JwtTokensResponse tgAuth(@RequestBody @Validated TgAuthRequest tgAuthRequest) {
+        return authenticationService.login(new LoginRequest());
     }
 
     @PostMapping("/signin")

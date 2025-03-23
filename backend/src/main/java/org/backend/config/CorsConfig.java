@@ -17,7 +17,7 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://194.87.94.5:3000", "http://localhost:3000", "https://a488-185-223-93-175.ngrok-free.app"));
+        config.setAllowedOrigins(List.of("http://194.87.94.5:3000", "http://localhost:3000", "https://6c26-185-223-93-175.ngrok-free.app"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(Collections.singletonList("*"));
         config.setAllowCredentials(true);
