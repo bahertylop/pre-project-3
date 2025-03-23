@@ -3,8 +3,6 @@ package org.bot.service;
 import lombok.RequiredArgsConstructor;
 import org.bot.model.CreateCarPositionData;
 import org.bot.repository.CreateCarPositionDataRepository;
-import org.hibernate.annotations.AttributeAccessor;
-import org.hibernate.annotations.Target;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

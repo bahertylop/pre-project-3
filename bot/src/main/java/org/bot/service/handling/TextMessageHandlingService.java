@@ -1,9 +1,12 @@
-package org.bot.service;
+package org.bot.service.handling;
 
 import lombok.RequiredArgsConstructor;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
+import org.bot.service.UserService;
+import org.bot.service.handling.CommandService;
+import org.bot.service.handling.MessageService;
 import org.bot.util.KeyboardConstants;
 import org.bot.util.MessagesConstants;
 import org.springframework.stereotype.Service;

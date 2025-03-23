@@ -4,15 +4,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
+import org.bot.service.api.CarPositionApiService;
 import org.bot.service.CarsService;
 import org.bot.util.ChartUtils;
 import org.bot.util.MessagesConstants;
-import org.dto.CarPositionDto;
 import org.dto.response.CarPositionResponse;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
-import org.telegram.telegrambots.meta.bots.AbsSender;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -23,6 +22,8 @@ import java.util.Optional;
 public class GetCarPositionCallbackHandler implements CallbackHandler {
 
     private final CarsService carsService;
+
+    private final CarPositionApiService carPositionApiService;
 
     @Override
     public void handleCallback(AvitoBot bot, SenderDto sender, CallbackQuery callback, String[] data) {
@@ -35,7 +36,7 @@ public class GetCarPositionCallbackHandler implements CallbackHandler {
             return;
         }
 
-        Optional<CarPositionResponse> carPositionResponse = carsService.getCarPosition(sender, carPositionId);
+        Optional<CarPositionResponse> carPositionResponse = carPositionApiService.getCarPosition(sender, carPositionId);
         if (carPositionResponse.isEmpty()) {
             bot.sendMessage(sender.getChatId(), MessagesConstants.FAILED_TO_GET_CAR_POSITION);
             return;

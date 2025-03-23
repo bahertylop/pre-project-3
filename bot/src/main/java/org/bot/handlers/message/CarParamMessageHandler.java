@@ -1,28 +1,40 @@
 package org.bot.handlers.message;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.model.TgUser;
+import org.bot.service.api.CarPositionApiService;
 import org.bot.service.CarsService;
 import org.bot.util.MessagesConstants;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
 @Component
-@RequiredArgsConstructor
 public class CarParamMessageHandler implements MessageHandler {
 
-    private final Map<TgUser.BotState, Consumer<HandlerArgs>> handlers = Map.of(
-            TgUser.BotState.ADD_CAR_PARAM_YEAR_FROM, this::handleAddYearFrom,
-            TgUser.BotState.ADD_CAR_PARAM_YEAR_BEFORE, this::handleAddYearBefore,
-            TgUser.BotState.ADD_CAR_PARAM_MILEAGE_FROM, this::handleAddMileageFrom,
-            TgUser.BotState.ADD_CAR_PARAM_MILEAGE_BEFORE, this::handleAddMileageBefore
-    );
+    private final Map<TgUser.BotState, Consumer<HandlerArgs>> handlers;
 
     private final CarsService carsService;
+
+    private final CarPositionApiService carPositionApiService;
+
+    @Autowired
+    public CarParamMessageHandler(CarsService carsService, CarPositionApiService carPositionApiService) {
+        Map<TgUser.BotState, Consumer<HandlerArgs>> tempHandlers = new HashMap<>();
+        tempHandlers.put(TgUser.BotState.ADD_CAR_PARAM_YEAR_FROM, this::handleAddYearFrom);
+        tempHandlers.put(TgUser.BotState.ADD_CAR_PARAM_YEAR_BEFORE, this::handleAddYearBefore);
+        tempHandlers.put(TgUser.BotState.ADD_CAR_PARAM_MILEAGE_FROM, this::handleAddMileageFrom);
+        tempHandlers.put(TgUser.BotState.ADD_CAR_PARAM_MILEAGE_BEFORE, this::handleAddMileageBefore);
+        handlers = tempHandlers;
+        this.carsService = carsService;
+        this.carPositionApiService = carPositionApiService;
+    }
 
     @Override
     public boolean handleMessage(AvitoBot bot, SenderDto sender, String text) {
@@ -31,46 +43,50 @@ public class CarParamMessageHandler implements MessageHandler {
             handleMethod.accept(new HandlerArgs(bot, sender, text));
             return true;
         }
-
         return false;
     }
 
     public void handleAddYearFrom(HandlerArgs args) {
-        if (carsService.processYearFrom(args.sender, args.text)) {
-            args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.INPUT_YEAR_BEFORE_MESSAGE);
+        if (carsService.processYearFrom(args.getSender(), args.getText())) {
+            args.getBot().sendMessage(args.getSender().getChatId(), MessagesConstants.INPUT_YEAR_BEFORE_MESSAGE);
             return;
         }
-        args.bot.sendMessage(args.sender.getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_YEAR_FROM_MESSAGE);
+        args.getBot().sendMessage(args.getSender().getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_YEAR_FROM_MESSAGE);
     }
 
     public void handleAddYearBefore(HandlerArgs args) {
-        if (carsService.processYearBefore(args.sender, args.text)) {
-            args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.INPUT_MILEAGE_FROM_MESSAGE);
+        if (carsService.processYearBefore(args.getSender(), args.getText())) {
+            args.getBot().sendMessage(args.getSender().getChatId(), MessagesConstants.INPUT_MILEAGE_FROM_MESSAGE);
             return;
         }
-        args.bot.sendMessage(args.sender.getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_YEAR_BEFORE_MESSAGE);
+        args.getBot().sendMessage(args.getSender().getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_YEAR_BEFORE_MESSAGE);
     }
 
     public void handleAddMileageFrom(HandlerArgs args) {
-        if (carsService.processMileageFrom(args.sender, args.text)) {
-            args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.INPUT_MILEAGE_BEFORE_MESSAGE);
+        if (carsService.processMileageFrom(args.getSender(), args.getText())) {
+            args.getBot().sendMessage(args.getSender().getChatId(), MessagesConstants.INPUT_MILEAGE_BEFORE_MESSAGE);
             return;
         }
-        args.bot.sendMessage(args.sender.getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_MILEAGE_FROM_MESSAGE);
+        args.getBot().sendMessage(args.getSender().getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_MILEAGE_FROM_MESSAGE);
     }
 
     public void handleAddMileageBefore(HandlerArgs args) {
-        if (carsService.processMileageBefore(args.sender, args.text)) {
-
-            if (carsService.createCarPosition(args.sender)) {
-                args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.SUCCESS_ADD_CAR_POSITION);
+        if (carsService.processMileageBefore(args.getSender(), args.getText())) {
+            if (carPositionApiService.createCarPosition(args.getSender())) {
+                args.getBot().sendMessage(args.getSender().getChatId(), MessagesConstants.SUCCESS_ADD_CAR_POSITION);
             } else {
-                args.bot.sendMessage(args.sender.getChatId(), MessagesConstants.FAILED_TO_ADD_CAR_POSITION);
+                args.getBot().sendMessage(args.getSender().getChatId(), MessagesConstants.FAILED_TO_ADD_CAR_POSITION);
             }
             return;
         }
-        args.bot.sendMessage(args.sender.getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_MILEAGE_BEFORE_MESSAGE);
+        args.getBot().sendMessage(args.getSender().getChatId(), "Ошибка!\n" + MessagesConstants.INPUT_MILEAGE_BEFORE_MESSAGE);
     }
 
-    private record HandlerArgs(AvitoBot bot, SenderDto sender, String text) {}
+    @Data
+    @AllArgsConstructor
+    private static class HandlerArgs {
+        private final AvitoBot bot;
+        private final SenderDto sender;
+        private final String text;
+    }
 }

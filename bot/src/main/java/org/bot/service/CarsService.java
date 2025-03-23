@@ -1,27 +1,16 @@
 package org.bot.service;
 
-import liquibase.pro.packaged.B;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.bot.api.CarPositionClient;
+import org.bot.api.ApiProperties;
 import org.bot.dto.SenderDto;
-import org.bot.exception.ApiException;
-import org.bot.exception.ForbiddenException;
-import org.bot.model.CarBrand;
 import org.bot.model.CreateCarPositionData;
 import org.bot.model.TgUser;
-import org.bot.util.MessagesConstants;
+import org.bot.service.api.ModelsApiService;
 import org.dto.CarBrandDto;
 import org.dto.CarModelDto;
-import org.dto.CarPositionDto;
-import org.dto.request.CreateCarPositionRequest;
-import org.dto.response.CarPositionResponse;
-import org.hibernate.annotations.Target;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -31,86 +20,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CarsService {
 
-    private final CarPositionClient carPositionClient;
-
     private final UserService userService;
 
     private final CreateCarPositionDataService carPositionDataService;
 
     private final CarBrandService carBrandService;
 
-    @Value("${api.constraint.min-year-from}")
-    private Integer minYearFromParam;
+    private final ApiProperties apiProperties;
 
-    @Value("${api.constraint.max-mileage}")
-    private Integer maxMileageParam;
+    private final ModelsApiService modelsApiService;
 
-    public List<CarPositionDto> getCarPositions(SenderDto senderDto) {
-        System.out.println(senderDto.getUser().getJwtToken());
-        try {
-            return carPositionClient.getCarPositions(senderDto);
-        } catch (ForbiddenException e) {
-            if (userService.refreshUserTokens(senderDto)) {
-                try {
-                    System.out.println(senderDto.getUser().getJwtToken());
-                    return carPositionClient.getCarPositions(senderDto);
-                } catch (ForbiddenException ex) {
-                    log.error("forbidden after refresh tokens chatId: {}", senderDto.getChatId(), ex);
-                } catch (ApiException exApi) {
-                    log.warn("api exception after forbidden chatId: {}", senderDto.getChatId(), exApi);
-                }
-            }
-        } catch (ApiException e) {
-            log.warn("api exception from get car positions request");
-        }
-        return List.of();
-    }
-
-    public boolean createCarPosition(SenderDto sender) {
-        CreateCarPositionData data = carPositionDataService.getCarPosition(sender.getChatId());
-        CreateCarPositionRequest request = CreateCarPositionRequest.builder()
-                .brand(data.getBrandName())
-                .model(data.getModelName())
-                .yearFrom(data.getYearFrom())
-                .yearBefore(data.getYearTo())
-                .mileageFrom(data.getMileageFrom())
-                .mileageBefore(data.getMileageBefore())
-                .build();
-
-        try {
-            carPositionClient.addCarPosition(sender, request);
-            return true;
-        } catch (ForbiddenException e) {
-            if (userService.refreshUserTokens(sender)) {
-                try {
-                    carPositionClient.addCarPosition(sender, request);
-                    return true;
-                } catch (ForbiddenException ex) {
-                    log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
-                }
-            }
-        } catch (ApiException e) {
-            log.warn("api exception from get car positions request");
-        }
-        return false;
-    }
-
-    public Optional<CarPositionResponse> getCarPosition(SenderDto sender, Long carPositionId) {
-        try {
-            return Optional.of(carPositionClient.getCarPosition(sender, carPositionId));
-        } catch (ForbiddenException e) {
-            if (userService.refreshUserTokens(sender)) {
-                try {
-                    return Optional.of(carPositionClient.getCarPosition(sender, carPositionId));
-                } catch (ForbiddenException ex) {
-                    log.error("forbidden after refresh tokens chatId: {}", sender.getChatId(), ex);
-                }
-            }
-        } catch (ApiException e) {
-            log.warn("api exception from get car position request");
-        }
-        return Optional.empty();
-    }
 
     public List<CarBrandDto> processCarBrand(SenderDto sender, String carBrand) {
         carPositionDataService.deleteAllCarPositionDataByChatId(sender.getChatId());
@@ -126,7 +45,8 @@ public class CarsService {
         }
         carPositionDataService.createCarPositionData(sender.getChatId(), brandOp.get().getName());
 
-        List<CarModelDto> carModels = carPositionClient.getCarModels(brandOp.get());
+        List<CarModelDto> carModels = modelsApiService.getCarModelsByBrand(sender, carBrandId);
+
         userService.changeUserBotStatus(sender, TgUser.BotState.ADD_CAR_MODEL);
         return Optional.of(carModels);
     }
@@ -148,8 +68,8 @@ public class CarsService {
             return true;
         }
         try {
-            Integer year = Integer.parseInt(yearFrom);
-            if (year < minYearFromParam || year > LocalDate.now().getYear()) {
+            int year = Integer.parseInt(yearFrom);
+            if (year < apiProperties.getConstraint().getMinYearFrom() || year > LocalDate.now().getYear()) {
                 log.debug("user input not valid yearFrom: {}", year);
                 return false;
             }
@@ -191,8 +111,8 @@ public class CarsService {
             return true;
         }
         try {
-            Integer mileage = Integer.parseInt(mileageFrom);
-            if (mileage < 0 || mileage > maxMileageParam) {
+            int mileage = Integer.parseInt(mileageFrom);
+            if (mileage < 0 || mileage > apiProperties.getConstraint().getMaxMileage()) {
                 log.debug("user input negative mileageFrom");
                 return false;
             }
@@ -213,9 +133,9 @@ public class CarsService {
             return true;
         }
         try {
-            Integer mileage = Integer.parseInt(mileageBefore);
+            int mileage = Integer.parseInt(mileageBefore);
             CreateCarPositionData data = carPositionDataService.getCarPosition(sender.getChatId());
-            if (mileage < 0 || mileage > maxMileageParam ||
+            if (mileage < 0 || mileage > apiProperties.getConstraint().getMaxMileage() ||
                 data.getMileageFrom() != null && data.getMileageFrom() > mileage
             ) {
                 log.debug("user input not valid yearBefore: {}", mileage);

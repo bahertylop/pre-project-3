@@ -1,7 +1,5 @@
-package org.bot.service;
+package org.bot.service.handling;
 
-import liquibase.command.core.InternalGenerateChangelogCommandStep;
-import liquibase.util.StringUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -9,11 +7,10 @@ import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
 import org.bot.handlers.callback.*;
-import org.bot.model.TgUser;
+import org.bot.service.UserService;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Map;
 import java.util.Optional;
 
@@ -34,7 +31,6 @@ public class CallbackHandlingService {
 
         Optional<TgUserDto> userOp = userService.getUserByChatId(chatId);
         if (userOp.isEmpty()) {
-            // какая-то хуйня
             return;
         }
 
@@ -56,22 +52,18 @@ public class CallbackHandlingService {
         String callbackNameUn = StringUtils.uncapitalize(callbackName);
 
         switch (callbackNameUn) {
-            case "/signIn" -> {
+            case "/signIn":
                 return StringUtils.uncapitalize(SignInCallbackHandler.class.getSimpleName());
-            }
-            case "/brand" -> {
+            case "/brand":
                 return StringUtils.uncapitalize(ChooseCarBrandCallbackHandler.class.getSimpleName());
-            }
-            case "/model" -> {
+            case "/model":
                 return StringUtils.uncapitalize(ChooseModelCallbackHandler.class.getSimpleName());
-            }
-            case "/car" -> {
+            case "/car":
                 return StringUtils.uncapitalize(GetCarPositionCallbackHandler.class.getSimpleName());
-            }
-            default -> {
+            default:
                 log.warn("unexpected callbackName: {}", callbackName);
                 return "";
-            }
         }
     }
+
 }

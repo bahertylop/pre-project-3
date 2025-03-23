@@ -1,15 +1,10 @@
 package org.bot.dto;
 
-import liquibase.pro.packaged.B;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bot.model.TgUser;
-
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 
 @Data
 @AllArgsConstructor
