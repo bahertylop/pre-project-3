@@ -25,8 +25,8 @@ server:
 
 api:
   url:
-    base-url: https://2dfa-185-223-93-175.ngrok-free.app
-    sign-in: /auth/signin
+    base-url: http://localhost:8080
+    sign-in: /auth/tg_auth
     refresh: /auth/refresh
     get-profile: /user
     car-positions: /cars

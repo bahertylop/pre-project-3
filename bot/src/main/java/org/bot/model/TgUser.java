@@ -20,9 +20,6 @@ public class TgUser {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tg_users_id_seq")
     private Long id;
 
-    @Column(name = "email", unique = true)
-    private String email;
-
     @Column(name = "chat_id")
     private Long chatId;
 
@@ -40,8 +37,6 @@ public class TgUser {
     private BotState botState;
 
     public enum BotState {
-        EMAIL,
-        PASSWORD,
         WORKING,
         ADD_CAR_BRAND,
         CHOOSE_CAR_BRAND,

@@ -11,6 +11,7 @@ import org.bot.repository.UserRepository;
 import org.bot.service.UserService;
 import org.dto.request.LoginRequest;
 import org.dto.request.RefreshTokenRequest;
+import org.dto.request.TgAuthRequest;
 import org.dto.response.JwtTokensResponse;
 import org.springframework.stereotype.Service;
 
@@ -23,19 +24,18 @@ public class AuthService {
 
     private final UserService userService;
 
-    public boolean signInUser(SenderDto sender, String password) {
-        LoginRequest loginRequest = new LoginRequest(sender.getUser().getEmail(), password);
+    public boolean signInUser(Long chatId) {
+        TgAuthRequest request = TgAuthRequest.builder().telegramId(chatId).build();
 
         try {
-            JwtTokensResponse response = authFeignClient.signInUser(loginRequest);
+            JwtTokensResponse response = authFeignClient.signInUser(request);
 
-            userService.setUserTokensBotAndStatus(response.getAccess(), response.getRefresh(), sender.getChatId(), TgUser.BotState.WORKING);
+            userService.setUserTokensBotAndStatus(response.getAccess(), response.getRefresh(), chatId, TgUser.BotState.WORKING);
 
-            log.info("user email: {} signed in", sender.getUser().getEmail());
+            log.info("user chatId: {} signed in", chatId);
             return true;
         } catch (FeignException e) {
-            log.warn("error with sign-in user email: {}", sender.getUser().getEmail(), e);
-            userService.changeUserBotStatus(sender, TgUser.BotState.EMAIL);
+            log.warn("error with sign-in user chatId: {}", chatId, e);
             return false;
         }
     }

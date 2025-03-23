@@ -8,7 +8,7 @@ import java.util.List;
 
 public class MessagesConstants {
 
-    public static final String HELLO_MESSAGE = "Привет, здесь ты можешь отслеживать медианную цену на свой автомобиль на авито, если ты уже зарегистрирован, нажми \"вход\", если нет, то сначала нажми \"регистрация\"";
+    public static final String HELLO_MESSAGE = "Привет, здесь ты можешь отслеживать медианную цену на свой автомобиль на авито";
     public static final String ADD_EMAIL_MESSAGE = "Введите почту";
     public static final String USER_ALREADY_SIGNED_IN = "Вы уже вошли";
     public static final String NOT_VALID_EMAIL_MESSAGE = "Введена некорректная почта, попробуйте еще раз";
@@ -35,9 +35,9 @@ public class MessagesConstants {
     public static String profileResponseMessage(ProfileResponse response) {
         StringBuilder sb = new StringBuilder();
         sb.append("id: ").append(response.getId()).append("\n");
-        sb.append("name: ").append(response.getName()).append("\n");
-        sb.append("email: ").append(response.getEmail()).append("\n");
-        sb.append("age: ").append(response.getAge()).append("\n");
+        sb.append("firstName: ").append(response.getFirstName()).append("\n");
+        sb.append("lastName: ").append(response.getLastName()).append("\n");
+        sb.append("username: ").append(response.getUserName()).append("\n");
         sb.append("roles: ").append(response.getRoles());
 
         return sb.toString();

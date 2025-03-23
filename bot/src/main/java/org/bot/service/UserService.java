@@ -44,23 +44,10 @@ public class UserService {
         TgUser newTgUser = TgUser.builder()
                 .chatId(chatId)
                 .tgUserName(userName)
-                .botState(TgUser.BotState.EMAIL)
+                .botState(TgUser.BotState.WORKING)
                 .build();
 
         userRepository.save(newTgUser);
-    }
-
-    public void addEmailToUser(SenderDto sender, String email) {
-        Optional<TgUser> tgUserOp = getTgUserByChatId(sender.getChatId());
-        if (tgUserOp.isEmpty()) {
-            // не может такого быть по сути
-            return;
-        }
-
-        TgUser user = tgUserOp.get();
-        user.setEmail(email);
-        user.setBotState(TgUser.BotState.PASSWORD);
-        userRepository.save(user);
     }
 
     @Transactional

@@ -9,4 +9,6 @@
         <include file="db/changelog/tables/changeset-18-03-2025-001-create-table-car_position.xml"/>
         <include file="db/changelog/tables/changeset-19-03-2025-001-create-table-brand.xml"/>
         <include file="db/changelog/indexes/changeset-20-03-2025-001-create-gist-idx-to-brand-name.xml"/>
+
+        <include file="db/changelog/tables/changeset-23-03-2025-001-edit-table-tg_users.xml"/>
 </databaseChangeLog>

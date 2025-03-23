@@ -29,7 +29,6 @@ public class TgUserDto {
     public static TgUserDto from(TgUser tgUser) {
         return TgUserDto.builder()
                 .id(tgUser.getId())
-                .email(tgUser.getEmail())
                 .chatId(tgUser.getChatId())
                 .tgUserName(tgUser.getTgUserName())
                 .jwtToken(tgUser.getJwtToken())

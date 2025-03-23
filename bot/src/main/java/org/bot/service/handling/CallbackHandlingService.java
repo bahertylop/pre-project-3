@@ -52,8 +52,6 @@ public class CallbackHandlingService {
         String callbackNameUn = StringUtils.uncapitalize(callbackName);
 
         switch (callbackNameUn) {
-            case "/signIn":
-                return StringUtils.uncapitalize(SignInCallbackHandler.class.getSimpleName());
             case "/brand":
                 return StringUtils.uncapitalize(ChooseCarBrandCallbackHandler.class.getSimpleName());
             case "/model":

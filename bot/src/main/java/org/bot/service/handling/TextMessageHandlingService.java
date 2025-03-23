@@ -5,6 +5,7 @@ import org.bot.bot.AvitoBot;
 import org.bot.dto.SenderDto;
 import org.bot.dto.TgUserDto;
 import org.bot.service.UserService;
+import org.bot.service.api.AuthService;
 import org.bot.service.handling.CommandService;
 import org.bot.service.handling.MessageService;
 import org.bot.util.KeyboardConstants;
@@ -24,6 +25,8 @@ public class TextMessageHandlingService {
 
     private final CommandService commandsService;
 
+    private final AuthService authService;
+
     public void onMessageReceived(AvitoBot bot, Long chatId, Message message) {
         String text = message.getText();
         Integer messageId = message.getMessageId();
@@ -31,7 +34,8 @@ public class TextMessageHandlingService {
         Optional<TgUserDto> tgUserOp = userService.getUserByChatId(chatId);
         if (tgUserOp.isEmpty()) {
             userService.addNewUser(chatId, message.getFrom().getUserName());
-            bot.sendMessage(chatId, MessagesConstants.HELLO_MESSAGE, KeyboardConstants.authCommands());
+            authService.signInUser(chatId);
+            bot.sendMessage(chatId, MessagesConstants.HELLO_MESSAGE, KeyboardConstants.botButtons());
             return;
         }
 
