@@ -26,9 +26,10 @@
 
 <div id="profileData" class="mb-3">
     <p><strong>ID:</strong> <span id="profileId"></span></p>
-    <p><strong>Имя:</strong> <span id="profileName"></span></p>
-    <p><strong>Почта:</strong> <span id="profileEmail"></span></p>
-    <p><strong>Возраст:</strong> <span id="profileAge"></span></p>
+    <p><strong>TG ID:</strong> <span id="chatId"></span></p>
+    <p><strong>Имя:</strong> <span id="firstName"></span></p>
+    <p><strong>Фамилия:</strong> <span id="lastName"></span></p>
+    <p><strong>Имя пользователя:</strong> <span id="username"></span></p>
     <p><strong>Роли:</strong> <span id="profileRoles"></span></p>
 </div>
 
@@ -49,16 +50,12 @@
             <div class="modal-body">
                 <form id="editProfileForm">
                     <div class="mb-3">
-                        <label for="editName" class="form-label">Имя</label>
-                        <input type="text" class="form-control" id="editName" required>
+                        <label for="editFirstName" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="editFirstName" required>
                     </div>
                     <div class="mb-3">
-                        <label for="editPassword" class="form-label">Пароль (минимум 8 символов)</label>
-                        <input type="password" class="form-control" id="editPassword">
-                    </div>
-                    <div class="mb-3">
-                        <label for="editAge" class="form-label">Возраст</label>
-                        <input type="number" class="form-control" id="editAge" required min="12">
+                        <label for="editLastName" class="form-label">Фамилия</label>
+                        <input type="text" class="form-control" id="editLastName" required>
                     </div>
                     <button type="submit" class="btn btn-success">Сохранить</button>
                 </form>

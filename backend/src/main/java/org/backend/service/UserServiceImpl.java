@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
                         .chatId(createUserDto.getChatId())
                         .firstName(createUserDto.getFirstName())
                         .lastName(createUserDto.getLastName())
-                        .userName(createUserDto.getUsername())
+                        .tgUserName(createUserDto.getUsername())
                         .roles(roleRepository.findByRoleIn(createUserDto.getRoles()))
                         .build());
     }
@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
                 .chatId(userDtoOp.get().getChatId())
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
-                .userName(request.getUserName())
+                .tgUserName(userDtoOp.get().getUserName())
                 .roles(roleRepository.findByRoleIn(request.getRoles()))
                 .build();
 

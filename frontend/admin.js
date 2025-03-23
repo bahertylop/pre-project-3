@@ -9,7 +9,8 @@ $(document).ready(function () {
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/admin`,
             method: 'GET',
-            headers: {'Authorization': 'Bearer ' + token,
+            headers: {
+                'Authorization': 'Bearer ' + token,
                 'ngrok-skip-browser-warning': 'true'
             },
             success: function (response) {
@@ -20,20 +21,18 @@ $(document).ready(function () {
                     let row = $(`
                     <tr data-id="${user.id}">
                         <td>${user.id}</td>
-                        <td class="user-name">${user.name}</td>
-                        <td class="user-email">${user.email}</td>
-                        <td class="user-age">${user.age}</td>
+                        <td>${user.chatId}</td>
+                        <td class="user-first-name">${user.firstName}</td>
+                        <td class="user-last-name">${user.lastName}</td>
+                        <td class="user-username">${user.userName}</td>                      
                         <td class="user-roles">${user.roles.join(', ')}</td>
                         <td>
+                            <button class="btn btn-primary btn-sm" onclick="viewUserCars(${user.id})">Машины</button>
                             <button class="btn btn-warning btn-sm" onclick="editUser(${user.id})">Редактировать</button>
                             <button class="btn btn-danger btn-sm" onclick="deleteUser(${user.id})">Удалить</button>
                         </td>
                     </tr>
                 `);
-
-                    row.click(function () {
-                        window.location.href = `admin_cars?userId=${user.id}`
-                    });
 
                     tableBody.append(row);
                 });
@@ -44,6 +43,11 @@ $(document).ready(function () {
             }
         });
     }
+
+    window.viewUserCars = function (userId) {
+        window.location.href = `admin_cars?userId=${userId}`;
+    }
+
 
     window.deleteUser = function (id) {
         $.ajax({
@@ -63,15 +67,15 @@ $(document).ready(function () {
 
     window.editUser = function (id) {
         const row = $(`#userTableBody tr[data-id="${id}"]`);
-        const name = row.find(".user-name").text();
-        const email = row.find(".user-email").text();
-        const age = row.find(".user-age").text();
+        const firstName = row.find(".user-first-name").text();
+        const lastName = row.find(".user-last-name").text();
+        const username = row.find(".user-username").text();
         const roles = row.find(".user-roles").text();
 
         $("#editUserId").val(id);
-        $("#editUserName").val(name);
-        $("#editUserEmail").val(email);
-        $("#editUserAge").val(age);
+        $("#editUserFirstName").val(firstName);
+        $("#editUserLastName").val(lastName);
+
 
         if (roles.includes("ROLE_USER")) {
             $("#roleUserEdit").prop("checked", true);
@@ -91,14 +95,10 @@ $(document).ready(function () {
     $("#editUserForm").submit(function (event) {
         event.preventDefault();
 
-        const id = $("#editUserId").val();
-        const name = $("#editUserName").val();
-        let password = $("#editUserPassword").val();
-        const age = $("#editUserAge").val();
+        const id = $("#editUserId").val()
+        const firstName = $("#editFirstName").val()
+        const lastName = $("#editLastName").val()
 
-        if (password === "") {
-            password = null;
-        }
         const roles = [];
         if ($("#roleUserEdit").prop("checked")) {
             roles.push("ROLE_USER");
@@ -114,7 +114,7 @@ $(document).ready(function () {
                 'ngrok-skip-browser-warning': 'true'
             },
             contentType: 'application/json',
-            data: JSON.stringify({id, name, password, age, roles}),
+            data: JSON.stringify({id, firstName, lastName, roles}),
             success: function () {
                 $('#editUserModal').modal('hide');
                 fetchUsers();

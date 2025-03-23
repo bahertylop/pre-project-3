@@ -13,12 +13,8 @@ import javax.validation.constraints.*;
 @Builder
 public class UpdateProfileRequest {
 
-    @NotBlank(message = "Имя не должно быть пустым")
-    private String name;
-
     private String firstName;
 
     private String lastName;
 
-    private String userName;
 }

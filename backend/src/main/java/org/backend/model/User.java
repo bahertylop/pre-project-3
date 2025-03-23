@@ -30,7 +30,7 @@ public class User implements UserDetails {
     private String lastName;
 
     @Column(name = "username")
-    private String userName;
+    private String tgUserName;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

@@ -21,17 +21,18 @@
     </div>
 </nav>
 <div class="container mt-4">
-    <div class="mb-4">
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createUserModal">Создать пользователя</button>
-    </div>
+<!--    <div class="mb-4">-->
+<!--        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createUserModal">Создать пользователя</button>-->
+<!--    </div>-->
 
     <table class="table table-striped">
         <thead>
         <tr>
             <th>ID</th>
+            <th>TG ID</th>
             <th>Имя</th>
-            <th>Email</th>
-            <th>Возраст</th>
+            <th>Фамилия</th>
+            <th>Имя пользователя</th>
             <th>Роли</th>
             <th>Действия</th>
         </tr>
@@ -97,20 +98,12 @@
                 <form id="editUserForm">
                     <input type="hidden" id="editUserId">
                     <div class="mb-3">
-                        <label for="editUserName" class="form-label">Имя</label>
-                        <input type="text" class="form-control" id="editUserName" required>
+                        <label for="editFirstName" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="editFirstName" required>
                     </div>
                     <div class="mb-3">
-                        <label for="editUserEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="editUserEmail" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="editUserPassword" class="form-label">Пароль (минимум 8 символов, 1 цифра и заглавная буква)</label>
-                        <input type="password" class="form-control" id="editUserPassword">
-                    </div>
-                    <div class="mb-3">
-                        <label for="editUserAge" class="form-label">Возраст</label>
-                        <input type="number" class="form-control" id="editUserAge" required>
+                        <label for="editLastName" class="form-label">Фамилия</label>
+                        <input type="text" class="form-control" id="editLastName" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Роли</label>

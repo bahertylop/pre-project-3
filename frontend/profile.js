@@ -15,12 +15,13 @@ $(document).ready(function () {
             },
             success: function (response) {
                 $("#profileId").text(response.id);
-                $("#profileName").text(response.name);
-                $("#profileEmail").text(response.email);
-                $("#profileAge").text(response.age);
+                $("#chatId").text(response.chatId);
+                $("#firstName").text(response.firstName);
+                $("#lastName").text(response.lastName);
+                $("#username").text(response.userName);
                 $("#profileRoles").text(response.roles.join(', '));
-                $("#userEmail").text(response.email);
                 $("#userRoles").text(response.roles.join(', '));
+                $("#userEmail").text(response.id);
 
                 if (response.roles.includes("ROLE_ADMIN")) {
                     $("#adminPanelBtn").removeClass("d-none");
@@ -34,17 +35,16 @@ $(document).ready(function () {
     }
 
     $("#editProfileBtn").click(function () {
-        $("#editName").val($("#profileName").text());
-        $("#editAge").val($("#profileAge").text());
+        $("#editFirstName").val($("#firstName").text());
+        $("#editLastName").val($("#lastName").text());
         $('#editProfileModal').modal('show');
     });
 
     $("#editProfileForm").submit(function (event) {
         event.preventDefault();
 
-        const name = $("#editName").val();
-        const password = $("#editPassword").val();
-        const age = $("#editAge").val();
+        const firstName = $("#editFirstName").val();
+        const lastName = $("#editLastName").val();
 
         $.ajax({
             url: `${CONFIG.API_BASE_URL}/user`,
@@ -53,7 +53,7 @@ $(document).ready(function () {
             headers: { 'Authorization': 'Bearer ' + token,
                 'ngrok-skip-browser-warning': 'true'
             },
-            data: JSON.stringify({ name, password, age }),
+            data: JSON.stringify({firstName, lastName }),
             success: function () {
                 fetchProfile();
                 $('#editProfileModal').modal('hide');

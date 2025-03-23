@@ -22,8 +22,6 @@ public class UpdateUserInfoRequest {
 
     private String lastName;
 
-    private String userName;
-
     @NotNull(message = "Не может не быть ролей")
     private Set<Role.ROLES> roles;
 }

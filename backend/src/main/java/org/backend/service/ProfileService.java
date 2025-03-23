@@ -27,7 +27,7 @@ public class ProfileService {
                 .chatId(user.getChatId())
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
-                .userName(user.getUsername())
+                .userName(user.getTgUserName())
                 .roles(user.getRoles().stream().map(Role::getRole).map(Enum::toString).collect(Collectors.toSet()))
                 .build();
     }
@@ -45,7 +45,6 @@ public class ProfileService {
                 .id(user.getId())
                 .firstName(updateInfo.getFirstName())
                 .lastName(updateInfo.getLastName())
-                .userName(updateInfo.getUserName())
                 .roles(user.getRoles().stream().map(Role::getRole).collect(Collectors.toSet()))
                 .build();
         userService.updateUser(updateRequest);

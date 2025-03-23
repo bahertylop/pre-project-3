@@ -36,7 +36,7 @@ public class UserDto {
                 .chatId(user.getChatId())
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
-                .userName(user.getUsername())
+                .userName(user.getTgUserName())
                 .roles(user.getRoles().stream().map(Role::getRole).collect(Collectors.toSet()))
                 .build();
     }
