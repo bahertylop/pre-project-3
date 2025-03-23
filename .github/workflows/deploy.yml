@@ -77,12 +77,15 @@ jobs:
             echo "DB_USERNAME=${{ secrets.POSTGRES_USERNAME }}" > .env
             echo DB_PASSWORD = ${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo AVITO_BOT_TOKEN = ${{ secrets.AVITO_BOT_TOKEN }} >> .env
+            echo NGROK_AUTHTOKEN = ${{ secrets.NGROK_AUTHTOKEN }} >> .env
             
             docker stop frontend
             docker stop bot
+            docker stop ngrok
             
             docker rm frontend
             docker rm bot
+            docker rm ngrok
             
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/frontend-http-server

@@ -1,20 +1,6 @@
 version: '2'
 
 services:
-#  app:
-#    image: 'bahertylop/docker-spring-boot-postgres:latest'
-#    build:
-#      context: ..
-#    container_name: app
-#    depends_on:
-#      - db
-#    environment:
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/pre_project_3
-#      - SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
-#      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
-#      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-#    ports:
-#      - "8080:8080"
   bot:
     image: 'bahertylop/avito-bot:latest'
     build:
@@ -46,5 +32,11 @@ services:
     container_name: frontend
     ports:
       - "3000:3000"
-#    environment:
-#      - API_BASE_URL=${API_BASE_URL}
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    restart: unless-stopped
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    command: "http frontend:3000"
