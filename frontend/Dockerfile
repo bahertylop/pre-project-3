@@ -10,8 +10,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY ./pages /usr/share/nginx/html
 
-RUN mkdir -p /etc/nginx/ssl
-
-EXPOSE 80 443
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
