@@ -43,7 +43,7 @@ jobs:
           docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot:latest ./bot
           
           # frontend
-          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/frontend-http-server:latest ./frontend
+          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-frontend:latest ./frontend
 
       - name: log in docker hub
         uses: docker/login-action@v3
@@ -57,7 +57,7 @@ jobs:
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot:latest
           
           # push frontend image
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/frontend-http-server:latest
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-frontend:latest
 
   deploy:
     name: deploy to server
@@ -79,16 +79,16 @@ jobs:
             echo AVITO_BOT_TOKEN = ${{ secrets.AVITO_BOT_TOKEN }} >> .env
             echo NGROK_AUTHTOKEN = ${{ secrets.NGROK_AUTHTOKEN }} >> .env
             
-            docker stop frontend
+            docker stop nginx-frontend
             docker stop bot
             docker stop ngrok
             
-            docker rm frontend
+            docker rm nginx-frontend
             docker rm bot
             docker rm ngrok
             
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot
-            docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/frontend-http-server
+            docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-frontend
   
             docker-compose up -d 
             docker ps -a

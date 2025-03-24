@@ -25,18 +25,14 @@ services:
     ports:
       - "5434:5432"
 
-  frontend:
-    image: 'bahertylop/frontend-http-server:latest'
+  nginx:
+    image: 'bahertylop/nginx-frontend:latest'
     build:
-      context: frontend
-    container_name: frontend
+      context: ./frontend
+    container_name: nginx-frontend
     ports:
-      - "3000:3000"
-
-  ngrok:
-    image: ngrok/ngrok:latest
-    container_name: ngrok
-    restart: unless-stopped
-    environment:
-      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
-    command: "http frontend:3000"
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ssl:/etc/nginx/ssl
+      - ./frontend/pages:/usr/share/nginx/html
