@@ -11,6 +11,8 @@ RUN apk add --no-cache certbot certbot-nginx
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
+RUN certbot certonly --standalone --agree-tos --email your-email@example.com -d bahertylop.ru
+
 COPY ./pages /usr/share/nginx/html
 
 EXPOSE 80 443
