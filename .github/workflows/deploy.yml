@@ -88,8 +88,6 @@ jobs:
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot
             docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-frontend
   
-            docker-compose up nginx --build -d 
-            docker-compose up certbot --build -d
-            docker-compose up bot -d
+            docker-compose up -d
             docker ps -a
             
