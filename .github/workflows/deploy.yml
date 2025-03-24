@@ -42,7 +42,7 @@ jobs:
           # bot
           docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot:latest ./bot
           
-          # frontend
+          # nginx frontend
           docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-frontend:latest ./frontend
 
       - name: log in docker hub
@@ -53,10 +53,10 @@ jobs:
 
       - name: push docker images to docker hub
         run: |
-          # push api image
+          # push bot image
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot:latest
           
-          # push frontend image
+          # push nginx frontend image
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-frontend:latest
 
   deploy:
@@ -73,23 +73,29 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd project
+            cd /home/lev/project
             echo "DB_USERNAME=${{ secrets.POSTGRES_USERNAME }}" > .env
-            echo DB_PASSWORD = ${{ secrets.POSTGRES_PASSWORD }} >> .env
-            echo AVITO_BOT_TOKEN = ${{ secrets.AVITO_BOT_TOKEN }} >> .env
-            echo NGROK_AUTHTOKEN = ${{ secrets.NGROK_AUTHTOKEN }} >> .env
-            
-            docker stop nginx-frontend
-            docker stop bot
-            docker stop ngrok
-            
-            docker rm nginx-frontend
-            docker rm bot
-            docker rm ngrok
-            
-            docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot
-            docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-frontend
-  
-            docker-compose up -d 
+            echo "DB_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env
+            echo "AVITO_BOT_TOKEN=${{ secrets.AVITO_BOT_TOKEN }}" >> .env
+
+            # Останавливаем существующие контейнеры
+            docker stop bot || true
+            docker stop db || true
+            docker stop nginx-frontend || true
+            docker stop certbot || true
+
+            # Удаляем контейнеры
+            docker rm bot || true
+            docker rm db || true
+            docker rm nginx-frontend || true
+            docker rm certbot || true
+
+            # Удаляем старые образы
+            docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/avito-bot:latest || true
+            docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-frontend:latest || true
+            docker rmi postgres:latest || true
+            docker rmi certbot/certbot:latest || true
+
+            # Запускаем docker-compose
+            docker-compose up -d
             docker ps -a
-            
