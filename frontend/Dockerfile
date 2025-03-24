@@ -6,10 +6,13 @@
 #CMD ["http-server", "-p", "3000", "--cors", "*"]
 
 FROM nginx:alpine
+
+RUN apk add --no-cache certbot certbot-nginx
+
 COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY ./pages /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
