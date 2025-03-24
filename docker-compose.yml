@@ -28,7 +28,7 @@ services:
   nginx:
     image: 'bahertylop/nginx-frontend:latest'
     build:
-      context: ./frontend
+      context: frontend
     container_name: nginx-frontend
     volumes:
       - ./frontend/nginx.conf:/etc/nginx/nginx.conf:ro
@@ -45,7 +45,7 @@ services:
     volumes:
       - ./frontend/:/etc/nginx/
     build:
-      context: ./frontend/certbot
+      context: frontend/certbot
       dockerfile: Dockerfile
       # задаем переменные среды
       args:
