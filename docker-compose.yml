@@ -33,6 +33,6 @@ services:
     ports:
       - "80:80"
 #      - "443:443"
-    volumes:
-      - ./ssl:/etc/nginx/ssl
-      - ./frontend/pages:/usr/share/nginx/html
+#    volumes:
+#      - ./ssl:/etc/nginx/ssl
+#      - ./frontend/pages:/usr/share/nginx/html
