@@ -8,9 +8,8 @@
 FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY ./pages /usr/share/nginx/html
 
-RUN mkdir -p /var/www/certbot
+COPY ./pages /usr/share/nginx/html
 
 EXPOSE 80 443
 
