@@ -17,5 +17,5 @@ public class TgAuthRequest {
 
     private String lastName;
 
-    private String userName;
+    private String username;
 }

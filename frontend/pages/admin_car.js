@@ -76,7 +76,7 @@ $(document).ready(function () {
                 },
                 scales: {
                     x: { title: { display: true, text: 'Дата' } },
-                    y: { title: { display: true, text: 'Цена (₽)' }, beginAtZero: false }
+                    y: { title: { display: true, text: 'Цена (₽)' }, beginAtZero: true, suggestedMin: 0 }
                 }
             }
         });
