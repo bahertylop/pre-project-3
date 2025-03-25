@@ -58,6 +58,7 @@ public class PositionParsingService {
         chromeOptions.addArguments("--disable-infobars");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--remote-allow-origins=*");
+        chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
 
         ChromeDriver driver = new ChromeDriver(chromeOptions);
         driver.executeScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
@@ -80,7 +81,7 @@ public class PositionParsingService {
             boolean anotherCars;
             do {
                 anotherCars = false;
-                for (int i = 1; i <= pageCount; i++) {
+                for (int i = 1; i <= pageCount && !anotherCars; i++) {
                     driver.get(getProductsUrl + "&p=" + i);
                     RandomTimeSleep.randomSleep();
                     List<WebElement> ads = driver.findElements(By.xpath("//div[@data-marker='item']"));
@@ -92,7 +93,7 @@ public class PositionParsingService {
                                 log.warn("page with another cars title: {}, brand: {}, model : {}", title, carPosition.getBrand().getName(), carPosition.getModel().getName());
                                 prices = new ArrayList<>();
                                 anotherCars = true;
-                                continue;
+                                break;
                             };
                             WebElement priceElement = ads.get(j).findElement(By.xpath(".//meta[@itemprop='price']"));
                             String price = priceElement.getAttribute("content");
