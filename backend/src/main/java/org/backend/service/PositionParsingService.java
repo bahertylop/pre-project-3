@@ -58,6 +58,7 @@ public class PositionParsingService {
         chromeOptions.addArguments("--disable-infobars");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--remote-allow-origins=*");
+        chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
 
         ChromeDriver driver = new ChromeDriver(chromeOptions);
         driver.executeScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
@@ -77,24 +78,34 @@ public class PositionParsingService {
             log.info("ads found: " + productsCount);
 
             int pageCount = productsCount / 50 + 1;
-            for (int i = 1; i <= pageCount; i++) {
-                driver.get(getProductsUrl + "&p=" + i);
-                RandomTimeSleep.randomSleep();
-                List<WebElement> ads = driver.findElements(By.xpath("//div[@data-marker='item']"));
-                for (int j = 0; j < ads.size(); j++) {
-                    try {
-                        WebElement titleElement = ads.get(j).findElement(By.xpath(".//h3"));
-                        String title = titleElement.getText();
-
-                        WebElement priceElement = ads.get(j).findElement(By.xpath(".//meta[@itemprop='price']"));
-                        String price = priceElement.getAttribute("content");
-                        prices.add(Integer.parseInt(price));
-                        System.out.println(i + " " + j + title + " - " + price);
-                    } catch (Exception e) {
-                        log.error("error with parsing ad carPosition: {}", carPosition.getId(), e);
+            boolean anotherCars;
+            do {
+                anotherCars = false;
+                for (int i = 1; i <= pageCount && !anotherCars; i++) {
+                    driver.get(getProductsUrl + "&p=" + i);
+                    RandomTimeSleep.randomSleep();
+                    List<WebElement> ads = driver.findElements(By.xpath("//div[@data-marker='item']"));
+                    for (int j = 0; j < ads.size(); j++) {
+                        try {
+                            WebElement titleElement = ads.get(j).findElement(By.xpath(".//h3"));
+                            String title = titleElement.getText();
+                            if (!title.startsWith(carPosition.getBrand().getName() + " " + carPosition.getModel().getName())) {
+                                log.warn("page with another cars title: {}, brand: {}, model : {}", title, carPosition.getBrand().getName(), carPosition.getModel().getName());
+                                prices = new ArrayList<>();
+                                anotherCars = true;
+                                break;
+                            };
+                            WebElement priceElement = ads.get(j).findElement(By.xpath(".//meta[@itemprop='price']"));
+                            String price = priceElement.getAttribute("content");
+                            prices.add(Integer.parseInt(price));
+                            System.out.println(i + " " + j + title + " - " + price);
+                        } catch (Exception e) {
+                            log.error("error with parsing ad carPosition: {}", carPosition.getId(), e);
+                        }
                     }
                 }
-            }
+            } while (anotherCars);
+
         } catch (Exception e) {
             log.info("error with parsing ads carPosition: {}", carPosition.getId(), e);
             throw new ParsingPricesException("ошибка при обработке объявлений");

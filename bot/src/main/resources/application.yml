@@ -25,7 +25,7 @@ server:
 
 api:
   url:
-    base-url: https://2940-185-223-93-175.ngrok-free.app
+    base-url: https://32a1-185-223-93-175.ngrok-free.app
     sign-in: /auth/tg_auth
     refresh: /auth/refresh
     get-profile: /user
